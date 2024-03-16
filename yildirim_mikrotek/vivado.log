@@ -2,10 +2,10 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Fri Mar 15 23:49:12 2024
-# Process ID: 4236
+# Start of session at: Sat Mar 16 14:51:01 2024
+# Process ID: 3148
 # Current directory: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3148 C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17028 C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr
 # Log file: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/vivado.log
 # Journal file: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek\vivado.jou
 # Running On: DESKTOP-VTDBCS3, OS: Windows, CPU Frequency: 1190 MHz, CPU Physical cores: 4, Host memory: 8345 MB
@@ -38,11 +38,497 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
-open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 1215.574 ; gain = 408.137
+open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 1164.031 ; gain = 363.602
 update_compile_order -fileset sources_1
-close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/carpma_birimi.v w ]
-add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/carpma_birimi.v
+close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v w ]
+add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v
 update_compile_order -fileset sources_1
-close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/carp_biriktir.v w ]
-add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/carp_biriktir.v
+close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/tb_bolme_birimi.v w ]
+add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/tb_bolme_birimi.v
 update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/tb_bolme_birimi.v] -no_script -reset -force -quiet
+remove_files  C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/tb_bolme_birimi.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v w ]
+add_files -fileset sim_1 C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v
+update_compile_order -fileset sim_1
+set_property top tb_bolme_birimi [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_bolme_birimi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bolme_birimi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bolme_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bolme_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bolme_birimi
+Compiling module xil_defaultlib.tb_bolme_birimi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bolme_birimi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_bolme_birimi_behav -key {Behavioral:sim_1:Functional:tb_bolme_birimi} -tclbatch {tb_bolme_birimi.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_bolme_birimi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_bolme_birimi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1273.406 ; gain = 61.629
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_bolme_birimi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bolme_birimi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bolme_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bolme_birimi
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bolme_birimi
+Compiling module xil_defaultlib.tb_bolme_birimi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bolme_birimi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_bolme_birimi_behav -key {Behavioral:sim_1:Functional:tb_bolme_birimi} -tclbatch {tb_bolme_birimi.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_bolme_birimi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 820 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" Line 72
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_bolme_birimi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1313.809 ; gain = 0.000
+run 10 us
+run 10 us
+run 10 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_bolme_birimi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bolme_birimi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bolme_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bolme_birimi
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bolme_birimi
+Compiling module xil_defaultlib.tb_bolme_birimi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bolme_birimi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_bolme_birimi_behav -key {Behavioral:sim_1:Functional:tb_bolme_birimi} -tclbatch {tb_bolme_birimi.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_bolme_birimi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!: 4294967295
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_bolme_birimi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1313.809 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_bolme_birimi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bolme_birimi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bolme_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bolme_birimi
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bolme_birimi
+Compiling module xil_defaultlib.tb_bolme_birimi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bolme_birimi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1313.809 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bolme_birimi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bolme_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bolme_birimi
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bolme_birimi
+Compiling module xil_defaultlib.tb_bolme_birimi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bolme_birimi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+passed
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1313.809 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bolme_birimi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bolme_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bolme_birimi
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bolme_birimi
+Compiling module xil_defaultlib.tb_bolme_birimi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bolme_birimi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1313.809 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bolme_birimi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bolme_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bolme_birimi
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bolme_birimi
+Compiling module xil_defaultlib.tb_bolme_birimi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bolme_birimi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1313.809 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bolme_birimi_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_bolme_birimi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bolme_birimi_behav xil_defaultlib.tb_bolme_birimi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x
+FAILED!:          x

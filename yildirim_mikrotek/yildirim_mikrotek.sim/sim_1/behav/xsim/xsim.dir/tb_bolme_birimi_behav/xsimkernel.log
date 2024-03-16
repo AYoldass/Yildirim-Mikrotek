@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_bolme_birimi_behav/xsimk.exe -simmode gui -wdb tb_bolme_birimi_behav.wdb -simrunnum 0 -socket 49986
+Design successfully loaded
+Design Loading Memory Usage: 7744 KB (Peak: 7744 KB)
+Design Loading CPU Usage: 0 ms
