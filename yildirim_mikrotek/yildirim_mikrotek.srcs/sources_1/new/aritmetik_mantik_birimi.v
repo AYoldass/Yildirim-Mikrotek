@@ -23,13 +23,13 @@ module aritmetik_mantik_birimi(
    wire [31:0] result_sltu;
    
    // Aritmetik Sinyalleri
-   wire [32:0] deger1_top = (kontrol_i == `ALU_CIKARMA) ? { value1_i,1'b1} : {value1_i,1'b0};
-   wire [32:0] deger2_top = (kontrol_i == `ALU_CIKARMA) ? {~value2_i,1'b1} : {value2_i,1'b0};
+   wire [32:0] value1_top = (kontrol_i == `ALU_CIKARMA) ? { value1_i,1'b1} : {value1_i,1'b0};
+   wire [32:0] value2_top = (kontrol_i == `ALU_CIKARMA) ? {~value2_i,1'b1} : {value2_i,1'b0};
    wire [32:0] result_top;
    wire elde_cla = (kontrol_i == `ALU_CIKARMA);
    
    `ifdef FPGA
-      assign result_top = deger2_top + deger1_top;
+      assign result_top = value2_top + value1_top;
    `else
       toplayici_birim`GATE sklanksy_toplayici(
          .a_in(deger1_top),
