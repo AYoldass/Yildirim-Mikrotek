@@ -1,0 +1,671 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 05:00:03 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 16676
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Thu Mar 21 22:08:11 TRT 2024
+Time zone: 	Turkey Time (Asia/Istanbul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+Scale size: 19
+
+Java version: 	11.0.11 64-bit
+Java home: 	C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9
+Java executable: 	C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9/bin/java.exe
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.d3d=false, -Dsun.awt.nopixfmt=true, -Dsun.java2d.dpiaware=true, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	ahmet
+User home directory: C:/Users/ahmet
+User working directory: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek
+User country: 	TR
+User language: 	tr
+User locale: 	tr_TR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2022.2
+RDI_DATADIR: C:/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/
+Vivado layouts directory: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	C:/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/vivado.log
+Vivado journal file: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/vivado.jou
+Engine tmp dir: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/.Xil/Vivado-16676-DESKTOP-VTDBCS3
+
+Xilinx Environment Variables
+----------------------------
+RDI_APPROOT: C:/Xilinx/Vivado/2022.2
+RDI_ARGS:  -gui_launcher_event rodinguilauncherevent17160 "C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr"
+RDI_ARGS_FUNCTION: RDI_EXEC_DEFAULT
+RDI_BASEROOT: C:/Xilinx/Vivado
+RDI_BINDIR: C:/Xilinx/Vivado/2022.2/bin
+RDI_BINROOT: C:/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_CHECK_PROG: True
+RDI_DATADIR: C:/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: C:/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_INSTALLVERSION: 2022.2
+RDI_ISE_PLATFORM: nt64
+RDI_JAVACEFROOT: C:/Xilinx/Vivado/2022.2/tps/win64/java-cef-95.0.4638.69
+RDI_JAVAFXROOT: C:/Xilinx/Vivado/2022.2/tps/win64/javafx-sdk-11.0.2
+RDI_JAVAROOT: C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: C:/Xilinx/Vivado/2022.2/lib/win64.o
+RDI_MINGW_LIB: C:/Xilinx/Vivado/2022.2\tps\mingw\6.2.0\win64.o\nt\bin;C:/Xilinx/Vivado/2022.2\tps\mingw\6.2.0\win64.o\nt\libexec\gcc\x86_64-w64-mingw32\6.2.0
+RDI_OPT_EXT: .o
+RDI_PLATFORM: win64
+RDI_PREPEND_PATH: C:/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2022.2/ids_lite/ISE/lib/nt64
+RDI_PROG: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/vivado.exe
+RDI_PROGNAME: vivado.exe
+RDI_PYTHON3: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3
+RDI_PYTHON3_VERSION: 3.8.3
+RDI_PYTHONHOME: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3
+RDI_PYTHONPATH: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\bin;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib\site-packages
+RDI_PYTHON_LD_LIBPATH: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib
+RDI_TPS_ROOT: C:/Xilinx/Vivado/2022.2/tps/win64
+RDI_USE_JDK11: True
+RDI_VERBOSE: False
+XILINX: C:/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/Vitis_HLS/2022.2
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2022.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2022.2
+_RDI_BINROOT: C:\Xilinx\Vivado\2022.2\bin
+_RDI_CWD: C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 514 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 84 MB (+85274kb) [00:00:12]
+// [Engine Memory]: 514 MB (+386984kb) [00:00:12]
+// Opening Vivado Project: C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr. Version: Vivado v2022.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek' 
+// HMemoryUtils.trashcanNow. Engine heap size: 514 MB. GUI used memory: 61 MB. Current time: 3/21/24, 10:08:12 PM TRT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek' 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 611 MB (+74918kb) [00:00:30]
+// WARNING: HEventQueue.dispatchEvent() is taking  3982 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 64 MB. Current time: 3/21/24, 10:08:29 PM TRT
+// Project name: yildirim_mikrotek; location: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek; part: xc7z020clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 1199.012 ; gain = 420.375 
+dismissDialog("Open Project"); // bq
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 98 MB (+10174kb) [00:00:40]
+// [GUI Memory]: 121 MB (+19888kb) [00:01:59]
+// PAPropertyPanels.initPanels (carpma_birimi.v) elapsed time: 0.2s
+// Elapsed time: 185 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, carpma_birimi (carpma_birimi.v)]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, carpma_birimi (carpma_birimi.v)]", 5, false, false, false, false, false, true); // D - Double Click
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, riscv_controller.vh]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, riscv_controller.vh]", 3, false, false, false, false, false, true); // D - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 68 MB. Current time: 3/21/24, 10:38:33 PM TRT
+// Elapsed time: 1696 seconds
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // L
+// Elapsed time: 20 seconds
+selectCodeEditor("riscv_controller.vh", 90, 48); // ac
+selectCodeEditor("riscv_controller.vh", 90, 48, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("riscv_controller.vh", 90, 48); // ac
+// Elapsed time: 16 seconds
+selectCodeEditor("riscv_controller.vh", 418, 82); // ac
+// Elapsed time: 93 seconds
+selectCodeEditor("riscv_controller.vh", 92, 241); // ac
+selectCodeEditor("riscv_controller.vh", 92, 241, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("riscv_controller.vh", 674, 298); // ac
+selectComboBox("FindAndReplaceDialog.aK_Find what:", "AMB", -1); // JComboBox
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "ALU", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// Elapsed time: 13 seconds
+selectCodeEditor("riscv_controller.vh", 823, 443); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // R
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// Elapsed time: 11 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "aritmetik_mantik_birimi"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 15 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/aritmetik_mantik_birimi.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/aritmetik_mantik_birimi.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // p
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 6, false, false, false, false, false, true); // D - Double Click
+// [GUI Memory]: 128 MB (+232kb) [00:35:06]
+// Elapsed time: 65 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 46, 434); // ac
+// Elapsed time: 221 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 165, 192); // ac
+// Elapsed time: 219 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 158, 29); // ac
+typeControlKey((HResource) null, "aritmetik_mantik_birimi.v", 'v'); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 197, 48); // ac
+// Elapsed time: 27 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 2, 127); // ac
+typeControlKey((HResource) null, "aritmetik_mantik_birimi.v", 'v'); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 388, 107); // ac
+selectComboBox("FindAndReplaceDialog.aK_Find what:", "AMB", -1); // JComboBox
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "ALU", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// Elapsed time: 12 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 592, 477); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 105 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, carp_biriktir (carp_biriktir.v)]", 5); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, carp_biriktir (carp_biriktir.v)]", 5); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, toplayici_birim (toplayici_birim.v)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, toplayici_birim (toplayici_birim.v), U3 : adder_tree_29 (toplayici_birim.v)]", 8, false, false, false, false, false, true); // D - Double Click
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, toplayici_birim (toplayici_birim.v)]", 4); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 6, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("aritmetik_mantik_birimi.v", 135, 450); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 64 MB. Current time: 3/21/24, 11:08:34 PM TRT
+// Elapsed time: 1276 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 229, 204); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 229, 204, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 39 seconds
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "input1_i", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// Elapsed time: 13 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 217, 225); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 217, 225, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("aritmetik_mantik_birimi.v", 239, 69); // ac
+selectComboBox("FindAndReplaceDialog.aK_Find what:", "deger2_i", -1); // JComboBox
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "input2_i", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// Elapsed time: 11 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 223, 249); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 223, 249, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 17 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 227, 242); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 236, 197); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 236, 197, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("aritmetik_mantik_birimi.v", 296, 202); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 228, 205); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 228, 205, false, false, false, false, true); // ac - Double Click
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "input1_i"); // d.c
+selectCodeEditor("aritmetik_mantik_birimi.v", 248, 197); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 248, 197, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("aritmetik_mantik_birimi.v", 411, 203); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 262, 203); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 262, 203, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 10 seconds
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "value1_i", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("aritmetik_mantik_birimi.v", 399, 250); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 226, 139); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 226, 139, false, false, false, false, true); // ac - Double Click
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "value2_i", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("aritmetik_mantik_birimi.v", 277, 340); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 245, 155); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 245, 155, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 13 seconds
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "result_o", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("aritmetik_mantik_birimi.v", 632, 376); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 473, 164); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 10 seconds
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // L
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // L
+selectCodeEditor("aritmetik_mantik_birimi.v", 880, 217); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 253, 188); // ac
+typeControlKey((HResource) null, "aritmetik_mantik_birimi.v", 'v'); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 185, 326); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 185, 326, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("aritmetik_mantik_birimi.v", 426, 434); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 38 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 178, 244); // ac
+// Elapsed time: 10 seconds
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "result", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// Elapsed time: 41 seconds
+selectCodeEditor("aritmetik_mantik_birimi.v", 1013, 215); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 701, 368); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 699, 389); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 700, 412); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 702, 426); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 703, 456); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 703, 471); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 702, 497); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 702, 513); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 702, 536); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 699, 556); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 412, 374); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 412, 385); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 423, 365); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 415, 392); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 412, 413); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 414, 431); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 415, 450); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 416, 475); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 413, 494); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 415, 516); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 417, 537); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 625, 377); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 626, 387); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 641, 403); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 677, 428); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 676, 447); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 678, 475); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 675, 499); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 689, 514); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 687, 519); // ac
+selectCodeEditor("aritmetik_mantik_birimi.v", 693, 540); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("aritmetik_mantik_birimi.v", 784, 206); // ac
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // R
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// Elapsed time: 11 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "tb_aritmetik_mantik_birimi"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 15 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_aritmetik_mantik_birimi.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_aritmetik_mantik_birimi.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// Elapsed time: 37 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 10); // D
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // j
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 11); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_aritmetik_mantik_birimi (tb_aritmetik_mantik_birimi.v)]", 18, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_aritmetik_mantik_birimi (tb_aritmetik_mantik_birimi.v)]", 18, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 0, 477); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 4, 71); // ac
+typeControlKey((HResource) null, "tb_aritmetik_mantik_birimi.v", 'v'); // ac
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 6, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("aritmetik_mantik_birimi.v", 312, 51); // ac
+typeControlKey((HResource) null, "aritmetik_mantik_birimi.v", 'c'); // ac
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_aritmetik_mantik_birimi (tb_aritmetik_mantik_birimi.v)]", 18, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_aritmetik_mantik_birimi (tb_aritmetik_mantik_birimi.v)]", 18, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 147, 35); // ac
+typeControlKey((HResource) null, "tb_aritmetik_mantik_birimi.v", 'v'); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 86, 167); // ac
+// Elapsed time: 15 seconds
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 53, 434); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 305, 96); // ac
+typeControlKey((HResource) null, "tb_aritmetik_mantik_birimi.v", 'v'); // ac
+selectComboBox("FindAndReplaceDialog.aK_Find what:", "AMB", -1); // JComboBox
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "ALU", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// Elapsed time: 19 seconds
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 162, 177); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 162, 177, false, false, false, false, true); // ac - Double Click
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "value1_i", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 593, 305); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 205, 199); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "value2_i", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 645, 423); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 206, 159); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "result_o", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 448, 253); // ac
+// Elapsed time: 11 seconds
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 94, 436); // ac
+// Elapsed time: 12 seconds
+selectComboBox("FindAndReplaceDialog.aK_Find what:", "sonuc", -1); // JComboBox
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "result", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 202, 396); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 156, 300); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 289, 283); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 18 seconds
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 86, 164); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 200, 161); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 197, 181); // ac
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 196, 181); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 240, 219); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 568, 273); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 201, 283); // ac
+selectCodeEditor("tb_aritmetik_mantik_birimi.v", 194, 304); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_aritmetik_mantik_birimi (tb_aritmetik_mantik_birimi.v)]", 16, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top tb_aritmetik_mantik_birimi [get_filesets sim_1] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_aritmetik_mantik_birimi (tb_aritmetik_mantik_birimi.v)]", 13); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_aritmetik_mantik_birimi (tb_aritmetik_mantik_birimi.v)]", 13); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 6, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // f
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-12493] Simulation top is 'tb_aritmetik_mantik_birimi' 
+// Tcl Message: "xvlog --incr --relax -prj tb_aritmetik_mantik_birimi_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/aritmetik_mantik_birimi.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module aritmetik_mantik_birimi INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_aritmetik_mantik_birimi.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module tb_aritmetik_mantik_birimi 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_aritmetik_mantik_birimi_behav xil_defaultlib.tb_aritmetik_mantik_birimi xil_defaultlib.glbl -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "tb_aritmetik_mantik_birimi_behav -key {Behavioral:sim_1:Functional:tb_aritmetik_mantik_birimi} -tclbatch {tb_aritmetik_mantik_birimi.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source tb_aritmetik_mantik_birimi.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 77 MB. Current time: 3/21/24, 11:27:21 PM TRT
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: passed passed passed passed passed passed passed passed passed passed passed 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_aritmetik_mantik_birimi_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1266.145 ; gain = 32.438 
+// 'd' command handler elapsed time: 8 seconds
+dismissDialog("Run Simulation"); // e
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // B
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:24 PM TRT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // B
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // B
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // B
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:26 PM TRT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // B
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:28 PM TRT
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:30 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:32 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 82 MB. Current time: 3/21/24, 11:27:32 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 77 MB. Current time: 3/21/24, 11:27:32 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:32 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:32 PM TRT
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 10 seconds
+selectMenu("Waveform Style"); // al
+selectMenu("Signal Color"); // al
+selectMenu("Radix"); // al
+selectMenu("Radix"); // al
+selectMenuItem((HResource) null, "Signed Decimal"); // ac
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:44 PM TRT
+selectMenu("Waveform Style"); // al
+selectMenu("Waveform Style"); // al
+selectMenu("Signal Color"); // al
+selectMenu("Radix"); // al
+selectMenu("Radix"); // al
+selectMenuItem((HResource) null, "Signed Decimal"); // ac
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectMenu("Waveform Style"); // al
+selectMenu("Signal Color"); // al
+selectMenu("Radix"); // al
+selectMenuItem((HResource) null, "Signed Decimal"); // ac
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// [GUI Memory]: 134 MB (+246kb) [01:19:57]
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:53 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 101 MB. Current time: 3/21/24, 11:27:59 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 88 MB. Current time: 3/21/24, 11:27:59 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:59 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:27:59 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 82 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 83 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 82 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 76 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 75 MB. Current time: 3/21/24, 11:28:00 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_SAVE_CONFIGURATION
+dismissFileChooser();
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_CLOSE_WCFG
+selectButton("OptionPane.button", "Discard"); // JButton
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // u
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - tb_aritmetik_mantik_birimi", "DesignTask.SIMULATION");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+dismissDialog("Confirm Close"); // u
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+dismissDialog("Close"); // bq
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_bolme (tb_bolme_birimi.v)]", 16, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_bolme (tb_bolme_birimi.v)]", 16, true, false, false, false, false, true); // D - Double Click - Node
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, toplayici_birim (toplayici_birim.v)]", 15, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, toplayici_birim (toplayici_birim.v), U14 : adder_tree_18 (toplayici_birim.v)]", 30, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, toplayici_birim (toplayici_birim.v), U13 : adder_tree_19 (toplayici_birim.v)]", 29, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, toplayici_birim (toplayici_birim.v), U13 : adder_tree_19 (toplayici_birim.v)]", 29, false, false, false, false, false, true); // D - Double Click
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, toplayici_birim (toplayici_birim.v)]", 15); // D
+// Elapsed time: 24 seconds
+selectCodeEditor("toplayici_birim.v", 401, 239); // ac

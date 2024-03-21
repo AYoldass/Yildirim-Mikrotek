@@ -241,7 +241,7 @@
 `define OPERAND   04:03
 `define BIRIM     07:05
 `define DAL       10:08
-`define AMB       14:11
+`define ALU       14:11
 `define BOLME     16:15
 `define CARPMA    18:17
 `define BIB       21:19
@@ -260,7 +260,7 @@
 `define OPERAND_PC       2'b10
 `define OPERAND_PCIMM    2'b11
 
-`define BIRIM_AMB        3'h0
+`define BIRIM_ALU        3'h0
 `define BIRIM_CARPMA     3'h1
 `define BIRIM_BOLME      3'h2
 `define BIRIM_BIB        3'h3
@@ -276,18 +276,18 @@
 `define DAL_JALR   3'b110
 `define DAL_YOK    3'b111
 
-`define AMB_TOPLAMA  4'h0
-`define AMB_CIKARMA  4'h1
-`define AMB_XOR      4'h2
-`define AMB_OR       4'h3
-`define AMB_AND      4'h4
-`define AMB_SLL      4'h5
-`define AMB_SRL      4'h6
-`define AMB_SRA      4'h7
-`define AMB_SLT      4'h8
-`define AMB_SLTU     4'h9
-`define AMB_GECIR    4'ha
-`define AMB_YOK      4'h0
+`define ALU_TOPLAMA  4'h0
+`define ALU_CIKARMA  4'h1
+`define ALU_XOR      4'h2
+`define ALU_OR       4'h3
+`define ALU_AND      4'h4
+`define ALU_SLL      4'h5
+`define ALU_SRL      4'h6
+`define ALU_SRA      4'h7
+`define ALU_SLT      4'h8
+`define ALU_SLTU     4'h9
+`define ALU_GECIR    4'ha
+`define ALU_YOK      4'h0
 
 `define BOLME_DIVU  2'h0
 `define BOLME_REMU  2'h1
