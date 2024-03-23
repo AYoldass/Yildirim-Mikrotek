@@ -1,16 +1,6 @@
 Time resolution is 1 ps
-<<<<<<< Updated upstream
-passed
-passed
-passed
-passed
-passed
-passed
-passed
-passed
-passed
-passed
-passed
-=======
-$finish called at time : 260 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bolme_birimi.v" Line 72
->>>>>>> Stashed changes
+Test case 1 failed!
+Test case 2 failed!
+Test case 3 failed!
+Test case 4 failed!
+Test case 5 failed!

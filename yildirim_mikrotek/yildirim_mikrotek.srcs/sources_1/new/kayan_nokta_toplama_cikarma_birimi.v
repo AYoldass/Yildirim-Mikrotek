@@ -26,10 +26,10 @@ wire  [7:0] value1_e, value2_e; // 8 esponent bits
 wire [26:0] value1_m, value2_m; // 1 [1.], 23 mantissa + 3 rounding bits
 
 kayan_nokta_hizalama_birimi align(
-     .a_align_i    ( value1_i     ), 
-     .b_align_i    ( value2_i     ), 
-     .a_aligned_o  ( value1_align ), 
-     .b_aligned_o  ( value2_align )
+     .a_hizala_i    ( value1_i     ), 
+     .b_hizala_i    ( value2_i     ), 
+     .a_hizali_o   ( value1_align ), 
+     .b_hizali_o   ( value2_align )
      );
 
 assign value1_s = value1_align[35];
