@@ -9,6 +9,20 @@
 `endif
 
 
+// Parameters
+`define DATA_WIDTH 32
+`define REG_DATA_WIDTH 32   // Word Width
+`define REG_ADDR_WIDTH 5   // Address With
+`define REG_DEPTH 1 << `REG_ADDR_WIDTH  // Total number of positions (32)
+
+
+`define MEM_DATA_WIDTH 32   // Word Width
+`define MEM_ADDR_WIDTH 10   // Address With
+`define MEM_DEPTH 1 << `MEM_ADDR_WIDTH-2  // Total number of positions (1024)
+
+`define MEM_TRANSFER_WIDTH 4  // Mask to store word, halfword or byte
+
+
 // RV32IM Buyruklari
 
 `define ADD        32'b0000000??????????000?????0110011
@@ -77,9 +91,8 @@
 `define AMOMINU_W   32'b11000??????????010?????0101111
 `define AMOMAXU_W   32'b11100??????????010?????0101111
 
-
+/*
 // RV32F Buyruklari
-
 `define FLW         32'b?????????????????010?????0000111
 `define FSW         32'b?????????????????010?????0100111
 `define FMADD_S     32'b?????00??????????000?????1000011
@@ -106,7 +119,7 @@
 `define FCVT_S_W    32'b110100000000?????000?????1010011 
 `define FCVT_S_WU   32'b110100000001?????000?????1010011
 `define FMV_W_X     32'b111100000000?????000?????1010011
-
+*/
 
 // RV32B Buyruklari
 
@@ -300,6 +313,34 @@
 `define CARPMA_MULHSU 2'h2
 `define CARPMA_MULHU  2'h3
 `define CARPMA_YOK    2'h0
+
+// ALU_F OP-FP {funct7[6:2]};
+`define FPU_FADD       5'b00000
+`define FPU_FSUB       5'b00001
+`define FPU_FMUL       5'b00010
+`define FPU_FDIV       5'b00011
+`define FPU_FSQRT      5'b01011
+`define FPU_FSGNJ      5'b00100 // FSGNJ, FSGNJN, FSGNJX use rm to differentiate
+`define FPU_FMINMAX    5'b00101 // FMIN, FMAX use rm to differentiate
+`define FPU_FCVT_W_F   5'b11000 // FCVT.W/WU.S/L/D/Q
+`define FPU_FMV_X      5'b11100 // also FCLASS, which uses rm to differentiate
+`define FPU_FEQ        5'b10100 // FEQ, FLT, FLE use rm to differentiate
+`define FPU_FCVT_F_W   5'b11010 // FCVT.S/L/D/Q.W and FCVT.S/L/D/Q.WU uses rm to diff
+`define FPU_FMV_W_X    5'b11110
+
+// FPU_F Fused Operations {2'b10, opcode[4:2]}
+`define FPU_FMADD      5'b10000
+`define FPU_FMSUB      5'b10001
+`define FPU_FNMSUB     5'b10010
+`define FPU_FNMADD     5'b10011
+
+// FCSR
+`define FRM_RNE 3'b000 // Round to Nearest, ties to Even
+`define FRM_RTZ 3'b001 // Rounds towards Zero
+`define FRM_RDN 3'b010 // Rounds Down (towards -inf)
+`define FRM_RUP 3'b011 // Rounds Up (towards +inf)
+`define FRM_RMM 3'b100 // Round to Nearest, ties to Max Magnitude
+`define FRM_DYN 3'b111 // Use FCSR rounding mode
 
 `define BIB_LB        3'h0
 `define BIB_LBU       3'h1
