@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_bit_manipulasyon_birimi_zbb_behav/xsimk.exe -simmode gui -wdb tb_bit_manipulasyon_birimi_zbb_behav.wdb -simrunnum 0 -socket 60059
+Design successfully loaded
+Design Loading Memory Usage: 8388 KB (Peak: 8388 KB)
+Design Loading CPU Usage: 15 ms

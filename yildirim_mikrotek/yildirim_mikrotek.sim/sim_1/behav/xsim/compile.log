@@ -1,20 +1,5 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/enyuksek_sol_bit28.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module enyuksek_sol_bit28
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/enyuksek_sol_bit48.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module enyuksek_sol_bit48
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_birimi.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module kayan_nokta_birimi
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_carpma_birimi.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module kayan_nokta_carpma_birimi
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_hizalama_birimi.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module kayan_nokta_hizalama_birimi
-WARNING: [VRFC 10-3248] data object 'a_hizali_e' is already declared [C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_hizalama_birimi.v:33]
-WARNING: [VRFC 10-9364] second declaration of 'a_hizali_e' is ignored [C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_hizalama_birimi.v:33]
-WARNING: [VRFC 10-3248] data object 'a_hizali_m' is already declared [C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_hizalama_birimi.v:34]
-WARNING: [VRFC 10-9364] second declaration of 'a_hizali_m' is ignored [C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_hizalama_birimi.v:34]
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_toplama_cikarma_birimi.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module kayan_nokta_toplama_cikarma_birimi
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/kayan_nokta_yuvarlama.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module kayan_nokta_yuvarlama
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_kayan_nokta_birimi.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_kayan_nokta_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manipulasyon_birimi_zbb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bit_manipulasyon_birimi_zbb
+INFO: [VRFC 10-311] analyzing module bit_manipulasyon_birimi_zbb_cozucu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bit_manipulasyon_birimi_zbb
