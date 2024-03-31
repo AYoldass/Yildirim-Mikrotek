@@ -1,3 +1,12 @@
 Time resolution is 1 ps
-Test tamamlandý.
-$finish called at time : 280 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbb.v" Line 104
+Starting test:                      Edge case 1
+Result for                      Edge case 1: 55550000
+Starting test:                      Edge case 2
+Result for                      Edge case 2: 12c466b8
+Starting test:                    Random case 1
+Result for                    Random case 1: 7aeaeaba
+Starting test:                   Pattern case 1
+Result for                   Pattern case 1: 0aa00aa0
+Starting test:                      Zero case 1
+Result for                      Zero case 1: 00000000
+$finish called at time : 500 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbc.v" Line 76
