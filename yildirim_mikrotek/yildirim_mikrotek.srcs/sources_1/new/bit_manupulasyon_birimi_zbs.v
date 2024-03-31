@@ -6,27 +6,27 @@ module bit_manupulasyon_birimi_zbs #(
 	parameter [0:0] BFP = 1
 ) (
 	// control signals
-	input             clk_i,          // positive edge clk_i
-	input             rst_i,          // synchronous rst_i
+	input             clk_i,          
+	input             rst_i,        
 
 	// data input
 	input             din_valid_i,      // input is valid
 	output            din_ready_o,      // core accepts input
-	input  [XLEN-1:0] din_value1_i,        // value of 1st argument
-	input  [XLEN-1:0] din_value2_i,        // value of 2nd argument
-	input  [XLEN-1:0] din_value3_i,        // value of 3rd argument
-	input             din_instruction_bit3_i,      // value of instruction bit 3
-	input             din_instruction_bit13_i,     // value of instruction bit 13
-	input             din_instruction_bit14_i,     // value of instruction bit 14
-	input             din_instruction_bit26_i,     // value of instruction bit 26
-	input             din_instruction_bit27_i,     // value of instruction bit 27
-	input             din_instruction_bit29_i,     // value of instruction bit 29
-	input             din_instruction_bit30_i,     // value of instruction bit 30
+	input  [XLEN-1:0] din_value1_i,       
+	input  [XLEN-1:0] din_value2_i,       
+	input  [XLEN-1:0] din_value3_i,       
+	input             din_instruction_bit3_i,      
+	input             din_instruction_bit13_i,     
+	input             din_instruction_bit14_i,    
+	input             din_instruction_bit26_i,    
+	input             din_instruction_bit27_i,     
+	input             din_instruction_bit29_i,    
+	input             din_instruction_bit30_i,     
 
 	// data output
-	output            dout_valid_o,     // output is valid
+	output            dout_valid_o,     
 	input             dout_ready_i,     // accept output
-	output [XLEN-1:0] dout_result_o         // output value
+	output [XLEN-1:0] dout_result_o         
 );
 	// 30 29 27 26 14 13  3   Function
 	// --------------------   --------
@@ -51,17 +51,18 @@ module bit_manupulasyon_birimi_zbs #(
 	//  1  0  1  0  1  1  W   BFP
 
 	assign dout_valid_o = din_valid_i;
-	assign din_ready_o = dout_ready_i;
+	assign din_ready_o  = dout_ready_i;
 
-	wire slliumode = (XLEN == 64) && !din_instruction_bit30_i && !din_instruction_bit29_i && din_instruction_bit27_i && !din_instruction_bit26_i && !din_instruction_bit14_i;
-	wire wmode = (XLEN == 32) || (din_instruction_bit3_i && !slliumode);
-	wire sbmode = SBOP && (din_instruction_bit30_i || din_instruction_bit29_i) && din_instruction_bit27_i && !din_instruction_bit26_i;
-	wire bfpmode = BFP && din_instruction_bit13_i;
+	wire slliumode = (XLEN == 64) && !din_instruction_bit30_i && !din_instruction_bit29_i && din_instruction_bit27_i 
+	                              && !din_instruction_bit26_i && !din_instruction_bit14_i;
+	wire wmode     = (XLEN == 32) || (din_instruction_bit3_i  && !slliumode);
+	wire sbmode    =  SBOP && (din_instruction_bit30_i || din_instruction_bit29_i) && din_instruction_bit27_i && !din_instruction_bit26_i;
+	wire bfpmode   =  BFP  && din_instruction_bit13_i;
 
-	reg [63:0] Y;
-	wire [63:0] A, B, X;
-	assign A = slliumode ? din_value1_i[31:0] : din_value1_i, B = din_value3_i;
-	assign dout_result_o = wmode ? {{32{Y[31]}}, Y[31:0]} : Y;
+	reg  [63:0] result_reg;
+	wire [63:0] value1_reg, value2_reg, value3_reg;
+	assign value1_reg = slliumode ? din_value1_i[31:0] : din_value1_i, value2_reg = din_value3_i;
+	assign dout_result_o = wmode ? {{32{result_reg[31]}}, result_reg[31:0]} : result_reg;
 
 	reg [63:0] aa, bb;
 	reg [6:0] shamt;
@@ -75,8 +76,8 @@ module bit_manupulasyon_birimi_zbs #(
 
 	always @* begin
 		shamt = din_value2_i;
-		aa = A;
-		bb = B;
+		aa = value1_reg;
+		bb = value2_reg;
 
 		if (wmode || !din_instruction_bit26_i)
 			shamt[6] = 0;
@@ -90,8 +91,8 @@ module bit_manupulasyon_birimi_zbs #(
 		if (!din_instruction_bit26_i) begin
 			casez ({din_instruction_bit30_i, din_instruction_bit29_i})
 				2'b 0z: bb = {64{din_instruction_bit29_i}};
-				2'b 10: bb = {64{wmode ? A[31] : A[63]}};
-				2'b 11: bb = A;
+				2'b 10: bb = {64{wmode ? value1_reg[31] : value1_reg[63]}};
+				2'b 11: bb = value1_reg;
 			endcase
 			if (sbmode && !din_instruction_bit14_i) begin
 				aa = 1;
@@ -107,42 +108,42 @@ module bit_manupulasyon_birimi_zbs #(
 	end
 
 	always @* begin
-		Y = X;
+		result_reg = value3_reg;
 		if (sbmode) begin
 			casez ({din_instruction_bit30_i, din_instruction_bit29_i, din_instruction_bit14_i})
-				3'b zz1: Y = 1 &  X;
-				3'b 0zz: Y = A |  X;
-				3'b z0z: Y = A & ~X;
-				3'b 11z: Y = A ^  X;
+				3'b zz1: result_reg = 1 &  value3_reg;
+				3'b 0zz: result_reg = value1_reg |  value3_reg;
+				3'b z0z: result_reg = value1_reg & ~value3_reg;
+				3'b 11z: result_reg = value1_reg ^  value3_reg;
 			endcase
 		end
 		if (bfpmode)
-			Y = (A & ~X) | {32'b0, din_value2_i[31:0] & ~bfp_mask} << bfp_off;
+			result_reg = (value1_reg & ~value3_reg) | {32'b0, din_value2_i[31:0] & ~bfp_mask} << bfp_off;
 	end
 
 	rvb_shifter_datapath #(
 		.XLEN(XLEN)
 	) datapath (
-		.A     (aa   ),
-		.B     (bb   ),
-		.X     (X    ),
-		.shamt (shamt),
-		.wmode (wmode)
+		.shift_value1         (aa   ),
+		.shift_value2         (bb   ),
+		.result_shift_reg     (value3_reg    ),
+		.shamt                (shamt),
+		.wmode                (wmode)
 	);
 endmodule
 
 module rvb_shifter_datapath #(
-	parameter integer XLEN = 64
+	parameter integer XLEN = 32
 ) (
-	input  [63:0] A, B,
-	output [63:0] X,
+	input  [63:0] shift_value1, shift_value2,
+	output [63:0] result_shift_reg,
 	input  [ 6:0] shamt,
 	input         wmode
 );
 	reg [127:0] tmp;
 
 	always @* begin
-		tmp = {B, A};
+		tmp = {shift_value2, shift_value1};
 
 		tmp = {
 			(wmode ? 0 : shamt[5]) ? tmp[127:96] : tmp[ 31: 0],
@@ -165,7 +166,7 @@ module rvb_shifter_datapath #(
 		tmp = shamt[0] ? {tmp[126:0], tmp[127:127]} : tmp;
 
 		if (XLEN == 32) begin
-			tmp = {64'bx, B[31:0], A[31:0]};
+			tmp = {64'bx, shift_value2[31:0], shift_value1[31:0]};
 			tmp[63:0] = shamt[5] ? {tmp[31:0], tmp[63:32]} : tmp[63:0];
 			tmp[63:0] = shamt[4] ? {tmp[47:0], tmp[63:48]} : tmp[63:0];
 			tmp[63:0] = shamt[3] ? {tmp[55:0], tmp[63:56]} : tmp[63:0];
@@ -175,5 +176,5 @@ module rvb_shifter_datapath #(
 		end
 	end
 
-	assign X = (XLEN == 32) ? {32'bx, tmp[31:0]} : tmp[63:0];
+	assign result_shift_reg = (XLEN == 32) ? {32'bx, tmp[31:0]} : tmp[63:0];
 endmodule

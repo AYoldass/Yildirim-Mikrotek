@@ -2,10 +2,10 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Sun Mar 31 13:48:43 2024
-# Process ID: 1252
+# Start of session at: Sun Mar 31 02:18:59 2024
+# Process ID: 9320
 # Current directory: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2560 C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1956 C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr
 # Log file: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/vivado.log
 # Journal file: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek\vivado.jou
 # Running On: DESKTOP-VTDBCS3, OS: Windows, CPU Frequency: 1190 MHz, CPU Physical cores: 4, Host memory: 8345 MB
@@ -38,79 +38,40 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
-open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1155.512 ; gain = 360.195
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 1146.449 ; gain = 369.977
 update_compile_order -fileset sources_1
 set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manupulasyon_birimi_zbs.v w ]
-add_files -fileset sim_1 C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manupulasyon_birimi_zbs.v
+close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbc.v w ]
+add_files -fileset sim_1 C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbc.v
 update_compile_order -fileset sim_1
-set_property top tb_bit_manupulasyon_birimi_zbs [get_filesets sim_1]
+set_property top tb_bit_manipulasyon_birimi_zbc [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
 launch_simulation
 Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_bit_manupulasyon_birimi_zbs'
+INFO: [Vivado 12-12493] Simulation top is 'tb_bit_manipulasyon_birimi_zbc'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_bit_manupulasyon_birimi_zbs' in fileset 'sim_1'...
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_bit_manipulasyon_birimi_zbc' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj tb_bit_manupulasyon_birimi_zbs_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manupulasyon_birimi_zbs.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module bit_manupulasyon_birimi_zbs
-INFO: [VRFC 10-311] analyzing module rvb_shifter_datapath
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manupulasyon_birimi_zbs.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_bit_manupulasyon_birimi_zbs
+"xvlog --incr --relax -prj tb_bit_manipulasyon_birimi_zbc_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manipulasyon_birimi_zbc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bit_manipulasyon_birimi_zbc
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bit_manipulasyon_birimi_zbc
 INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_manupulasyon_birimi_zbs_behav xil_defaultlib.tb_bit_manupulasyon_birimi_zbs xil_defaultlib.glbl -log elaborate.log"
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_manipulasyon_birimi_zbc_behav xil_defaultlib.tb_bit_manipulasyon_birimi_zbc xil_defaultlib.glbl -log elaborate.log"
 Vivado Simulator v2022.2
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_manupulasyon_birimi_zbs_behav xil_defaultlib.tb_bit_manupulasyon_birimi_zbs xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-ERROR: [VRFC 10-3180] cannot find port 'B' on this module [C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manupulasyon_birimi_zbs.v:128]
-ERROR: [VRFC 10-3180] cannot find port 'A' on this module [C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manupulasyon_birimi_zbs.v:127]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1225.336 ; gain = 0.000
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_bit_manupulasyon_birimi_zbs'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_bit_manupulasyon_birimi_zbs' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj tb_bit_manupulasyon_birimi_zbs_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manupulasyon_birimi_zbs.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module bit_manupulasyon_birimi_zbs
-INFO: [VRFC 10-311] analyzing module rvb_shifter_datapath
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manupulasyon_birimi_zbs.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_bit_manupulasyon_birimi_zbs
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_manupulasyon_birimi_zbs_behav xil_defaultlib.tb_bit_manupulasyon_birimi_zbs xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2022.2
-Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_manupulasyon_birimi_zbs_behav xil_defaultlib.tb_bit_manupulasyon_birimi_zbs xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_manipulasyon_birimi_zbc_behav xil_defaultlib.tb_bit_manipulasyon_birimi_zbc xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -118,19 +79,18 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.rvb_shifter_datapath
-Compiling module xil_defaultlib.bit_manupulasyon_birimi_zbs
-Compiling module xil_defaultlib.tb_bit_manupulasyon_birimi_zbs
+Compiling module xil_defaultlib.bit_manipulasyon_birimi_zbc_defa...
+Compiling module xil_defaultlib.tb_bit_manipulasyon_birimi_zbc
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_bit_manupulasyon_birimi_zbs_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Built simulation snapshot tb_bit_manipulasyon_birimi_zbc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_bit_manupulasyon_birimi_zbs_behav -key {Behavioral:sim_1:Functional:tb_bit_manupulasyon_birimi_zbs} -tclbatch {tb_bit_manupulasyon_birimi_zbs.tcl} -log {simulate.log}"
+   with args "tb_bit_manipulasyon_birimi_zbc_behav -key {Behavioral:sim_1:Functional:tb_bit_manipulasyon_birimi_zbc} -tclbatch {tb_bit_manipulasyon_birimi_zbc.tcl} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
-source tb_bit_manupulasyon_birimi_zbs.tcl
+source tb_bit_manipulasyon_birimi_zbc.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
 #   if { [llength [get_objects]] > 0} {
@@ -141,27 +101,100 @@ source tb_bit_manupulasyon_birimi_zbs.tcl
 #   }
 # }
 # run 1000ns
-Starting                                                                                                                                                                                                                                                         Test SLL
-                                                                                                                                                                                                                                                        Test SLL Result: 00000004
-Starting                                                                                                                                                                                                                                                        BSET Test
-                                                                                                                                                                                                                                                       BSET Test Result: 00000004
-Starting                                                                                                                                                                                                                                                        BINV Test
-                                                                                                                                                                                                                                                       BINV Test Result: 00000000
-Starting                                                                                                                                                                                                                                                        BEXT Test
-                                                                                                                                                                                                                                                       BEXT Test Result: 00000001
-Starting                                                                                                                                                                                                                                                        BCLR Test
-                                                                                                                                                                                                                                                       BCLR Test Result: 00000000
-Starting                                                                                                                                                                                                                                                       BSETI Test
-                                                                                                                                                                                                                                                      BSETI Test Result: 00000004
-Starting                                                                                                                                                                                                                                                       BINVI Test
-                                                                                                                                                                                                                                                      BINVI Test Result: 00000000
-Starting                                                                                                                                                                                                                                                       BEXTI Test
-                                                                                                                                                                                                                                                      BEXTI Test Result: 00000001
-Starting                                                                                                                                                                                                                                                       BCLRI Test
-                                                                                                                                                                                                                                                      BCLRI Test Result: 00000000
-$finish called at time : 310 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manupulasyon_birimi_zbs.v" Line 90
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_bit_manupulasyon_birimi_zbs_behav' loaded.
+Test Case 1: CLMUL
+Result for operation [0 1 0]: 27722772
+Test Case 2: CLMULR
+Result for operation [1 0 0]: 4ee44ee4
+Test Case 3: CLMULH
+Result for operation [1 1 0]: 27722772
+Test Case 4: CLMULW
+Result for operation [0 1 1]: 27722772
+Test Case 5: CLMULRW
+Result for operation [1 0 1]: 4ee44ee4
+Test Case 6: CLMULHW
+Result for operation [1 1 1]: 27722772
+$finish called at time : 570 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbc.v" Line 91
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_bit_manipulasyon_birimi_zbc_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1282.809 ; gain = 50.305
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1248.215 ; gain = 19.156
+run 10 us
+run 10 us
+run 10 us
+run 10 us
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_bit_manipulasyon_birimi_zbc'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_bit_manipulasyon_birimi_zbc' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_bit_manipulasyon_birimi_zbc_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manipulasyon_birimi_zbc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bit_manipulasyon_birimi_zbc
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_bit_manipulasyon_birimi_zbc
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_manipulasyon_birimi_zbc_behav xil_defaultlib.tb_bit_manipulasyon_birimi_zbc xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_manipulasyon_birimi_zbc_behav xil_defaultlib.tb_bit_manipulasyon_birimi_zbc xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bit_manipulasyon_birimi_zbc_defa...
+Compiling module xil_defaultlib.tb_bit_manipulasyon_birimi_zbc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bit_manipulasyon_birimi_zbc_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_bit_manipulasyon_birimi_zbc_behav -key {Behavioral:sim_1:Functional:tb_bit_manipulasyon_birimi_zbc} -tclbatch {tb_bit_manipulasyon_birimi_zbc.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_bit_manipulasyon_birimi_zbc.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting test:                      Edge case 1
+Result for                      Edge case 1: 55550000
+Starting test:                      Edge case 2
+Result for                      Edge case 2: 12c466b8
+Starting test:                    Random case 1
+Result for                    Random case 1: 7aeaeaba
+Starting test:                   Pattern case 1
+Result for                   Pattern case 1: 0aa00aa0
+Starting test:                      Zero case 1
+Result for                      Zero case 1: 00000000
+$finish called at time : 500 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zbc.v" Line 76
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_bit_manipulasyon_birimi_zbc_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1789.062 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manupulasyon_birimi_zbs.v w ]
+add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manupulasyon_birimi_zbs.v
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 31 05:07:05 2024...
