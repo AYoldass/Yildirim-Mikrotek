@@ -146,3 +146,181 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Project name: yildirim_mikrotek; location: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek; part: xc7z020clg400-1
 dismissDialog("Open Project"); // bq
 // Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 1657 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+// HMemoryUtils.trashcanNow. Engine heap size: 1,066 MB. GUI used memory: 64 MB. Current time: 4/7/24, 1:04:07 PM TRT
+// [GUI Memory]: 122 MB (+1370kb) [00:36:13]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,066 MB. GUI used memory: 56 MB. Current time: 4/7/24, 1:34:10 PM TRT
+// PAPropertyPanels.initPanels (bit_manipulasyon_birimi_zbc.v) elapsed time: 0.3s
+// Elapsed time: 2654 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbc (bit_manipulasyon_birimi_zbc.v)]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbc (bit_manipulasyon_birimi_zbc.v)]", 8, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 57 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// Elapsed time: 34 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "bit_manipulasyon_birimi_zba"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 41 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manipulasyon_birimi_zba.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manipulasyon_birimi_zba.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Elapsed time: 14 seconds
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manupulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 6, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manupulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 6, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manupulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 6, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manupulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 6, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manupulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 6, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("bit_manupulasyon_birimi_zbs.v", 137, 52); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 13); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 14); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 15); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 20, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 20, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v), datapath : rvb_shifter_datapath (bit_manupulasyon_birimi_zbs.v)]", 21, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v), datapath : rvb_shifter_datapath (bit_manupulasyon_birimi_zbs.v)]", 21, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 20, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 20, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 20, true, false, false, false, false, true); // D - Double Click - Node
+// Elapsed time: 32 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zba (bit_manipulasyon_birimi_zba.v)]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zba (bit_manipulasyon_birimi_zba.v)]", 8, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 6, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 6, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("bit_manupulasyon_birimi_zbs.v", 710, 127); // ac
+typeControlKey((HResource) null, "bit_manupulasyon_birimi_zbs.v", 'c'); // ac
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbs (bit_manupulasyon_birimi_zbs.v)]", 6, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ao
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Remove Sources"); // U
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manupulasyon_birimi_zbs.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manupulasyon_birimi_zbs.v 
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// Elapsed time: 24 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "bit_manipulasyon_birimi_zbs"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+// Elapsed time: 19 seconds
+selectButton("BACK", "< Back"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 51 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manipulasyon_birimi_zbs.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bit_manipulasyon_birimi_zbs.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("bit_manipulasyon_birimi_zba.v", 478, 263); // ac
+typeControlKey((HResource) null, "bit_manipulasyon_birimi_zba.v", 'v'); // ac
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectCodeEditor("bit_manipulasyon_birimi_zba.v", 427, 237); // ac
+typeControlKey(null, null, 'z');
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbs (bit_manipulasyon_birimi_zba.v)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbs (bit_manipulasyon_birimi_zba.v)]", 9, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbs (bit_manipulasyon_birimi_zbs.v)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zbs (bit_manipulasyon_birimi_zbs.v)]", 9, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("bit_manipulasyon_birimi_zbs.v", 560, 229); // ac
+typeControlKey((HResource) null, "bit_manipulasyon_birimi_zbs.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 45 seconds
+selectCodeEditor("bit_manipulasyon_birimi_zbs.v", 658, 101); // ac
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_bit_manupulasyon_birimi_zbs (tb_bit_manupulasyon_birimi_zbs.v)]", 17, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_bit_manupulasyon_birimi_zbs (tb_bit_manupulasyon_birimi_zbs.v)]", 17, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("tb_bit_manupulasyon_birimi_zbs.v", 160, 74); // ac
+selectCodeEditor("tb_bit_manupulasyon_birimi_zbs.v", 108, 176); // ac
+selectCodeEditor("tb_bit_manupulasyon_birimi_zbs.v", 286, 216); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// Elapsed time: 11 seconds
+dismissDialog("Invalid Top Module"); // s
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_bit_manipulasyon_birimi_zbs (tb_bit_manupulasyon_birimi_zbs.v)]", 22); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_bit_manipulasyon_birimi_zbs (tb_bit_manupulasyon_birimi_zbs.v)]", 22, true); // D - Node
+// Elapsed time: 21 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zba (bit_manipulasyon_birimi_zba.v)]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bit_manipulasyon_birimi_zba (bit_manipulasyon_birimi_zba.v)]", 8, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("bit_manipulasyon_birimi_zba.v", 10, 433); // ac
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// Elapsed time: 24 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "tb_bit_manipulasyon_birimi_zba"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 28 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zba.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_bit_manipulasyon_birimi_zba.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // p
+// Tcl Message: update_compile_order -fileset sim_1 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Invalid Top Module"); // s
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// Elapsed time: 26 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bit_manipulasyon_birimi_zba.v", 2); // o
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bit_manipulasyon_birimi_zba.v", 2, false, true); // o - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // L
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // E
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tb_bit_manupulasyon_birimi_zbs.v", 3); // o
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // E
+selectCodeEditor("bit_manipulasyon_birimi_zba.v", 607, 290); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,066 MB. GUI used memory: 64 MB. Current time: 4/7/24, 2:04:11 PM TRT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
