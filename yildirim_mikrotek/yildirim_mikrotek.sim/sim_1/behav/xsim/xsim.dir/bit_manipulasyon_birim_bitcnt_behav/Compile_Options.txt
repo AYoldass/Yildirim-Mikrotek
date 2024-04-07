@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "bit_manipulasyon_birim_bitcnt_behav" "xil_defaultlib.bit_manipulasyon_birim_bitcnt" "xil_defaultlib.glbl" -log "elaborate.log" 
