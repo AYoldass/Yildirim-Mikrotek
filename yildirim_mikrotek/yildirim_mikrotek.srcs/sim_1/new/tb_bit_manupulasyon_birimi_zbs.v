@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-module tb_bit_manupulasyon_birimi_zbs();
+module tb_bit_manipulasyon_birimi_zbs();
 
 
     reg clk_i, rst_i;
@@ -12,7 +12,7 @@ module tb_bit_manupulasyon_birimi_zbs();
     wire din_ready_o, dout_valid_o;
     wire [31:0] dout_result_o;
 
-    bit_manupulasyon_birimi_zbs #(
+    bit_manipulasyon_birimi_zbs #(
         .XLEN(32),
         .SBOP(1),
         .BFP(1)

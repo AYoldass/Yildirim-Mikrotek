@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module bit_manupulasyon_birimi_zbs #(
+module bit_manipulasyon_birimi_zbs #(
 	parameter integer XLEN = 32,
 	parameter [0:0] SBOP = 1,
 	parameter [0:0] BFP = 1
