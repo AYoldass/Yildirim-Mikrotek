@@ -1,0 +1,295 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 05:00:03 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 3052
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Tue Apr 09 11:43:35 TRT 2024
+Time zone: 	Turkey Time (Asia/Istanbul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+Scale size: 19
+
+Java version: 	11.0.11 64-bit
+Java home: 	C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9
+Java executable: 	C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9/bin/java.exe
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.d3d=false, -Dsun.awt.nopixfmt=true, -Dsun.java2d.dpiaware=true, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	ahmet
+User home directory: C:/Users/ahmet
+User working directory: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek
+User country: 	TR
+User language: 	tr
+User locale: 	tr_TR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2022.2
+RDI_DATADIR: C:/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/
+Vivado layouts directory: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	C:/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/vivado.log
+Vivado journal file: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/vivado.jou
+Engine tmp dir: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/.Xil/Vivado-3052-DESKTOP-VTDBCS3
+
+Xilinx Environment Variables
+----------------------------
+RDI_APPROOT: C:/Xilinx/Vivado/2022.2
+RDI_ARGS:  -gui_launcher_event rodinguilauncherevent15104 "C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr"
+RDI_ARGS_FUNCTION: RDI_EXEC_DEFAULT
+RDI_BASEROOT: C:/Xilinx/Vivado
+RDI_BINDIR: C:/Xilinx/Vivado/2022.2/bin
+RDI_BINROOT: C:/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_CHECK_PROG: True
+RDI_DATADIR: C:/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: C:/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_INSTALLVERSION: 2022.2
+RDI_ISE_PLATFORM: nt64
+RDI_JAVACEFROOT: C:/Xilinx/Vivado/2022.2/tps/win64/java-cef-95.0.4638.69
+RDI_JAVAFXROOT: C:/Xilinx/Vivado/2022.2/tps/win64/javafx-sdk-11.0.2
+RDI_JAVAROOT: C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: C:/Xilinx/Vivado/2022.2/lib/win64.o
+RDI_MINGW_LIB: C:/Xilinx/Vivado/2022.2\tps\mingw\6.2.0\win64.o\nt\bin;C:/Xilinx/Vivado/2022.2\tps\mingw\6.2.0\win64.o\nt\libexec\gcc\x86_64-w64-mingw32\6.2.0
+RDI_OPT_EXT: .o
+RDI_PLATFORM: win64
+RDI_PREPEND_PATH: C:/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2022.2/ids_lite/ISE/lib/nt64
+RDI_PROG: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/vivado.exe
+RDI_PROGNAME: vivado.exe
+RDI_PYTHON3: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3
+RDI_PYTHON3_VERSION: 3.8.3
+RDI_PYTHONHOME: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3
+RDI_PYTHONPATH: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\bin;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib\site-packages
+RDI_PYTHON_LD_LIBPATH: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib
+RDI_TPS_ROOT: C:/Xilinx/Vivado/2022.2/tps/win64
+RDI_USE_JDK11: True
+RDI_VERBOSE: False
+XILINX: C:/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/Vitis_HLS/2022.2
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2022.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2022.2
+_RDI_BINROOT: C:\Xilinx\Vivado\2022.2\bin
+_RDI_CWD: C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 691 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 72 MB (+72827kb) [00:00:12]
+// [Engine Memory]: 652 MB (+532519kb) [00:00:12]
+// Opening Vivado Project: C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr. Version: Vivado v2022.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek' 
+// HMemoryUtils.trashcanNow. Engine heap size: 714 MB. GUI used memory: 59 MB. Current time: 4/9/24, 11:43:37 AM TRT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek' 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,015 MB (+345596kb) [00:00:26]
+// WARNING: HEventQueue.dispatchEvent() is taking  3475 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'. 
+// [GUI Memory]: 76 MB (+471kb) [00:00:28]
+// [GUI Memory]: 101 MB (+22234kb) [00:00:29]
+// [Engine Memory]: 1,083 MB (+18667kb) [00:00:29]
+// Project name: yildirim_mikrotek; location: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek; part: xc7z020clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 1178.348 ; gain = 375.770 
+dismissDialog("Open Project"); // bq
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 64 MB. Current time: 4/9/24, 11:43:52 AM TRT
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 112 MB (+6678kb) [00:04:26]
+// [GUI Memory]: 122 MB (+4569kb) [00:04:54]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 63 MB. Current time: 4/9/24, 12:13:54 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 56 MB. Current time: 4/9/24, 12:43:56 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 55 MB. Current time: 4/9/24, 1:13:59 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 55 MB. Current time: 4/9/24, 1:44:02 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 55 MB. Current time: 4/9/24, 2:14:05 PM TRT
+// Elapsed time: 9638 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "yazmac_obegi"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 13 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/yazmac_obegi.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/yazmac_obegi.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // p
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, yazmac_obegi (yazmac_obegi.v)]", 10, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, yazmac_obegi (yazmac_obegi.v)]", 10, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("yazmac_obegi.v", 76, 428); // ac
+selectCodeEditor("yazmac_obegi.v", 174, 77); // ac
+typeControlKey((HResource) null, "yazmac_obegi.v", 'v'); // ac
+selectCodeEditor("yazmac_obegi.v", 344, 72); // ac
+selectCodeEditor("yazmac_obegi.v", 226, 201); // ac
+// Elapsed time: 11 seconds
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "read", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// Elapsed time: 14 seconds
+selectCodeEditor("yazmac_obegi.v", 296, 241); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "value", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("yazmac_obegi.v", 226, 303); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "write", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// Elapsed time: 21 seconds
+selectCodeEditor("yazmac_obegi.v", 195, 243); // ac
+selectCodeEditor("yazmac_obegi.v", 195, 243, false, false, false, false, true); // ac - Double Click
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "register", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("yazmac_obegi.v", 731, 78); // ac
+selectCodeEditor("yazmac_obegi.v", 652, 266); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("yazmac_obegi.v", 389, 84); // ac
+selectCodeEditor("yazmac_obegi.v", 300, 93); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("yazmac_obegi.v", 457, 174); // ac
+selectCodeEditor("yazmac_obegi.v", 483, 153); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 62 MB. Current time: 4/9/24, 2:44:08 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 62 MB. Current time: 4/9/24, 3:14:11 PM TRT
+// Elapsed time: 3778 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, riscv_controller.vh]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, riscv_controller.vh]", 2, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 266 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton("BACK", "< Back"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+selectComboBox(PAResourceAtoD.CreateSrcFileDialog_FILE_TYPE, "Verilog Header", 1); // bc
+// Elapsed time: 29 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "constant"); // Q
+// Elapsed time: 117 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "constants"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 157 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/constants.vh w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/constants.vh 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 4); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, constants.vh]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, constants.vh]", 5, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("constants.vh", 249, 354); // ac
+typeControlKey((HResource) null, "constants.vh", 'v'); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("constants.vh", 316, 6); // ac
+selectCodeEditor("constants.vh", 316, 6, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("constants.vh", 316, 6); // ac
+// Elapsed time: 32 seconds
+selectCodeEditor("constants.vh", 521, 308); // ac
+selectCodeEditor("constants.vh", 283, 261); // ac
+selectCodeEditor("constants.vh", 320, 244); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/9/24, 3:44:13 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/9/24, 4:14:16 PM TRT
+// Elapsed time: 2195 seconds
+selectCodeEditor("constants.vh", 281, 174); // ac
+// Elapsed time: 1283 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, riscv_controller.vh]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, riscv_controller.vh]", 2, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "riscv_controller.vh", 2); // o
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "riscv_controller.vh", 2, false, true); // o - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // L
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/9/24, 4:44:18 PM TRT
+// Elapsed time: 480 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "constants.vh", 3); // o
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/9/24, 5:14:21 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 5:44:24 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 6:14:27 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 6:44:30 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 7:14:33 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 7:44:36 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/9/24, 8:14:39 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 8:44:42 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 9:14:43 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 9:44:46 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 10:14:49 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 10:44:52 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/9/24, 11:14:54 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/9/24, 11:44:57 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/10/24, 12:15:00 AM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/10/24, 12:45:03 AM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/10/24, 1:15:06 AM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/10/24, 1:45:09 AM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/10/24, 2:15:12 AM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/10/24, 2:45:15 AM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 60 MB. Current time: 4/10/24, 3:15:18 AM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 61 MB. Current time: 4/10/24, 3:45:20 AM TRT
+// Elapsed time: 40708 seconds
+selectCodeEditor("constants.vh", 799, 328); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
