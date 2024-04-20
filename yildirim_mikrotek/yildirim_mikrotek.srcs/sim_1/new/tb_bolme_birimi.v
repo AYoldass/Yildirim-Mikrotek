@@ -1,97 +1,169 @@
 `timescale 1ns / 1ps
 
-module tb_bolme();
+//Bazi durumlarda sonuc x donuyor
 
-   // Inputs
-    reg clk_i;
-    reg rst_i;
-    reg [3:0] islev_kodu_i;
-    reg [31:0] value1_i;
-    reg [31:0] value2_i;
-    reg islem_gecerli_i;
+module tb_bolme_birimi();
 
-    // Outputs
-    wire bolum_gecerli_o;
-    wire [31:0] bolum_o;
+	reg        clk_i=1;
+	reg        rst_i=0;
+	
+	reg        basla_i=1;
+	reg [1:0]  islem_i;
+	reg [31:0] bolen_i;
+	reg [31:0] bolunen_i;
 
-    // Instantiate the Unit Under Test (UUT)
-    bolme_birimi uut (
-        .clk_i(clk_i), 
-        .rst_i(rst_i), 
-        .islev_kodu_i(islev_kodu_i), 
-        .value1_i(value1_i), 
-        .value2_i(value2_i), 
-        .islem_gecerli_i(islem_gecerli_i), 
-        .bolum_gecerli_o(bolum_gecerli_o), 
-        .bolum_o(bolum_o)
-    );
+	wire [31:0] sonuc_o;
+	wire bitti_o;
 
-    // Clock generation
-    initial begin
-        clk_i = 0;
-        forever #5 clk_i = ~clk_i;
-    end
-
-    // Reset and test scenario
-    initial begin
-        // Initialize inputs
-        rst_i = 1;
-        islev_kodu_i = 0;
-        value1_i = 0;
-        value2_i = 0;
-        islem_gecerli_i = 0;
-
-        // Apply reset
-        #10;
-        rst_i = 0;
-        #10;
-        rst_i = 1;
-        #10;
-
-        // Test cases start here
-
-        // Test DIV operation with positive numbers
-        islev_kodu_i = 4'h1; // DIV
-        value1_i = 32'd100;
-        value2_i = 32'd5;
-        islem_gecerli_i = 1;
-        #10; islem_gecerli_i = 0;
-        #100;
-
-        // Test DIVU operation with unsigned numbers
-        islev_kodu_i = 4'h2; // DIVU
-        value1_i = 32'd150;
-        value2_i = 32'd7;
-        islem_gecerli_i = 1;
-        #10; islem_gecerli_i = 0;
-        #100;
-
-        // Test REM operation with positive and negative
-        islev_kodu_i = 4'h4; // REM
-        value1_i = -32'd200;
-        value2_i = 32'd50;
-        islem_gecerli_i = 1;
-        #10; islem_gecerli_i = 0;
-        #100;
-
-        // Test REMU operation with unsigned numbers
-        islev_kodu_i = 4'h8; // REMU
-        value1_i = 32'd43;
-        value2_i = 32'd6;
-        islem_gecerli_i = 1;
-        #10; islem_gecerli_i = 0;
-        #100;
-
-        // Test division by zero and special cases
-        islev_kodu_i = 4'h1; // DIV
-        value1_i = 32'd10;
-        value2_i = 32'd0;
-        islem_gecerli_i = 1;
-        #10; islem_gecerli_i = 0;
-        #100;
-
-        // End of simulation
-        $finish;
-    end
-
+	// Instantiate the Unit Under Test (UUT)
+	bolme_birimi bbt (
+	    .clk_i(clk_i),
+	    .rst_i(rst_i),
+	    
+	    .basla_i(basla_i),
+	    .islem_i(islem_i),
+       	    .bolunen_i(bolunen_i),
+	    .bolen_i(bolen_i),
+		 
+	    .sonuc_o(sonuc_o),
+	    .bitti_o(bitti_o)
+	);
+	
+      always begin
+      clk_i=~clk_i;
+      #1;
+      end
+      
+	initial begin
+	    
+	    basla_i=1;
+	    rst_i=0;
+	    
+	    //DIVU
+	    bolunen_i = 32'd41; 
+	    bolen_i =   32'd9;
+ 	    islem_i =   2'b00;
+	    #66;
+	    if(sonuc_o==32'd4) $display("passed"); else $display("FAILED!: %d",sonuc_o);#1;
+	
+	    bolunen_i = 32'd9; 
+	    bolen_i =   32'd41;
+ 	    islem_i =   2'b00;
+	    #70;
+	    if(sonuc_o==32'd0) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+	    
+	    bolunen_i =-32'd41; 
+	    bolen_i =   32'd9;
+ 	    islem_i =   2'b00;
+	    #70;
+	    if(sonuc_o==32'd477218583) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+		
+	    bolunen_i = 32'd41; 
+	    bolen_i =  -32'd9;
+ 	    islem_i =   2'b00;
+	    #70;
+            if(sonuc_o==32'd0) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+        
+            bolunen_i = 32'd41; 
+	    bolen_i =   32'd0;
+ 	    islem_i =   2'b00;
+	    #70;
+            if(sonuc_o==32'd0) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+  
+            //DIV
+            bolunen_i = 32'd41; 
+	    bolen_i =   32'd9;
+ 	    islem_i =   2'b10;
+	    #70;
+	    if(sonuc_o==32'd4) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+		
+	    bolunen_i = 32'd9; 
+	    bolen_i =   32'd41;
+ 	    islem_i =   2'b10;
+	    #70;
+	    if(sonuc_o==32'd0) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+	    
+	    bolunen_i =-32'd41; 
+	    bolen_i =   32'd9;
+ 	    islem_i =   2'b10;
+	    #70;
+	    if(sonuc_o==-32'd4) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+		
+	    bolunen_i = 32'd41; 
+	    bolen_i =  -32'd9;
+ 	    islem_i =   2'b10;
+	    #70;
+            if(sonuc_o==-32'd4) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+        
+            bolunen_i = 32'd41; 
+	    bolen_i =   32'd0;
+ 	    islem_i =   2'b00;
+	    #70;
+            if(sonuc_o==32'd0) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+        
+            //REMU
+            bolunen_i = 32'd41; 
+	    bolen_i =   32'd9;
+ 	    islem_i =   2'b01;
+	    #70;
+	    if(sonuc_o== 32'd5) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+		
+	    bolunen_i = 32'd9; 
+	    bolen_i =   32'd41;
+ 	    islem_i =   2'b01;
+	    #70;
+	    if(sonuc_o== 32'd9) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+	   
+	    bolunen_i =-32'd41; 
+	    bolen_i =   32'd9;
+ 	    islem_i =   2'b01;
+	    #70;
+	    if(sonuc_o== 32'd8) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+		
+	    bolunen_i = 32'd41; 
+	    bolen_i =   -32'd9;
+ 	    islem_i =   2'b01;
+	    #70;
+            if(sonuc_o== 32'd0) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+        
+            bolunen_i = 32'd41; 
+	    bolen_i =   32'd0;
+ 	    islem_i =   2'b00;
+	    #70;
+            if(sonuc_o== -32'd1) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+        
+       	    //REM
+            bolunen_i = 32'd41; 
+	    bolen_i =   32'd9;
+ 	    islem_i =   2'b11;
+	    #70;
+	    if(sonuc_o== 32'd5) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+		
+	    bolunen_i = 32'd9; 
+	    bolen_i =   32'd41;
+ 	    islem_i =   2'b11;
+	    #70;
+	    if(sonuc_o== 32'd9) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+	    
+	    bolunen_i =-32'd41; 
+	    bolen_i =   32'd9;
+ 	    islem_i =   2'b11;
+	    #70;
+	    if(sonuc_o== -32'd5) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+		
+	    bolunen_i = 32'd41; 
+	    bolen_i =  -32'd9;
+ 	    islem_i =   2'b11;
+	    #70;
+            if(sonuc_o== 32'd5) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+        
+            bolunen_i = 32'd41; 
+	    bolen_i =   32'd0;
+ 	    islem_i =   2'b00;
+	    #70;
+            if(sonuc_o== -32'd1) $display("passed"); else $display("FAILED!: %d",sonuc_o);
+        
+	end
+      
+	
 endmodule

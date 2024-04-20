@@ -1,160 +1,195 @@
 `timescale 1ns / 1ps
 
+`include "riscv_controller.vh"
+
 //9 CEVRIM/
 module bolme_birimi(
-  input                     clk_i                                                         ,
-   input                    rst_i                                                         ,
-   input            [3:0]   islev_kodu_i                                                  ,
-   input            [31:0]  value1_i                                                      ,
-   input            [31:0]  value2_i                                                      ,
-   input                    islem_gecerli_i                                                       ,
-   output     reg           bolum_gecerli_o=0                                                     ,
-   output     reg   [31:0]  bolum_o
-   );
-   
-   localparam DIV  = 4'h1; 
-   localparam DIVU = 4'h2; 
-   localparam REM  = 4'h4; 
-   localparam REMU = 4'h8;
-   localparam EVET = 1'b1;
-   
-   reg  [1:0]   durum=2'b00,durum_next=2'b00;
-   reg  [3:0]   islev_kodu_r=0,islev_kodu_r_next=0;
-   reg  [62:0]  s2=0,s2_next=0;
-   reg  [62:0]  s1=0,s1_next=0;
-   reg  [16:0]  cevrim=17'd1,cevrim_next=17'd1;
-   reg          bolum_gecerli_o_next=0;
-   reg          sign_bolum=0,sign_bolum_next=0;
-   reg          sign_kalan=0,sign_kalan_next=0;
-   reg[31:0] bolum_o_next =  0;
-   reg[31:0] tt           =  32'b10_00000_00000_00000_00000_00000_00000;
-   reg[31:0] tt_next      =  32'b10_00000_00000_00000_00000_00000_00000;
-   
-   always@* begin
-      bolum_gecerli_o_next  = bolum_gecerli_o;
-      islev_kodu_r_next     = islev_kodu_r;
-      s2_next               = s2;
-      s1_next               = s1;
-      cevrim_next           = cevrim;
-      sign_bolum_next       = sign_bolum;
-      bolum_o_next          = bolum_o;
-      sign_kalan_next       = sign_kalan;
-      tt_next               = tt;
-      durum_next            = durum;
-      
-      case(islem_gecerli_i&cevrim[0])
-         1'b1: begin
-            case( {value1_i[31],(islev_kodu_i[1]|islev_kodu_i[3])})
-               2'b10: s1_next = {31'd0,{~value1_i+1}};
-               2'b00: s1_next = {31'd0,value1_i};
-               2'b11: s1_next = {31'd0,value1_i};
-               2'b01: s1_next = {31'd0,value1_i};
-            endcase
-            case({value2_i[31],(islev_kodu_i[1]|islev_kodu_i[3])})
-               2'b10:s2_next = {{~value2_i+1},31'd0};
-               2'b00:s2_next = {value2_i,31'd0};
-               2'b11:s2_next = {value2_i,31'd0};
-               2'b01:s2_next = {value2_i,31'd0};
-            endcase
-            sign_bolum_next         =   value1_i[31]^value2_i[31];
-            sign_kalan_next         =   value1_i[31];
-            bolum_gecerli_o_next    =   1'b0;
-            bolum_o_next            =   32'd0;
-            islev_kodu_r_next       =   islev_kodu_i;
-            durum_next              =   durum+1;
-            cevrim_next             =   cevrim<<1;
-         end
-      endcase
-      
-      case(durum)
-         2'b01: begin
-            case(s1>=s2)
-               1'b1: begin
-                  case(s1>=(s2+(s2>>1)))
-                     1'b1: begin
-                        s1_next=s1-s2-(s2>>1);
-                        bolum_o_next=bolum_o+tt+(tt>>1);
-                     end
-                     1'b0: begin
-                        s1_next=s1-s2;
-                        bolum_o_next=bolum_o+tt;
-                     end
-                  endcase
+   input clk_i,
+   input rst_i,
+   input basla_i,
+   input [1:0] islem_i, //00 DIVU, 01 REMU, 10 DIV, 11 REM
+   input [31:0] bolunen_i,
+   input [31:0] bolen_i,
+   output wire [31:0] sonuc_o,
+   output reg bitti_o = 1
+);
+   reg [32:0] sonuc;
+   assign sonuc_o = sonuc[31:0];
+
+   reg [32:0] bolen_r = 0;
+   reg [32:0] bolen_sonraki_r = 0;
+
+   reg [32:0] bolunen_r = 0;
+   reg [32:0] bolunen1_r = 0;
+   reg [32:0] bolunen1_sonraki_r = 0;
+   reg [32:0] bolunen_sonraki_r = 0;
+
+   reg [32:0] fark_r = 0;
+   reg [32:0] fark1_r = 0;
+   reg [32:0] fark1_sonraki_r = 0;
+   reg [32:0] fark_sonraki_r = 0;
+
+   reg [18:0] cevrim_r = 19'd1;
+   reg [18:0] cevrim_sonraki_r = 19'd1;
+
+   reg[32:0] gecici_fark_r = 0;
+   reg[32:0] gecici_fark1_r = 0;
+
+   wire isaret_bolunen_r = bolunen_i[31];
+   wire isaret_bolen_r = bolen_i[31];
+
+   wire [31:0] tmp_bolen = ~bolen_i + 1;
+   wire [31:0] tmp_bolunen = ~bolunen_i + 1;
+   always @(*)begin
+      bolen_sonraki_r = bolen_r;
+      fark1_sonraki_r = fark1_r;
+      bolunen1_sonraki_r = bolunen1_r ;
+      bolunen_sonraki_r = bolunen_r;
+      fark_sonraki_r = fark_r;
+      cevrim_sonraki_r = cevrim_r;
+      sonuc = 33'dx;
+      gecici_fark_r = 33'bx;
+      bitti_o = 1;
+
+      if(basla_i) begin
+         bitti_o = 0;
+
+         case({cevrim_r[18], cevrim_r[0]})
+            2'b01: begin // ilk cevrim
+               // Isaretli bolme yapiliyorsa ve isatetler farkliysa sayilarin negatifi aliniyor ve sifirla genisletiliyor.
+               // Cikarma isleminde tasmalari onlemek icin sifirla bir bit genisletme yapiliyor.
+               if(islem_i[1] & bolen_i[31]) begin
+                  bolen_sonraki_r = {1'b0,tmp_bolen};
                end
-               1'b0: begin
-                  case(s1>=(s2>>1))
-                     1'b1: begin
-                        s1_next=s1-(s2>>1);
-                        bolum_o_next=bolum_o+(tt>>1);
-                     end
-                  endcase
+               else begin
+                  bolen_sonraki_r= {1'b0, bolen_i};
                end
-            endcase
-            s2_next         = s2>>2;
-            tt_next         = tt>>2;
-            cevrim_next     = cevrim<<1;
-            durum_next[0]   = durum[0]^cevrim[16];
-            durum_next[1]   = durum[1]^cevrim[16];
-         end
-         2'b10: begin
-            case(islev_kodu_r)
-               DIV & {sign_bolum,sign_bolum,sign_bolum,sign_bolum}: begin
-                  bolum_o_next=(~bolum_o)+32'd1;
+
+               if(islem_i[1] & bolunen_i[31])begin
+                  bolunen_sonraki_r = {1'b0,tmp_bolunen};
                end
-               REM & {sign_kalan,sign_kalan,sign_kalan,sign_kalan}: begin
-                  bolum_o_next=(~s1[31:0])+32'd1;    
+               else begin
+                  bolunen_sonraki_r ={1'b0, bolunen_i};
                end
-               REM | {sign_kalan,sign_kalan,sign_kalan,sign_kalan}: begin
-                  bolum_o_next=s1[31:0];   
+
+               cevrim_sonraki_r = cevrim_r<<1;
+            end
+
+            2'b00: begin // Bolme islemi yapiliyor.
+               // Cevrim sayisini dusurmek icin bir cevirimde iki adim ilerleniyor.
+               // Birinci adim
+               fark1_sonraki_r = {fark_r[31:0], bolunen_r[32]} - bolen_r;
+               gecici_fark1_r = fark1_sonraki_r;
+               bolunen1_sonraki_r = bolunen_r<<1;
+
+               if(fark1_sonraki_r[32])begin
+                  bolunen1_sonraki_r[0] = 0;
+                  fark1_sonraki_r = gecici_fark1_r + bolen_r;
                end
-               REMU: begin
-                  bolum_o_next=s1[31:0];   
+               else begin
+                  bolunen1_sonraki_r[0] = 1;
                end
-            endcase
-            tt_next                 = 32'b10000000000000000000000000000000;
-            bolum_gecerli_o_next    = 1'b1;
-            cevrim_next             = 17'd1;
-            durum_next              = durum+1;
-         end
-         2'b11: begin
-            case(islem_gecerli_i&cevrim[0])
-               1'b1: durum_next=2'b01;
-               1'b0: durum_next=2'b00;
-            endcase
-            bolum_gecerli_o_next= 1'b0;
-            cevrim_next         = 17'd1;
-         end
-       
-      endcase
-      
-   end
-   
-   always@(posedge clk_i) begin
-      case(rst_i)
-      1'b1: begin
-         bolum_gecerli_o<=1'b0;
-         s2<=63'd0;
-         s1<=63'd0;
-         cevrim<=17'd1;
-         sign_bolum<=1'd0;
-         tt<=32'b10000000000000000000000000000000;
-         islev_kodu_r<=4'b0001;
-         bolum_o<=32'd0;
-         sign_kalan<=1'b0;    
-         durum<=2'b00;
-      end 
-      1'b0: begin
-         bolum_gecerli_o<=bolum_gecerli_o_next;
-         s2<=s2_next;
-         s1<=s1_next;
-         cevrim<=cevrim_next;
-         sign_bolum<=sign_bolum_next;
-         tt<=tt_next;
-         islev_kodu_r<=islev_kodu_r_next;
-         bolum_o<=bolum_o_next;
-         sign_kalan<=sign_kalan_next;
-         durum<=durum_next;
+
+               // Ýkinci adim
+               fark_sonraki_r = {fark1_sonraki_r[31:0], bolunen1_sonraki_r[32]} - bolen_r;
+               gecici_fark_r = fark_sonraki_r;
+               bolunen_sonraki_r = bolunen1_sonraki_r<<1;
+
+               if(fark_sonraki_r[32])begin
+                 bolunen_sonraki_r[0] = 0;
+                 fark_sonraki_r = gecici_fark_r + bolen_r;
+               end
+               else begin
+                  bolunen_sonraki_r[0] = 1;
+               end
+
+               cevrim_sonraki_r = cevrim_r<<1;
+            end
+
+            2'b10: begin // son cevrim. islem girisine gore sonuclar ataniyor.
+               casez({islem_i, (isaret_bolen_r ^ isaret_bolunen_r)})
+                  {`BOLME_DIVU, 1'b?}: sonuc = bolunen1_r;
+                  {`BOLME_REMU, 1'b?}: sonuc = fark1_r;
+                  {`BOLME_DIV, 1'b0}: sonuc = bolunen1_r;
+                  {`BOLME_DIV, 1'b1}: sonuc = (~bolunen1_r) + 1;
+                  {`BOLME_REM, 1'b0}: begin
+                      case (isaret_bolunen_r)
+                        1'b0: begin
+                           sonuc = fark1_r;
+                        end
+                        1'b1: begin
+                           sonuc = (~fark1_r)+1 ;
+                        end
+                     endcase
+                  end
+                  {`BOLME_REM, 1'b1}: begin
+                     case (isaret_bolunen_r)
+                        1'b0: begin
+                           sonuc = fark1_r;
+                        end
+                        1'b1: begin
+                           sonuc = (~fark1_r)+1 ;
+                        end
+                     endcase
+                  end
+                  default: sonuc = 33'hxxxx_xxxx;
+               endcase
+
+            cevrim_sonraki_r = 19'd1;
+            fark_sonraki_r = 0;
+            bolen_sonraki_r = 0;
+            bolunen_sonraki_r = 0;
+            bolunen1_sonraki_r = 0;
+            fark1_sonraki_r = 0;
+
+            if(islem_i[0] && (bolen_i==0))
+               sonuc = {1'b0,bolunen_i};
+            if(!islem_i[0] && (bolen_i == 0))
+               sonuc = -1;
+               bitti_o= 1;
+            end
+
+            default: begin
+               bolen_sonraki_r = 33'dx;
+               bolunen_sonraki_r = 33'dx;
+               fark_sonraki_r = 33'dx;
+               bolunen1_sonraki_r = 33'dx;
+               fark1_sonraki_r = 33'dx;
+               cevrim_sonraki_r = 1;
+               sonuc = 33'dx;
+               bitti_o = 1;
+            end
+         endcase
       end
-      endcase
+      else begin
+         bolen_sonraki_r = 33'dx;
+         bolunen_sonraki_r = 33'dx;
+         fark_sonraki_r = 33'dx;
+         bolunen1_sonraki_r = 33'dx;
+         fark1_sonraki_r = 33'dx;
+         cevrim_sonraki_r = 1;
+         sonuc = 33'dx;
+         bitti_o = 1;
+      end
    end
+
+   always @(posedge clk_i)begin
+      if(rst_i | !basla_i) begin
+         bolen_r    <= 0;
+         bolunen_r  <= 0;
+         fark_r     <= 0;
+         cevrim_r   <= 1;
+         fark1_r    <= 0;
+         bolunen1_r <= 0;
+      end
+      else begin
+         fark1_r    <= fark1_sonraki_r;
+         bolunen1_r <= bolunen1_sonraki_r;
+         bolen_r    <= bolen_sonraki_r;
+         bolunen_r  <= bolunen_sonraki_r;
+         fark_r     <= fark_sonraki_r;
+         cevrim_r   <= cevrim_sonraki_r;
+      end
+   end
+
 endmodule
