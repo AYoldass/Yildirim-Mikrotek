@@ -2,263 +2,159 @@
 
 //9 CEVRIM/
 module bolme_birimi(
-   input            clk_i,
-   input            rst_i,
+  input                     clk_i                                                         ,
+   input                    rst_i                                                         ,
+   input            [3:0]   islev_kodu_i                                                  ,
+   input            [31:0]  value1_i                                                      ,
+   input            [31:0]  value2_i                                                      ,
+   input                    islem_gecerli_i                                                       ,
+   output     reg           bolum_gecerli_o=0                                                     ,
+   output     reg   [31:0]  bolum_o
+   );
    
-   input            istek_i, 
-   input            sign_i, //unsigned:0, signed:1
-   input   [31:0]   bolunen_i,
-   input   [31:0]   bolen_i,
+   localparam DIV  = 4'h1; 
+   localparam DIVU = 4'h2; 
+   localparam REM  = 4'h4; 
+   localparam REMU = 4'h8;
+   localparam EVET = 1'b1;
    
-   output  [31:0]   bolum_o,
-   output  [31:0]   kalan_o,
-   output           result_ready_o
-);
-
-   reg [5:0] Ncounter_ns;
-   reg [5:0] Ncounter_r;
+   reg  [1:0]   durum=2'b00,durum_next=2'b00;
+   reg  [3:0]   islev_kodu_r=0,islev_kodu_r_next=0;
+   reg  [62:0]  s2=0,s2_next=0;
+   reg  [62:0]  s1=0,s1_next=0;
+   reg  [16:0]  cevrim=17'd1,cevrim_next=17'd1;
+   reg          bolum_gecerli_o_next=0;
+   reg          sign_bolum=0,sign_bolum_next=0;
+   reg          sign_kalan=0,sign_kalan_next=0;
+   reg[31:0] bolum_o_next =  0;
+   reg[31:0] tt           =  32'b10_00000_00000_00000_00000_00000_00000;
+   reg[31:0] tt_next      =  32'b10_00000_00000_00000_00000_00000_00000;
    
-   reg [31:0] a_ns;
-   reg [31:0] a_2_ns;
-   reg [31:0] a_3_ns;
-   reg [31:0] a_4_ns;
-   reg [31:0] q_ns;
-   reg [31:0] q_2_ns;
-   reg [31:0] q_3_ns;
-   reg [31:0] q_4_ns;
-   reg [31:0] m_ns;
-   
-   reg [31:0] a_r;
-   reg [31:0] q_r;
-   reg [31:0] m_r;  
-   
-   reg [31:0] a;//remainder
-   
-   reg result_ready_ns;
-   reg result_ready_r;
-   reg [2:0] durum_r; 
-   reg [2:0] durum_ns;
-   
-   reg bolen_isaret_r;
-   reg bolunen_isaret_r;
-   reg bolen_isaret_ns;
-   reg bolunen_isaret_ns;
-       
-   localparam ISLEM_BEKLE = 3'b000;
-   localparam ISLEM       = 3'b001;
-   localparam SIGNED_SONUC= 3'B010;
-   localparam TAMAMLANDI  = 3'b011;
-   localparam BOSTA  = 3'b100;
-   
-   assign bolum_o = q_r;
-   assign kalan_o = a_r;  
-   assign result_ready_o = result_ready_r; 
-   
-   always @* begin
-      result_ready_ns   = 1'b0;
-      a_ns              = a_r;
-      q_ns              = q_r;
-      m_ns              = m_r;
-      Ncounter_ns       = Ncounter_r;
-      durum_ns          = durum_r;
-      bolen_isaret_ns   = bolen_isaret_r;   
-      bolunen_isaret_ns = bolunen_isaret_r;
-       
-      case(durum_r)
-         ISLEM_BEKLE: begin 
-            if (istek_i) begin  
-               if(bolen_i == 32'd0) begin //DIVISION BY ZERO!
-                  if(sign_i)begin
-                     q_ns=32'hffffffff; //-1
-                  end
-                  else begin
-                     q_ns=32'hffffffff; // max 
-                  end
-                  a_ns = bolunen_i;
-                  durum_ns = BOSTA;
-                  result_ready_ns= 1'b1;
-               end
-               else if( !sign_i && (bolen_i > bolunen_i)) begin
-                  a_ns = bolunen_i;
-                  q_ns = 32'd0;
-                  durum_ns = BOSTA;
-                  result_ready_ns= 1'b1;
-               end
-               else if(sign_i == 1 && bolunen_i == 32'h80000000 && bolen_i == 32'hffffffff)begin //OVERFLOW
-                  q_ns= bolunen_i;
-                  a_ns = 32'd0;
-                  durum_ns = BOSTA;
-                  result_ready_ns= 1'b1;
-               end
-               else if(sign_i) begin
-                  a_ns              = 32'd0;
-                  m_ns              = bolen_i;
-                  q_ns              = bolunen_i;    
-                  if(bolen_i[31])begin
-                     m_ns              = ~bolen_i + 1;           
-                  end  
-                  if(bolunen_i[31])begin
-                     q_ns              = ~bolunen_i + 1;   
-                  end    
-                  bolen_isaret_ns   = bolen_i[31];   
-                  bolunen_isaret_ns = bolunen_i[31];                 
-                  durum_ns       = ISLEM;
-               end
-               else begin
-                  a_ns               = 32'd0;
-                  m_ns               = bolen_i;
-                  q_ns               = bolunen_i;
-                  if(bolen_i[31])begin
-                     m_ns              = bolen_i;//~bolen_i + 1;           
-                  end  
-                  if(bolunen_i[31])begin
-                     q_ns              = bolunen_i;//~bolunen_i + 1;   
-                  end 
-                  durum_ns       = ISLEM;                        
-               end
-            end
-         end    
-         ISLEM: begin
-            if(a_r[31])begin
-               a    = a_r << 1;
-               a[0] = q_r[31];
-               q_2_ns    = q_r << 1;
-               a_2_ns = a + m_r;     
-            end
-            else begin
-               a    = a_r << 1;
-               a[0] = q_r[31];
-               q_2_ns    = q_r << 1;
-               a_2_ns = a - m_r;      
-            end
-            q_2_ns[0] = 1'b1;
-            if(a_r[31])begin
-               q_2_ns[0] = 1'b0;
-            end              
-            if(a_2_ns[31])begin
-               a    = a_2_ns << 1;
-               a[0] = q_2_ns[31];
-               q_3_ns    = q_2_ns << 1;
-               a_3_ns = a + m_r;    
-            end
-            else begin
-               a    = a_2_ns << 1;
-               a[0] = q_2_ns[31];
-               q_3_ns    = q_2_ns << 1;
-               a_3_ns = a - m_r;    
-            end
-            q_3_ns[0] = 1'b1;
-            if(a_2_ns[31])begin
-               q_3_ns[0] = 1'b0;
-            end  
-
-            if(a_3_ns[31])begin
-               a    = a_3_ns << 1;
-               a[0] = q_3_ns[31];
-               q_4_ns    = q_3_ns << 1;
-               a_4_ns = a + m_r;     
-            end
-            else begin
-               a    = a_3_ns << 1;
-               a[0] = q_3_ns[31];
-               q_4_ns    = q_3_ns << 1;
-               a_4_ns = a - m_r;    
-            end
-            q_4_ns[0] = 1'b1;
-            if(a_3_ns[31])begin
-               q_4_ns[0] = 1'b0;
-            end           
-            if(a_4_ns[31])begin
-               a    = a_4_ns << 1;
-               a[0] = q_4_ns[31];
-               q_ns    = q_4_ns << 1;
-               a_ns = a + m_r;    
-            end
-            else begin
-               a    = a_4_ns << 1;
-               a[0] = q_4_ns[31];
-               q_ns    = q_4_ns << 1;
-               a_ns = a - m_r;       
-            end
-            q_ns[0] = 1'b1;
-            if(a_4_ns[31])begin
-               q_ns[0] = 1'b0;
-            end                
-            
-            Ncounter_ns = Ncounter_r - 4;
-            
-            if(Ncounter_ns == 6'd0)begin
-               durum_ns = TAMAMLANDI;
-            end
-         end
-         TAMAMLANDI: begin
-            if(a_r[31])begin
-               a_ns       = a_r + m_r;
-            end
-            q_ns    = q_r << 1;
-            q_ns[0] = 1'b1;
-            if(a_r[31])begin
-              q_ns[0] = 1'b0;
-            end
-            if(sign_i) begin
-               durum_ns        = SIGNED_SONUC;   
-            end
-            else begin
-               result_ready_ns = 1'b1;  
-               Ncounter_ns        = 6'd32;         
-               durum_ns        = BOSTA;    
-            end
-         end
-         SIGNED_SONUC: begin
-            if(bolunen_isaret_r == 1 && bolen_isaret_r == 1 && a_r != 32'd0)begin
-               a_ns = ~a_r+1;
-            end
-            else if(bolunen_isaret_r == 1 && bolen_isaret_r == 0) begin
-               q_ns = ~(q_r)+1;                     
-               if(a_r != 0) begin
-                  q_ns = ~(q_r)+1; 
-                  a_ns = ~a_r + 1; 
-               end
-            end
-            else if(bolunen_isaret_r == 0 && bolen_isaret_r == 1) begin
-               q_ns = ~(q_r)+1;                    
-               if(a_r != 0) begin
-                  q_ns = ~(q_r)+1;
-                  a_ns = a_r;                                
-               end
-            end   
-            Ncounter_ns        = 6'd32;
-            result_ready_ns = 1'b1;        
-            durum_ns        = BOSTA;          
-         end
-         BOSTA: begin
-            durum_ns = ISLEM_BEKLE;
-            result_ready_ns   = 1'b0;
+   always@* begin
+      bolum_gecerli_o_next  = bolum_gecerli_o;
+      islev_kodu_r_next     = islev_kodu_r;
+      s2_next               = s2;
+      s1_next               = s1;
+      cevrim_next           = cevrim;
+      sign_bolum_next       = sign_bolum;
+      bolum_o_next          = bolum_o;
+      sign_kalan_next       = sign_kalan;
+      tt_next               = tt;
+      durum_next            = durum;
+      
+      case(islem_gecerli_i&cevrim[0])
+         1'b1: begin
+            case( {value1_i[31],(islev_kodu_i[1]|islev_kodu_i[3])})
+               2'b10: s1_next = {31'd0,{~value1_i+1}};
+               2'b00: s1_next = {31'd0,value1_i};
+               2'b11: s1_next = {31'd0,value1_i};
+               2'b01: s1_next = {31'd0,value1_i};
+            endcase
+            case({value2_i[31],(islev_kodu_i[1]|islev_kodu_i[3])})
+               2'b10:s2_next = {{~value2_i+1},31'd0};
+               2'b00:s2_next = {value2_i,31'd0};
+               2'b11:s2_next = {value2_i,31'd0};
+               2'b01:s2_next = {value2_i,31'd0};
+            endcase
+            sign_bolum_next         =   value1_i[31]^value2_i[31];
+            sign_kalan_next         =   value1_i[31];
+            bolum_gecerli_o_next    =   1'b0;
+            bolum_o_next            =   32'd0;
+            islev_kodu_r_next       =   islev_kodu_i;
+            durum_next              =   durum+1;
+            cevrim_next             =   cevrim<<1;
          end
       endcase
+      
+      case(durum)
+         2'b01: begin
+            case(s1>=s2)
+               1'b1: begin
+                  case(s1>=(s2+(s2>>1)))
+                     1'b1: begin
+                        s1_next=s1-s2-(s2>>1);
+                        bolum_o_next=bolum_o+tt+(tt>>1);
+                     end
+                     1'b0: begin
+                        s1_next=s1-s2;
+                        bolum_o_next=bolum_o+tt;
+                     end
+                  endcase
+               end
+               1'b0: begin
+                  case(s1>=(s2>>1))
+                     1'b1: begin
+                        s1_next=s1-(s2>>1);
+                        bolum_o_next=bolum_o+(tt>>1);
+                     end
+                  endcase
+               end
+            endcase
+            s2_next         = s2>>2;
+            tt_next         = tt>>2;
+            cevrim_next     = cevrim<<1;
+            durum_next[0]   = durum[0]^cevrim[16];
+            durum_next[1]   = durum[1]^cevrim[16];
+         end
+         2'b10: begin
+            case(islev_kodu_r)
+               DIV & {sign_bolum,sign_bolum,sign_bolum,sign_bolum}: begin
+                  bolum_o_next=(~bolum_o)+32'd1;
+               end
+               REM & {sign_kalan,sign_kalan,sign_kalan,sign_kalan}: begin
+                  bolum_o_next=(~s1[31:0])+32'd1;    
+               end
+               REM | {sign_kalan,sign_kalan,sign_kalan,sign_kalan}: begin
+                  bolum_o_next=s1[31:0];   
+               end
+               REMU: begin
+                  bolum_o_next=s1[31:0];   
+               end
+            endcase
+            tt_next                 = 32'b10000000000000000000000000000000;
+            bolum_gecerli_o_next    = 1'b1;
+            cevrim_next             = 17'd1;
+            durum_next              = durum+1;
+         end
+         2'b11: begin
+            case(islem_gecerli_i&cevrim[0])
+               1'b1: durum_next=2'b01;
+               1'b0: durum_next=2'b00;
+            endcase
+            bolum_gecerli_o_next= 1'b0;
+            cevrim_next         = 17'd1;
+         end
+       
+      endcase
+      
    end
    
-   always @(posedge clk_i)begin
-      if(!rst_i)begin
-         a_r               <= 32'd0;
-         m_r               <= 32'd0;
-         q_r               <= 32'd0;
-         Ncounter_r        <= 6'd32;   
-         durum_r           <= ISLEM_BEKLE;
-         bolen_isaret_r    <= 1'b0;   
-         bolunen_isaret_r  <= 1'b0;  
-         result_ready_r    <= 1'b0;
+   always@(posedge clk_i) begin
+      case(rst_i)
+      1'b1: begin
+         bolum_gecerli_o<=1'b0;
+         s2<=63'd0;
+         s1<=63'd0;
+         cevrim<=17'd1;
+         sign_bolum<=1'd0;
+         tt<=32'b10000000000000000000000000000000;
+         islev_kodu_r<=4'b0001;
+         bolum_o<=32'd0;
+         sign_kalan<=1'b0;    
+         durum<=2'b00;
+      end 
+      1'b0: begin
+         bolum_gecerli_o<=bolum_gecerli_o_next;
+         s2<=s2_next;
+         s1<=s1_next;
+         cevrim<=cevrim_next;
+         sign_bolum<=sign_bolum_next;
+         tt<=tt_next;
+         islev_kodu_r<=islev_kodu_r_next;
+         bolum_o<=bolum_o_next;
+         sign_kalan<=sign_kalan_next;
+         durum<=durum_next;
       end
-      else begin
-         Ncounter_r        <= Ncounter_ns;
-         a_r               <= a_ns;
-         q_r               <= q_ns;
-         m_r               <= m_ns;  
-         durum_r           <= durum_ns;
-         bolen_isaret_r    <= bolen_isaret_ns;   
-         bolunen_isaret_r  <= bolunen_isaret_ns;
-         result_ready_r    <= result_ready_ns;
-      end
+      endcase
    end
-   
 endmodule

@@ -2,70 +2,95 @@
 
 module tb_bolme();
 
-    reg         clk_i;
-    reg         rst_i;
-    reg         istek_i;
-    reg         sign_i;
-    reg [31:0]  bolunen_i;
-    reg [31:0]  bolen_i;
+   // Inputs
+    reg clk_i;
+    reg rst_i;
+    reg [3:0] islev_kodu_i;
+    reg [31:0] value1_i;
+    reg [31:0] value2_i;
+    reg islem_gecerli_i;
 
+    // Outputs
+    wire bolum_gecerli_o;
     wire [31:0] bolum_o;
-    wire [31:0] kalan_o;
-    wire        result_ready_o;
 
+    // Instantiate the Unit Under Test (UUT)
     bolme_birimi uut (
-        .clk_i(clk_i),
-        .rst_i(rst_i),
-        .istek_i(istek_i),
-        .sign_i(sign_i),
-        .bolunen_i(bolunen_i),
-        .bolen_i(bolen_i),
-        .bolum_o(bolum_o),
-        .kalan_o(kalan_o),
-        .result_ready_o(result_ready_o)
+        .clk_i(clk_i), 
+        .rst_i(rst_i), 
+        .islev_kodu_i(islev_kodu_i), 
+        .value1_i(value1_i), 
+        .value2_i(value2_i), 
+        .islem_gecerli_i(islem_gecerli_i), 
+        .bolum_gecerli_o(bolum_gecerli_o), 
+        .bolum_o(bolum_o)
     );
 
-    always #5 clk_i = ~clk_i;
-
+    // Clock generation
     initial begin
         clk_i = 0;
-        rst_i = 1;
-        istek_i = 0;
-        sign_i = 0;
-        bolunen_i = 0;
-        bolen_i = 0;
+        forever #5 clk_i = ~clk_i;
+    end
 
-        // Sistemi sýfýrla
+    // Reset and test scenario
+    initial begin
+        // Initialize inputs
+        rst_i = 1;
+        islev_kodu_i = 0;
+        value1_i = 0;
+        value2_i = 0;
+        islem_gecerli_i = 0;
+
+        // Apply reset
         #10;
         rst_i = 0;
         #10;
         rst_i = 1;
         #10;
 
-        // Test 1: Ýþaretsiz bölme
-        bolunen_i = 32'd50;
-        bolen_i = 32'd3;
-        sign_i = 0; // Ýþaretsiz
-        istek_i = 1; // Ýþlemi baþlat
-        #10;
-        istek_i = 0; // Ýstek sinyalini kapat
+        // Test cases start here
 
-        // Ýþlem bitene kadar bekle
-        while(!result_ready_o) #10;
+        // Test DIV operation with positive numbers
+        islev_kodu_i = 4'h1; // DIV
+        value1_i = 32'd100;
+        value2_i = 32'd5;
+        islem_gecerli_i = 1;
+        #10; islem_gecerli_i = 0;
+        #100;
 
-        // Test 2: Ýþaretli bölme
-        #20; // Önceki iþlemin tamamen bitmesi için ek bekleme süresi
-        bolunen_i = -32'd50; // Ýþaretli bölme için negatif sayý
-        bolen_i = 32'd3;
-        sign_i = 1; // Ýþaretli
-        istek_i = 1; // Ýþlemi baþlat
-        #10;
-        istek_i = 0; // Ýstek sinyalini kapat
+        // Test DIVU operation with unsigned numbers
+        islev_kodu_i = 4'h2; // DIVU
+        value1_i = 32'd150;
+        value2_i = 32'd7;
+        islem_gecerli_i = 1;
+        #10; islem_gecerli_i = 0;
+        #100;
 
-        // Ýþlem bitene kadar bekle
-        while(!result_ready_o) #10;
+        // Test REM operation with positive and negative
+        islev_kodu_i = 4'h4; // REM
+        value1_i = -32'd200;
+        value2_i = 32'd50;
+        islem_gecerli_i = 1;
+        #10; islem_gecerli_i = 0;
+        #100;
 
-        // Testler tamamlandý
+        // Test REMU operation with unsigned numbers
+        islev_kodu_i = 4'h8; // REMU
+        value1_i = 32'd43;
+        value2_i = 32'd6;
+        islem_gecerli_i = 1;
+        #10; islem_gecerli_i = 0;
+        #100;
+
+        // Test division by zero and special cases
+        islev_kodu_i = 4'h1; // DIV
+        value1_i = 32'd10;
+        value2_i = 32'd0;
+        islem_gecerli_i = 1;
+        #10; islem_gecerli_i = 0;
+        #100;
+
+        // End of simulation
         $finish;
     end
 
