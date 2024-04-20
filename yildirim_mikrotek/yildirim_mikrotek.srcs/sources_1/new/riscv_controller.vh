@@ -314,6 +314,8 @@
 `define DAL_JALR   3'b110
 `define DAL_YOK    3'b111
 
+
+
 `define ALU_TOPLAMA  4'h0
 `define ALU_CIKARMA  4'h1
 `define ALU_XOR      4'h2

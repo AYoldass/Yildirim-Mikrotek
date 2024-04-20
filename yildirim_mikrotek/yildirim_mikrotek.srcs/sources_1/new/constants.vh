@@ -128,3 +128,196 @@
 `define GENEL_GECMIS_YAZMACI_BIT 5
 `define BTB_VALID_BITI           `BTB_SATIR_BOYUT-1 // en anlamlý biti
 `define GGY_SAYAC_BIT            3
+
+
+
+// Buyruk Bilgisi
+`define VALID_BIT       1
+`define VALID_PTR       0
+`define VALID           0
+
+`define RVC_BIT         1
+`define RVC_PTR         `VALID_PTR + `VALID_BIT
+`define RVC             `RVC_PTR +: `RVC_BIT
+
+`define PC_BIT          32
+`define PC_PTR          `RVC_PTR + `RVC_BIT
+`define PC              `PC_PTR +: `PC_BIT
+
+`define TAG_BIT         4
+`define TAG_PTR         `PC_PTR + `PC_BIT
+`define TAG             `TAG_PTR +: `TAG_BIT
+
+// RD yazmac adresi
+`define RD_ADDR_BIT     5
+`define RD_ADDR_PTR     `TAG_PTR + `TAG_BIT
+`define RD_ADDR         `RD_ADDR_PTR +: `RD_ADDR_BIT
+
+// RD'ye yazma yapilacagini belirten flag
+`define RD_ALLOC_BIT    1
+`define RD_ALLOC_PTR    `RD_ADDR_PTR + `RD_ADDR_BIT
+`define RD_ALLOC        `RD_ALLOC_PTR +: `RD_ALLOC_BIT
+
+// RS2'den okuma yapilacagini belirten flag
+`define RS2_EN_BIT      1
+`define RS2_EN_PTR      (`RD_ALLOC_PTR + `RD_ALLOC_BIT)
+`define RS2_EN          `RS2_EN_PTR +: `RS2_EN_BIT
+
+// RS1'den okuma yapilacagini belirten flag
+`define RS1_EN_BIT      1
+`define RS1_EN_PTR      (`RS2_EN_PTR + `RS2_EN_BIT)
+`define RS1_EN          `RS1_EN_PTR +: `RS1_EN_BIT
+
+// Islecler (Simdilik 4 tane lazim sanirim? Islec iletmek gerekirse genisletilebilir)
+`define RD_BIT          32
+`define RD_PTR          (`RS1_EN_PTR + `RS1_EN_BIT)
+`define RD              `RD_PTR +: `RD_BIT
+
+`define IMM_BIT         32
+`define IMM_PTR         (`RD_PTR + `RD_BIT)
+`define IMM             `IMM_PTR +: `IMM_BIT
+
+`define RS2_BIT         32
+`define RS2_PTR         (`IMM_PTR + `IMM_BIT)
+`define RS2             `RS2_PTR +: `RS2_BIT
+
+`define RS1_BIT         32
+`define RS1_PTR         (`RS2_PTR + `RS2_BIT)
+`define RS1             `RS1_PTR +: `RS1_BIT 
+
+`define CSR_BIT         32
+`define CSR_PTR         (`RS1_PTR + `RS1_BIT)
+`define CSR             `CSR_PTR +: `CSR_BIT
+
+`define CSR_ADDR_BIT    12
+`define CSR_ADDR_PTR    (`CSR_PTR + `CSR_BIT)
+`define CSR_ADDR        `CSR_ADDR_PTR +: `CSR_ADDR_BIT
+
+`define CSR_ALLOC_BIT   1
+`define CSR_ALLOC_PTR   (`CSR_ADDR_PTR + `CSR_ADDR_BIT)
+`define CSR_ALLOC       `CSR_ALLOC_PTR +: `CSR_ALLOC_BIT
+
+`define CSR_EN_BIT      1
+`define CSR_EN_PTR      (`CSR_ALLOC_PTR + `CSR_ALLOC_BIT)
+`define CSR_EN          `CSR_EN_PTR +: `CSR_EN_BIT
+
+// Aritmetik Mantik Birimi
+`define AMB_NOP         0
+`define AMB_ADD         1
+`define AMB_SUB         2
+`define AMB_DIV         3
+`define AMB_MUL         4
+`define AMB_AND         5
+`define AMB_OR          6
+`define AMB_XOR         7
+`define AMB_SLL         8
+`define AMB_SRL         9
+`define AMB_SRA         10
+`define AMB_SLT         11
+`define AMB_SLTU        12
+`define AMB_HMDST       13
+`define AMB_PKG         14
+`define AMB_RVRS        15
+`define AMB_SLADD       16
+`define AMB_CNTZ        17
+`define AMB_CNTP        18
+`define AMB_MULH        19
+`define AMB_MULHSU      20
+`define AMB_MULHU       21
+`define AMB_DIVU        22
+`define AMB_REM         23
+`define AMB_REMU        24
+
+`define AMB_OP_NOP      0
+`define AMB_OP_RS1      1
+`define AMB_OP_RS2      2
+`define AMB_OP_IMM      3
+`define AMB_OP_CSR      4
+`define AMB_OP_PC       5
+
+`define AMB_OP_BIT      3
+
+// Islecler hangi veriler olmali?
+`define AMB_OP2_BIT     `AMB_OP_BIT
+`define AMB_OP2_PTR     (`CSR_EN_PTR + `CSR_EN_BIT)
+`define AMB_OP2         `AMB_OP2_PTR +: `AMB_OP2_BIT
+
+`define AMB_OP1_BIT     `AMB_OP_BIT
+`define AMB_OP1_PTR     (`AMB_OP2_PTR + `AMB_OP2_BIT)
+`define AMB_OP1         `AMB_OP1_PTR +: `AMB_OP1_BIT
+
+`define AMB_BIT         5
+`define AMB_PTR         (`AMB_OP1_PTR + `AMB_OP1_BIT)
+`define AMB             `AMB_PTR +: `AMB_BIT
+
+// Yazilacak veri secimi
+`define YAZ_NOP         0
+`define YAZ_AMB         1
+`define YAZ_IS1         2
+`define YAZ_DAL         3
+`define YAZ_CSR         4
+`define YAZ_BEL         5
+`define YAZ_YZB         6
+
+`define YAZ_BIT         3
+`define YAZ_PTR         (`AMB_PTR + `AMB_BIT)
+`define YAZ             `YAZ_PTR +: `YAZ_BIT
+
+// Dallanma Birimi
+`define DAL_NOP             0
+`define DAL_BEQ             1
+`define DAL_BNE             2
+`define DAL_BLT             3
+`define DAL_JAL             4
+`define DAL_JALR            5
+`define DAL_BGE             6
+`define DAL_BLTU            7
+`define DAL_BGEU            8
+`define DAL_CJAL            9
+`define DAL_CJALR           10
+
+`define DAL_BIT             4
+`define DAL_PTR             (`YAZ_PTR + `YAZ_BIT)
+`define DAL                 `DAL_PTR +: `DAL_BIT
+
+`define TAKEN_BIT           1
+`define TAKEN_PTR           (`DAL_PTR + `DAL_BIT)
+`define TAKEN               `TAKEN_PTR +: `TAKEN_BIT
+
+// Bellek Islemleri
+`define BEL_NOP             0
+`define BEL_LW              1
+`define BEL_LH              2
+`define BEL_LHU             3
+`define BEL_LB              4
+`define BEL_LBU             5
+`define BEL_SW              6
+`define BEL_SH              7
+`define BEL_SB              8
+
+`define BEL_BIT             4   //seçim için kullanýlacak
+`define BEL_PTR             (`TAKEN_PTR + `TAKEN_BIT)
+`define BEL                 `BEL_PTR +: `BEL_BIT
+
+`define EXC_CODE_IAM            0   // Instruction Address Misaligned
+`define EXC_CODE_IS             1   // Illegal Instruction
+`define EXC_CODE_LAM            4   // Load Address Misaligned
+`define EXC_CODE_SAM            6   // Store Address Misaligned
+`define EXC_CODE_MRET           11  // Environment call from M-mode
+
+`define EXC_CODE_BIT            5
+
+// CSR Islemleri
+`define CSR_NOP             0
+`define CSR_RW              1
+`define CSR_RS              2
+`define CSR_RC              3
+`define CSR_MRET            4
+
+`define CSR_OP_BIT          4 // CSR_OP berbat bir isim, AMB_OP1'deki OPerand ile buradaki CSR_OPeration kisaltmasi ayristirilmali
+`define CSR_OP_PTR          (`BEL_PTR + `BEL_BIT)
+`define CSR_OP              `CSR_OP_PTR +: `CSR_OP_BIT
+
+
+
+//!!! TODO: HER ASAMA ICIN MIKROISLEM TANIMLARI (COZ_UOP, YURUT_UOP...) YAPILMALI, BU SAYEDE UOP YAZMACLARI KUCULTULEBILIR !!!
