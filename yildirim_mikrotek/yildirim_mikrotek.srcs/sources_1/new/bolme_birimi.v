@@ -2,19 +2,19 @@
 
 `include "riscv_controller.vh"
 
-//9 CEVRIM/
+//9 CEVRIM//
 module bolme_birimi(
    input clk_i,
    input rst_i,
-   input basla_i,
-   input [1:0] islem_i, //00 DIVU, 01 REMU, 10 DIV, 11 REM
+   input start_i,
+   input [1:0] islem_i, //state
    input [31:0] bolunen_i,
    input [31:0] bolen_i,
-   output wire [31:0] sonuc_o,
+   output wire [31:0] result_o,
    output reg bitti_o = 1
 );
-   reg [32:0] sonuc;
-   assign sonuc_o = sonuc[31:0];
+   reg [32:0] result;
+   assign result_o = result[31:0];
 
    reg [32:0] bolen_r = 0;
    reg [32:0] bolen_sonraki_r = 0;
@@ -47,11 +47,11 @@ module bolme_birimi(
       bolunen_sonraki_r = bolunen_r;
       fark_sonraki_r = fark_r;
       cevrim_sonraki_r = cevrim_r;
-      sonuc = 33'dx;
+      result = 33'dx;
       gecici_fark_r = 33'bx;
       bitti_o = 1;
 
-      if(basla_i) begin
+      if(start_i) begin
          bitti_o = 0;
 
          case({cevrim_r[18], cevrim_r[0]})
@@ -108,31 +108,31 @@ module bolme_birimi(
 
             2'b10: begin // son cevrim. islem girisine gore sonuclar ataniyor.
                casez({islem_i, (isaret_bolen_r ^ isaret_bolunen_r)})
-                  {`BOLME_DIVU, 1'b?}: sonuc = bolunen1_r;
-                  {`BOLME_REMU, 1'b?}: sonuc = fark1_r;
-                  {`BOLME_DIV, 1'b0}: sonuc = bolunen1_r;
-                  {`BOLME_DIV, 1'b1}: sonuc = (~bolunen1_r) + 1;
+                  {`BOLME_DIVU, 1'b?}: result = bolunen1_r;
+                  {`BOLME_REMU, 1'b?}: result = fark1_r;
+                  {`BOLME_DIV, 1'b0}: result = bolunen1_r;
+                  {`BOLME_DIV, 1'b1}: result = (~bolunen1_r) + 1;
                   {`BOLME_REM, 1'b0}: begin
                       case (isaret_bolunen_r)
                         1'b0: begin
-                           sonuc = fark1_r;
+                           result = fark1_r;
                         end
                         1'b1: begin
-                           sonuc = (~fark1_r)+1 ;
+                           result = (~fark1_r)+1 ;
                         end
                      endcase
                   end
                   {`BOLME_REM, 1'b1}: begin
                      case (isaret_bolunen_r)
                         1'b0: begin
-                           sonuc = fark1_r;
+                           result = fark1_r;
                         end
                         1'b1: begin
-                           sonuc = (~fark1_r)+1 ;
+                           result = (~fark1_r)+1 ;
                         end
                      endcase
                   end
-                  default: sonuc = 33'hxxxx_xxxx;
+                  default: result = 33'hxxxx_xxxx;
                endcase
 
             cevrim_sonraki_r = 19'd1;
@@ -143,9 +143,9 @@ module bolme_birimi(
             fark1_sonraki_r = 0;
 
             if(islem_i[0] && (bolen_i==0))
-               sonuc = {1'b0,bolunen_i};
+               result = {1'b0,bolunen_i};
             if(!islem_i[0] && (bolen_i == 0))
-               sonuc = -1;
+               result = -1;
                bitti_o= 1;
             end
 
@@ -156,7 +156,7 @@ module bolme_birimi(
                bolunen1_sonraki_r = 33'dx;
                fark1_sonraki_r = 33'dx;
                cevrim_sonraki_r = 1;
-               sonuc = 33'dx;
+               result = 33'dx;
                bitti_o = 1;
             end
          endcase
@@ -168,13 +168,13 @@ module bolme_birimi(
          bolunen1_sonraki_r = 33'dx;
          fark1_sonraki_r = 33'dx;
          cevrim_sonraki_r = 1;
-         sonuc = 33'dx;
+         result = 33'dx;
          bitti_o = 1;
       end
    end
 
    always @(posedge clk_i)begin
-      if(rst_i | !basla_i) begin
+      if(rst_i | !start_i) begin
          bolen_r    <= 0;
          bolunen_r  <= 0;
          fark_r     <= 0;

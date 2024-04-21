@@ -314,6 +314,18 @@
 `define DAL_JALR   3'b110
 `define DAL_YOK    3'b111
 
+//----Dallanma Öngörücü Tanimlamalar----
+`define BTB_SATIR_SAYISI         32
+`define BTB_PS_BIT               5
+`define BTB_SATIR_BOYUT          (32 - `BTB_PS_BIT) + 1 + 32
+`define BHT_SATIR_SAYISI         32
+`define BHT_PS_BIT               5
+`define DALLANMA_TAHMIN_BIT      2 // ilerde çift kutuplu yapýlabilir
+`define BHT_SATIR_BOYUT          (32 - `BHT_PS_BIT) + `DALLANMA_TAHMIN_BIT
+`define GENEL_GECMIS_YAZMACI_BIT 5
+`define BTB_VALID_BITI           `BTB_SATIR_BOYUT-1 // en anlamlý biti
+`define GGY_SAYAC_BIT            3
+
 
 
 `define ALU_TOPLAMA  4'h0
