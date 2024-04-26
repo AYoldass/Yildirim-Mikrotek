@@ -4,7 +4,7 @@
 
 module dallanma_ongorucu (
    input                        clk_i,
-   input                        rstn_i,
+   input                        rst_i,
 
    input   [31:0]               ps_i,
    input                        ps_gecerli_i,
@@ -112,7 +112,7 @@ always @* begin
 end
 
 always @ (posedge clk_i) begin
-   if (!rstn_i) begin
+   if (!rst_i) begin
       for (i = 0; i < `BTB_SATIR_SAYISI; i = i + 1) begin
          BTB_r[i] <= 0;
       end

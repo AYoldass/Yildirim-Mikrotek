@@ -10,9 +10,9 @@ module dallanma_birimi (
    input                        islem_atladi_i,
    input                        islem_rvc_i,
 
-   input                        amb_esittir_i,
-   input                        amb_kucuktur_i,
-   input                        amb_kucuktur_isaretsiz_i,
+   input                        alu_esittir_i,
+   input                        alu_kucuktur_i,
+   input                        alu_kucuktur_isaretsiz_i,
 
    output  [31:0]               g1_ps_o,
    output                       g1_ps_gecerli_o,
@@ -23,7 +23,7 @@ module dallanma_birimi (
    output                       g2_atladi_o,
    output                       g2_hatali_tahmin_o,
 
-   output  [32-1:0]             ps_atlamadi_o
+   output  [31:0]             ps_atlamadi_o
 );
 
 reg [31:0]          g1_ps_cmb;
@@ -61,48 +61,48 @@ always @* begin
    `DAL_EQ: begin
       g2_ps_cmb             = islem_ps_i;
       g2_guncelle_cmb       = 1'b1;
-      g2_atladi_cmb         = amb_esittir_i;
-      g2_hatali_tahmin_cmb  = amb_esittir_i != islem_atladi_i;
+      g2_atladi_cmb         = alu_esittir_i;
+      g2_hatali_tahmin_cmb  = alu_esittir_i != islem_atladi_i;
       g1_ps_cmb             = g2_atladi_cmb ? ps_atladi_cmb : ps_atlamadi_cmb;
       g1_ps_gecerli_cmb     = g2_hatali_tahmin_cmb;
    end
    `DAL_NE: begin
       g2_ps_cmb             = islem_ps_i;
       g2_guncelle_cmb       = 1'b1;
-      g2_atladi_cmb         = !amb_esittir_i;
-      g2_hatali_tahmin_cmb  = amb_esittir_i == islem_atladi_i;
+      g2_atladi_cmb         = !alu_esittir_i;
+      g2_hatali_tahmin_cmb  = alu_esittir_i == islem_atladi_i;
       g1_ps_cmb             = g2_atladi_cmb ? ps_atladi_cmb : ps_atlamadi_cmb;
       g1_ps_gecerli_cmb     = g2_hatali_tahmin_cmb;
    end
    `DAL_LT: begin
       g2_ps_cmb             = islem_ps_i;
       g2_guncelle_cmb       = 1'b1;
-      g2_atladi_cmb         = amb_kucuktur_i;
-      g2_hatali_tahmin_cmb  = amb_kucuktur_i != islem_atladi_i;
+      g2_atladi_cmb         = alu_kucuktur_i;
+      g2_hatali_tahmin_cmb  = alu_kucuktur_i != islem_atladi_i;
       g1_ps_cmb             = g2_atladi_cmb ? ps_atladi_cmb : ps_atlamadi_cmb;
       g1_ps_gecerli_cmb     = g2_hatali_tahmin_cmb;
    end
    `DAL_GE: begin
       g2_ps_cmb             = islem_ps_i;
       g2_guncelle_cmb       = 1'b1;
-      g2_atladi_cmb         = !amb_kucuktur_i;
-      g2_hatali_tahmin_cmb  = amb_kucuktur_i == islem_atladi_i;
+      g2_atladi_cmb         = !alu_kucuktur_i;
+      g2_hatali_tahmin_cmb  = alu_kucuktur_i == islem_atladi_i;
       g1_ps_cmb             = g2_atladi_cmb ? ps_atladi_cmb : ps_atlamadi_cmb;
       g1_ps_gecerli_cmb     = g2_hatali_tahmin_cmb;
    end
    `DAL_LTU: begin
       g2_ps_cmb             = islem_ps_i;
       g2_guncelle_cmb       = 1'b1;
-      g2_atladi_cmb         = amb_kucuktur_isaretsiz_i;
-      g2_hatali_tahmin_cmb  = amb_kucuktur_isaretsiz_i != islem_atladi_i;
+      g2_atladi_cmb         = alu_kucuktur_isaretsiz_i;
+      g2_hatali_tahmin_cmb  = alu_kucuktur_isaretsiz_i != islem_atladi_i;
       g1_ps_cmb             = g2_atladi_cmb ? ps_atladi_cmb : ps_atlamadi_cmb;
       g1_ps_gecerli_cmb     = g2_hatali_tahmin_cmb;
    end
    `DAL_GEU: begin
       g2_ps_cmb             = islem_ps_i;
       g2_guncelle_cmb       = 1'b1;
-      g2_atladi_cmb         = !amb_kucuktur_isaretsiz_i;
-      g2_hatali_tahmin_cmb  = amb_kucuktur_isaretsiz_i == islem_atladi_i;
+      g2_atladi_cmb         = !alu_kucuktur_isaretsiz_i;
+      g2_hatali_tahmin_cmb  = alu_kucuktur_isaretsiz_i == islem_atladi_i;
       g1_ps_cmb             = g2_atladi_cmb ? ps_atladi_cmb : ps_atlamadi_cmb;
       g1_ps_gecerli_cmb     = g2_hatali_tahmin_cmb;
    end

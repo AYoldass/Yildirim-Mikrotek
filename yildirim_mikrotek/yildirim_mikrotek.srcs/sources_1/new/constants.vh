@@ -52,7 +52,7 @@
 
 //-----------Bellek---------------
 `define ADRES_BIT           32
-`define BELLEK_BASLANGIC    32'h4000_0000
+`define BELLEK_BASLANGIC    32'h8000_0000
 `define BELLEK_BOYUT        32'h0004_0000
 
 //-----------Adres Aralýklarý-----------
@@ -273,8 +273,6 @@
 `define DAL_BGE             6
 `define DAL_BLTU            7
 `define DAL_BGEU            8
-`define DAL_CJAL            9
-`define DAL_CJALR           10
 
 `define DAL_BIT             4
 `define DAL_PTR             (`YAZ_PTR + `YAZ_BIT)
