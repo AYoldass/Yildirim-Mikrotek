@@ -1165,3 +1165,6 @@ selectCodeEditor("tb_getir_asama2.v", 366, 562); // ac
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 141 MB (+789kb) [07:46:14]

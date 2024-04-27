@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../yildirim_mikrotek.srcs/sources_1/new" \
+"../../../../yildirim_mikrotek.srcs/sources_1/new/dallanma_ongorucu.v" \
+"../../../../yildirim_mikrotek.srcs/sources_1/new/getir_asama2.v" \
+"../../../../yildirim_mikrotek.srcs/sim_1/new/tb_getir_asama2.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
