@@ -1,0 +1,1165 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 05:00:03 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 12668
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Apr 27 15:17:26 TRT 2024
+Time zone: 	Turkey Time (Asia/Istanbul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+Scale size: 19
+
+Java version: 	11.0.11 64-bit
+Java home: 	C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9
+Java executable: 	C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9/bin/java.exe
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.d3d=false, -Dsun.awt.nopixfmt=true, -Dsun.java2d.dpiaware=true, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	ahmet
+User home directory: C:/Users/ahmet
+User working directory: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek
+User country: 	TR
+User language: 	tr
+User locale: 	tr_TR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2022.2
+RDI_DATADIR: C:/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/
+Vivado layouts directory: C:/Users/ahmet/AppData/Roaming/Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	C:/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/vivado.log
+Vivado journal file: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/vivado.jou
+Engine tmp dir: 	C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/.Xil/Vivado-12668-DESKTOP-VTDBCS3
+
+Xilinx Environment Variables
+----------------------------
+RDI_APPROOT: C:/Xilinx/Vivado/2022.2
+RDI_ARGS:  -gui_launcher_event rodinguilauncherevent9344 "C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr"
+RDI_ARGS_FUNCTION: RDI_EXEC_DEFAULT
+RDI_BASEROOT: C:/Xilinx/Vivado
+RDI_BINDIR: C:/Xilinx/Vivado/2022.2/bin
+RDI_BINROOT: C:/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_CHECK_PROG: True
+RDI_DATADIR: C:/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: C:/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_INSTALLVERSION: 2022.2
+RDI_ISE_PLATFORM: nt64
+RDI_JAVACEFROOT: C:/Xilinx/Vivado/2022.2/tps/win64/java-cef-95.0.4638.69
+RDI_JAVAFXROOT: C:/Xilinx/Vivado/2022.2/tps/win64/javafx-sdk-11.0.2
+RDI_JAVAROOT: C:/Xilinx/Vivado/2022.2/tps/win64/jre11.0.11_9
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: C:/Xilinx/Vivado/2022.2/lib/win64.o
+RDI_MINGW_LIB: C:/Xilinx/Vivado/2022.2\tps\mingw\6.2.0\win64.o\nt\bin;C:/Xilinx/Vivado/2022.2\tps\mingw\6.2.0\win64.o\nt\libexec\gcc\x86_64-w64-mingw32\6.2.0
+RDI_OPT_EXT: .o
+RDI_PLATFORM: win64
+RDI_PREPEND_PATH: C:/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2022.2/ids_lite/ISE/lib/nt64
+RDI_PROG: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/vivado.exe
+RDI_PROGNAME: vivado.exe
+RDI_PYTHON3: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3
+RDI_PYTHON3_VERSION: 3.8.3
+RDI_PYTHONHOME: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3
+RDI_PYTHONPATH: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\bin;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib;C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib\site-packages
+RDI_PYTHON_LD_LIBPATH: C:/Xilinx/Vivado/2022.2\tps\win64\python-3.8.3\lib
+RDI_TPS_ROOT: C:/Xilinx/Vivado/2022.2/tps/win64
+RDI_USE_JDK11: True
+RDI_VERBOSE: False
+XILINX: C:/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/Vitis_HLS/2022.2
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2022.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2022.2
+_RDI_BINROOT: C:\Xilinx\Vivado\2022.2\bin
+_RDI_CWD: C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 737 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 83 MB (+84824kb) [00:00:11]
+// [Engine Memory]: 652 MB (+532466kb) [00:00:11]
+// Opening Vivado Project: C:\Users\ahmet\Desktop\Yildirim_Mikrotek_Teknofest\Yildirim_Mikrotek\yildirim_mikrotek\yildirim_mikrotek.xpr. Version: Vivado v2022.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek' 
+// HMemoryUtils.trashcanNow. Engine heap size: 742 MB. GUI used memory: 61 MB. Current time: 4/27/24, 3:17:27 PM TRT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek' 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,018 MB (+349510kb) [00:00:25]
+// [GUI Memory]: 97 MB (+10110kb) [00:00:25]
+// WARNING: HEventQueue.dispatchEvent() is taking  2984 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:15 . Memory (MB): peak = 1185.215 ; gain = 384.273 
+// [Engine Memory]: 1,086 MB (+17991kb) [00:00:27]
+// Project name: yildirim_mikrotek; location: C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek; part: xc7z020clg400-1
+dismissDialog("Open Project"); // bq
+// [GUI Memory]: 123 MB (+21562kb) [00:00:30]
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 64 MB. Current time: 4/27/24, 3:17:42 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 65 MB. Current time: 4/27/24, 3:47:43 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 57 MB. Current time: 4/27/24, 4:17:46 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 55 MB. Current time: 4/27/24, 4:47:49 PM TRT
+// Elapsed time: 6499 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "bram_model"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 12 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bram_model.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bram_model.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (bram_model.v) elapsed time: 0.2s
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bram_model (bram_model.v)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bram_model (bram_model.v)]", 11, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("bram_model.v", 215, 463); // ac
+typeControlKey((HResource) null, "bram_model.v", 'v'); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 61 MB. Current time: 4/27/24, 5:17:50 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 61 MB. Current time: 4/27/24, 5:47:51 PM TRT
+// Elapsed time: 3329 seconds
+selectCodeEditor("bram_model.v", 164, 33); // ac
+selectCodeEditor("bram_model.v", 164, 33, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("bram_model.v", 164, 33); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 43 seconds
+selectCodeEditor("bram_model.v", 198, 117); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "BRAM", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("bram_model.v", 648, 339); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 59 seconds
+selectCodeEditor("bram_model.v", 203, 217); // ac
+selectCodeEditor("bram_model.v", 203, 217, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("bram_model.v", 196, 236); // ac
+selectCodeEditor("bram_model.v", 196, 236, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 146 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "sram_"); // Q
+// Elapsed time: 11 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "sram_112x128"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 19 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/sram_112x128.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/sram_112x128.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sram_112x128 (sram_112x128.v)]", 15, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sram_112x128 (sram_112x128.v)]", 15, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("sram_112x128.v", 58, 440); // ac
+selectCodeEditor("sram_112x128.v", 89, 144); // ac
+typeControlKey((HResource) null, "sram_112x128.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 38 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "sram_"); // Q
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "sram_336x128"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 17 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/sram_336x128.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/sram_336x128.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // p
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sram_336x128 (sram_336x128.v)]", 16, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sram_336x128 (sram_336x128.v)]", 16, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("sram_336x128.v", 78, 436); // ac
+selectCodeEditor("sram_336x128.v", 111, 143); // ac
+typeControlKey((HResource) null, "sram_336x128.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 61 MB. Current time: 4/27/24, 6:17:52 PM TRT
+// Elapsed time: 1586 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, riscv_controller.vh]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, riscv_controller.vh]", 2, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 28 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "bellek_islem_birimi"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 10 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bellek_islem_birimi.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/bellek_islem_birimi.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 61 MB. Current time: 4/27/24, 6:47:54 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 61 MB. Current time: 4/27/24, 7:17:54 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 61 MB. Current time: 4/27/24, 7:47:54 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 60 MB. Current time: 4/27/24, 8:17:55 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 60 MB. Current time: 4/27/24, 8:47:55 PM TRT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 61 MB. Current time: 4/27/24, 9:17:55 PM TRT
+// Elapsed time: 9933 seconds
+selectCodeEditor("riscv_controller.vh", 180, 396); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bellek_islem_birimi (bellek_islem_birimi.v)]", 12, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, bellek_islem_birimi (bellek_islem_birimi.v)]", 12, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("bellek_islem_birimi.v", 117, 439); // ac
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aritmetik_mantik_birimi (aritmetik_mantik_birimi.v)]", 11, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("aritmetik_mantik_birimi.v", 297, 53); // ac
+typeControlKey((HResource) null, "aritmetik_mantik_birimi.v", 'c'); // ac
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // E
+selectCodeEditor("bellek_islem_birimi.v", 543, 27); // ac
+selectCodeEditor("bellek_islem_birimi.v", 530, 49); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+// Elapsed time: 37 seconds
+selectCodeEditor("bellek_islem_birimi.v", 4, 114); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 165, 191); // ac
+selectCodeEditor("bellek_islem_birimi.v", 168, 191, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'c'); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("bellek_islem_birimi.v", 234, 196); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "3", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("bellek_islem_birimi.v", 348, 391); // ac
+selectCodeEditor("bellek_islem_birimi.v", 196, 211); // ac
+selectCodeEditor("bellek_islem_birimi.v", 196, 211, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("bellek_islem_birimi.v", 223, 223); // ac
+selectCodeEditor("bellek_islem_birimi.v", 206, 222); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'c'); // ac
+// Elapsed time: 17 seconds
+selectCodeEditor("bellek_islem_birimi.v", 224, 217); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "31", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("bellek_islem_birimi.v", 599, 300); // ac
+// Elapsed time: 11 seconds
+selectCodeEditor("bellek_islem_birimi.v", 179, 242); // ac
+selectCodeEditor("bellek_islem_birimi.v", 179, 242, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'c'); // ac
+// Elapsed time: 19 seconds
+selectCodeEditor("bellek_islem_birimi.v", 279, 217); // ac
+selectCodeEditor("bellek_islem_birimi.v", 187, 239); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'c'); // ac
+// Elapsed time: 25 seconds
+selectCodeEditor("bellek_islem_birimi.v", 240, 254); // ac
+selectCodeEditor("bellek_islem_birimi.v", 204, 240); // ac
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("bellek_islem_birimi.v", 367, 461); // ac
+selectCodeEditor("bellek_islem_birimi.v", 201, 307); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'c'); // ac
+// Elapsed time: 111 seconds
+selectCodeEditor("bellek_islem_birimi.v", 343, 419); // ac
+selectCodeEditor("bellek_islem_birimi.v", 193, 304); // ac
+selectCodeEditor("bellek_islem_birimi.v", 193, 304, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("bellek_islem_birimi.v", 203, 222); // ac
+selectCodeEditor("bellek_islem_birimi.v", 203, 222, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'c'); // ac
+// Elapsed time: 17 seconds
+selectCodeEditor("bellek_islem_birimi.v", 311, 179); // ac
+selectCodeEditor("bellek_islem_birimi.v", 195, 116); // ac
+selectCodeEditor("bellek_islem_birimi.v", 193, 125); // ac
+selectCodeEditor("bellek_islem_birimi.v", 197, 114); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "4", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("bellek_islem_birimi.v", 344, 431); // ac
+selectCodeEditor("bellek_islem_birimi.v", 218, 222); // ac
+selectCodeEditor("bellek_islem_birimi.v", 218, 222, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("bellek_islem_birimi.v", 242, 218); // ac
+selectCodeEditor("bellek_islem_birimi.v", 235, 224); // ac
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("bellek_islem_birimi.v", 421, 315); // ac
+selectCodeEditor("bellek_islem_birimi.v", 218, 180); // ac
+selectCodeEditor("bellek_islem_birimi.v", 150, 305); // ac
+selectCodeEditor("bellek_islem_birimi.v", 58, 304); // ac
+selectCodeEditor("bellek_islem_birimi.v", 98, 304); // ac
+selectCodeEditor("bellek_islem_birimi.v", 86, 324); // ac
+selectCodeEditor("bellek_islem_birimi.v", 89, 338); // ac
+selectCodeEditor("bellek_islem_birimi.v", 170, 200); // ac
+selectCodeEditor("bellek_islem_birimi.v", 188, 223); // ac
+selectCodeEditor("bellek_islem_birimi.v", 206, 242); // ac
+selectCodeEditor("bellek_islem_birimi.v", 210, 285); // ac
+selectCodeEditor("bellek_islem_birimi.v", 192, 310); // ac
+selectCodeEditor("bellek_islem_birimi.v", 313, 140); // ac
+selectCodeEditor("bellek_islem_birimi.v", 313, 140, false, false, false, false, true); // ac - Double Click
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "rst_i", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("bellek_islem_birimi.v", 362, 461); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "riscv_controller.vh", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bellek_islem_birimi.v", 5); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "riscv_controller.vh", 4); // o
+selectCodeEditor("riscv_controller.vh", 107, 202); // ac
+typeControlKey((HResource) null, "riscv_controller.vh", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bellek_islem_birimi.v", 5); // o
+selectCodeEditor("bellek_islem_birimi.v", 132, 163); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 127, 263); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "riscv_controller.vh", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bellek_islem_birimi.v", 5); // o
+selectCodeEditor("bellek_islem_birimi.v", 124, 306); // ac
+selectCodeEditor("bellek_islem_birimi.v", 138, 309); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 127, 412); // ac
+selectCodeEditor("bellek_islem_birimi.v", 137, 414); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 132, 263); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 134, 390); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 135, 329); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 136, 452); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "riscv_controller.vh", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bellek_islem_birimi.v", 5); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "riscv_controller.vh", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bellek_islem_birimi.v", 5); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "riscv_controller.vh", 4); // o
+selectCodeEditor("riscv_controller.vh", 293, 238); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bellek_islem_birimi.v", 5); // o
+// Elapsed time: 270 seconds
+selectCodeEditor("bellek_islem_birimi.v", 325, 203); // ac
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 63 MB. Current time: 4/27/24, 9:47:57 PM TRT
+// Elapsed time: 2279 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bellek_islem_birimi.v", 5); // o
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bellek_islem_birimi.v", 5, false, true); // o - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // L
+selectCodeEditor("bellek_islem_birimi.v", 180, 282); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("bellek_islem_birimi.v", 146, 244); // ac
+selectCodeEditor("bellek_islem_birimi.v", 178, 266); // ac
+selectCodeEditor("bellek_islem_birimi.v", 178, 239); // ac
+selectCodeEditor("bellek_islem_birimi.v", 197, 262); // ac
+selectCodeEditor("bellek_islem_birimi.v", 198, 285); // ac
+selectCodeEditor("bellek_islem_birimi.v", 152, 323); // ac
+selectCodeEditor("bellek_islem_birimi.v", 170, 303); // ac
+selectCodeEditor("bellek_islem_birimi.v", 150, 347); // ac
+selectCodeEditor("bellek_islem_birimi.v", 169, 406); // ac
+selectCodeEditor("bellek_islem_birimi.v", 148, 431); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("bellek_islem_birimi.v", 154, 430); // ac
+selectCodeEditor("bellek_islem_birimi.v", 173, 413); // ac
+selectCodeEditor("bellek_islem_birimi.v", 150, 449); // ac
+selectCodeEditor("bellek_islem_birimi.v", 169, 327); // ac
+selectCodeEditor("bellek_islem_birimi.v", 151, 350); // ac
+selectCodeEditor("bellek_islem_birimi.v", 152, 370); // ac
+selectCodeEditor("bellek_islem_birimi.v", 169, 367); // ac
+selectCodeEditor("bellek_islem_birimi.v", 154, 389); // ac
+selectCodeEditor("bellek_islem_birimi.v", 151, 410); // ac
+selectCodeEditor("bellek_islem_birimi.v", 169, 348); // ac
+selectCodeEditor("bellek_islem_birimi.v", 152, 366); // ac
+selectCodeEditor("bellek_islem_birimi.v", 152, 387); // ac
+selectCodeEditor("bellek_islem_birimi.v", 170, 406); // ac
+selectCodeEditor("bellek_islem_birimi.v", 157, 428); // ac
+selectCodeEditor("bellek_islem_birimi.v", 162, 430); // ac
+selectCodeEditor("bellek_islem_birimi.v", 154, 450); // ac
+selectCodeEditor("bellek_islem_birimi.v", 153, 466); // ac
+selectCodeEditor("bellek_islem_birimi.v", 169, 351); // ac
+selectCodeEditor("bellek_islem_birimi.v", 163, 368); // ac
+selectCodeEditor("bellek_islem_birimi.v", 154, 395); // ac
+selectCodeEditor("bellek_islem_birimi.v", 154, 413); // ac
+selectCodeEditor("bellek_islem_birimi.v", 172, 288); // ac
+selectCodeEditor("bellek_islem_birimi.v", 160, 312); // ac
+selectCodeEditor("bellek_islem_birimi.v", 154, 326); // ac
+selectCodeEditor("bellek_islem_birimi.v", 153, 341); // ac
+selectCodeEditor("bellek_islem_birimi.v", 169, 345); // ac
+selectCodeEditor("bellek_islem_birimi.v", 163, 361); // ac
+selectCodeEditor("bellek_islem_birimi.v", 150, 390); // ac
+selectCodeEditor("bellek_islem_birimi.v", 150, 414); // ac
+selectCodeEditor("bellek_islem_birimi.v", 125, 511); // ac
+selectCodeEditor("bellek_islem_birimi.v", 134, 536); // ac
+selectCodeEditor("bellek_islem_birimi.v", 136, 545); // ac
+selectCodeEditor("bellek_islem_birimi.v", 135, 561); // ac
+selectCodeEditor("bellek_islem_birimi.v", 136, 583); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("bellek_islem_birimi.v", 375, 369); // ac
+selectCodeEditor("bellek_islem_birimi.v", 188, 343); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'c'); // ac
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("bellek_islem_birimi.v", 365, 370); // ac
+selectCodeEditor("bellek_islem_birimi.v", 176, 342); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 607, 184); // ac
+selectCodeEditor("bellek_islem_birimi.v", 199, 163); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 586, 76); // ac
+selectCodeEditor("bellek_islem_birimi.v", 191, 48); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 593, 151); // ac
+selectCodeEditor("bellek_islem_birimi.v", 598, 160); // ac
+selectCodeEditor("bellek_islem_birimi.v", 192, 132); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+selectCodeEditor("bellek_islem_birimi.v", 599, 181); // ac
+selectCodeEditor("bellek_islem_birimi.v", 191, 160); // ac
+typeControlKey((HResource) null, "bellek_islem_birimi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 63 MB. Current time: 4/27/24, 10:18:00 PM TRT
+// Elapsed time: 385 seconds
+selectCodeEditor("bellek_islem_birimi.v", 472, 303); // ac
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // R
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, getir_asama2 (getir_asama2.v)]", 10); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, getir_asama2 (getir_asama2.v), do : dallanma_ongorucu (dallanma_ongorucu.v)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, getir_asama2 (getir_asama2.v), do : dallanma_ongorucu (dallanma_ongorucu.v)]", 11, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("dallanma_ongorucu.v", 408, 446); // ac
+typeControlKey((HResource) null, "dallanma_ongorucu.v", 'c'); // ac
+// Elapsed time: 712 seconds
+selectCodeEditor("dallanma_ongorucu.v", 210, 260); // ac
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// Elapsed time: 12 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "tb_dallanma_ongorucu"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 15 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_dallanma_ongorucu.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_dallanma_ongorucu.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 23); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 24); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_dallanma_ongorucu (tb_dallanma_ongorucu.v)]", 47, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_dallanma_ongorucu (tb_dallanma_ongorucu.v)]", 47, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("tb_dallanma_ongorucu.v", 89, 433); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 12, 102); // ac
+typeControlKey((HResource) null, "tb_dallanma_ongorucu.v", 'v'); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 208, 86); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 159, 139); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 306, 71); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 208, 105); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_dallanma_ongorucu (tb_dallanma_ongorucu.v)]", 40, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top tb_dallanma_ongorucu [get_filesets sim_1] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// Elapsed time: 12 seconds
+selectCodeEditor("tb_dallanma_ongorucu.v", 219, 74); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 219, 74, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_dallanma_ongorucu.v", 219, 74); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 176, 95); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 176, 95, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_dallanma_ongorucu.v", 176, 95); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 125, 97); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 125, 114); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 114, 136); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 191, 162); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 217, 138); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 181, 116); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 181, 94); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 167, 173); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 225, 201); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 209, 217); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 271, 242); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 267, 256); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 119, 202); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 189, 219); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 171, 238); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 225, 266); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 208, 283); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 271, 310); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 271, 330); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 118, 283); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 175, 304); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 203, 320); // ac
+selectCodeEditor("tb_dallanma_ongorucu.v", 268, 346); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // f
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-12493] Simulation top is 'tb_dallanma_ongorucu' 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0' INFO: [SIM-utils-54] Inspecting design source files for 'tb_dallanma_ongorucu' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj tb_dallanma_ongorucu_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/dallanma_ongorucu.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module dallanma_ongorucu INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_dallanma_ongorucu.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module tb_dallanma_ongorucu 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_dallanma_ongorucu_behav xil_defaultlib.tb_dallanma_ongorucu xil_defaultlib.glbl -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "tb_dallanma_ongorucu_behav -key {Behavioral:sim_1:Functional:tb_dallanma_ongorucu} -tclbatch {tb_dallanma_ongorucu.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source tb_dallanma_ongorucu.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 74 MB. Current time: 4/27/24, 10:35:34 PM TRT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: $finish called at time : 240 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_dallanma_ongorucu.v" Line 80 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_dallanma_ongorucu_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 1292.555 ; gain = 45.738 
+// 'd' command handler elapsed time: 11 seconds
+dismissDialog("Run Simulation"); // e
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 7); // o
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// [GUI Memory]: 134 MB (+5237kb) [07:18:25]
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // B
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 72 MB. Current time: 4/27/24, 10:35:37 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 187, 288); // b
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 72 MB. Current time: 4/27/24, 10:35:41 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 127, 82); // b
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 157, 83); // b
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - tb_dallanma_ongorucu", "DesignTask.SIMULATION");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: WAVEFORM_CLOSE_WCFG
+dismissDialog("Confirm Close"); // u
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+dismissDialog("Close"); // bq
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, getir_asama2 (getir_asama2.v)]", 10, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, getir_asama2 (getir_asama2.v)]", 10, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("getir_asama2.v", 528, 457); // ac
+typeControlKey((HResource) null, "getir_asama2.v", 'c'); // ac
+// Elapsed time: 225 seconds
+selectCodeEditor("getir_asama2.v", 121, 187); // ac
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "tb_getir_asama2"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 12 seconds
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Add Sources"); // c
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// Tcl Message: close [ open C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_getir_asama2.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_getir_asama2.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_getir_asama2 (tb_getir_asama2.v)]", 47, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_getir_asama2 (tb_getir_asama2.v)]", 47, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("tb_getir_asama2.v", 63, 459); // ac
+selectCodeEditor("tb_getir_asama2.v", 200, 73); // ac
+typeControlKey((HResource) null, "tb_getir_asama2.v", 'v'); // ac
+selectCodeEditor("tb_getir_asama2.v", 303, 113); // ac
+selectCodeEditor("tb_getir_asama2.v", 391, 72); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("tb_getir_asama2.v", 129, 76); // ac
+selectCodeEditor("tb_getir_asama2.v", 127, 93); // ac
+selectCodeEditor("tb_getir_asama2.v", 247, 112); // ac
+selectCodeEditor("tb_getir_asama2.v", 217, 73); // ac
+selectCodeEditor("tb_getir_asama2.v", 145, 136); // ac
+selectCodeEditor("tb_getir_asama2.v", 214, 159); // ac
+selectCodeEditor("tb_getir_asama2.v", 171, 177); // ac
+selectCodeEditor("tb_getir_asama2.v", 227, 206); // ac
+selectCodeEditor("tb_getir_asama2.v", 225, 216); // ac
+selectCodeEditor("tb_getir_asama2.v", 208, 239); // ac
+selectCodeEditor("tb_getir_asama2.v", 271, 263); // ac
+selectCodeEditor("tb_getir_asama2.v", 252, 223); // ac
+selectCodeEditor("tb_getir_asama2.v", 252, 204); // ac
+selectCodeEditor("tb_getir_asama2.v", 250, 172); // ac
+selectCodeEditor("tb_getir_asama2.v", 250, 162); // ac
+selectCodeEditor("tb_getir_asama2.v", 248, 142); // ac
+selectCodeEditor("tb_getir_asama2.v", 248, 114); // ac
+selectCodeEditor("tb_getir_asama2.v", 248, 97); // ac
+selectCodeEditor("tb_getir_asama2.v", 248, 71); // ac
+selectCodeEditor("tb_getir_asama2.v", 260, 303); // ac
+selectCodeEditor("tb_getir_asama2.v", 188, 283); // ac
+selectCodeEditor("tb_getir_asama2.v", 188, 324); // ac
+selectCodeEditor("tb_getir_asama2.v", 206, 345); // ac
+selectCodeEditor("tb_getir_asama2.v", 146, 200); // ac
+selectCodeEditor("tb_getir_asama2.v", 217, 219); // ac
+selectCodeEditor("tb_getir_asama2.v", 190, 240); // ac
+selectCodeEditor("tb_getir_asama2.v", 257, 266); // ac
+selectCodeEditor("tb_getir_asama2.v", 243, 300); // ac
+selectCodeEditor("tb_getir_asama2.v", 184, 84); // ac
+selectCodeEditor("tb_getir_asama2.v", 184, 74); // ac
+selectCodeEditor("tb_getir_asama2.v", 184, 74, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_getir_asama2.v", 184, 74); // ac
+selectCodeEditor("tb_getir_asama2.v", 184, 74, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_getir_asama2.v", 184, 74); // ac
+selectCodeEditor("tb_getir_asama2.v", 215, 160); // ac
+selectComboBox("FindAndReplaceDialog.aK_Replace with:", "Case", -1); // JComboBox
+selectButton("FindAndReplaceDialog.aK_Find", "Find"); // JButton
+selectCodeEditor("tb_getir_asama2.v", 591, 434); // ac
+selectCodeEditor("tb_getir_asama2.v", 172, 369); // ac
+selectCodeEditor("tb_getir_asama2.v", 224, 389); // ac
+selectCodeEditor("tb_getir_asama2.v", 254, 366); // ac
+selectCodeEditor("tb_getir_asama2.v", 226, 389); // ac
+selectCodeEditor("tb_getir_asama2.v", 230, 404); // ac
+selectCodeEditor("tb_getir_asama2.v", 226, 406); // ac
+selectCodeEditor("tb_getir_asama2.v", 208, 430); // ac
+selectCodeEditor("tb_getir_asama2.v", 281, 344); // ac
+selectCodeEditor("tb_getir_asama2.v", 281, 344, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_getir_asama2.v", 288, 401); // ac
+selectCodeEditor("tb_getir_asama2.v", 171, 539); // ac
+selectCodeEditor("tb_getir_asama2.v", 171, 539, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_getir_asama2.v", 171, 539); // ac
+selectCodeEditor("tb_getir_asama2.v", 239, 105); // ac
+selectCodeEditor("tb_getir_asama2.v", 239, 105, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_getir_asama2.v", 239, 105); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("tb_getir_asama2.v", 218, 96); // ac
+selectCodeEditor("tb_getir_asama2.v", 218, 96, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_getir_asama2.v", 218, 96); // ac
+selectCodeEditor("tb_getir_asama2.v", 206, 7); // ac
+selectCodeEditor("tb_getir_asama2.v", 206, 7, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("tb_getir_asama2.v", 206, 7); // ac
+selectCodeEditor("tb_getir_asama2.v", 207, 111); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("tb_getir_asama2.v", 127, 243); // ac
+selectCodeEditor("tb_getir_asama2.v", 128, 260); // ac
+selectCodeEditor("tb_getir_asama2.v", 246, 288); // ac
+selectCodeEditor("tb_getir_asama2.v", 146, 307); // ac
+selectCodeEditor("tb_getir_asama2.v", 220, 324); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("tb_getir_asama2.v", 200, 346); // ac
+selectCodeEditor("tb_getir_asama2.v", 227, 372); // ac
+selectCodeEditor("tb_getir_asama2.v", 274, 388); // ac
+selectCodeEditor("tb_getir_asama2.v", 253, 353); // ac
+selectCodeEditor("tb_getir_asama2.v", 254, 334); // ac
+selectCodeEditor("tb_getir_asama2.v", 252, 308); // ac
+selectCodeEditor("tb_getir_asama2.v", 247, 287); // ac
+selectCodeEditor("tb_getir_asama2.v", 258, 261); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("tb_getir_asama2.v", 254, 255); // ac
+selectCodeEditor("tb_getir_asama2.v", 257, 241); // ac
+selectCodeEditor("tb_getir_asama2.v", 255, 241); // ac
+selectCodeEditor("tb_getir_asama2.v", 174, 344); // ac
+selectCodeEditor("tb_getir_asama2.v", 229, 370); // ac
+selectCodeEditor("tb_getir_asama2.v", 229, 390); // ac
+selectCodeEditor("tb_getir_asama2.v", 209, 410); // ac
+selectCodeEditor("tb_getir_asama2.v", 269, 428); // ac
+selectCodeEditor("tb_getir_asama2.v", 194, 452); // ac
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("tb_getir_asama2.v", 192, 445); // ac
+selectCodeEditor("tb_getir_asama2.v", 265, 470); // ac
+selectCodeEditor("tb_getir_asama2.v", 247, 493); // ac
+selectCodeEditor("tb_getir_asama2.v", 193, 515); // ac
+selectCodeEditor("tb_getir_asama2.v", 216, 533); // ac
+selectCodeEditor("tb_getir_asama2.v", 266, 557); // ac
+selectCodeEditor("tb_getir_asama2.v", 260, 560); // ac
+selectCodeEditor("tb_getir_asama2.v", 250, 578); // ac
+selectCodeEditor("tb_getir_asama2.v", 193, 598); // ac
+selectCodeEditor("tb_getir_asama2.v", 212, 623); // ac
+selectCodeEditor("tb_getir_asama2.v", 208, 622); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_getir_asama2 (tb_getir_asama2.v)]", 39, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top tb_getir_asama2 [get_filesets sim_1] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // f
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // f
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // f
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-12493] Simulation top is 'tb_getir_asama2' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_getir_asama2_behav xil_defaultlib.tb_getir_asama2 xil_defaultlib.glbl -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "tb_getir_asama2_behav -key {Behavioral:sim_1:Functional:tb_getir_asama2} -tclbatch {tb_getir_asama2.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:43:39 PM TRT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source tb_getir_asama2.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// Tcl Message: $finish called at time : 200 ns : File "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_getir_asama2.v" Line 101 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_getir_asama2_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1297.047 ; gain = 0.000 
+// 'd' command handler elapsed time: 7 seconds
+dismissDialog("Run Simulation"); // e
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 2", 9); // o
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 127, 50); // b
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:43:42 PM TRT
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // B
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 78 MB. Current time: 4/27/24, 10:43:45 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 78 MB. Current time: 4/27/24, 10:43:46 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 78 MB. Current time: 4/27/24, 10:43:47 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 78 MB. Current time: 4/27/24, 10:43:52 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 12 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // B
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, "simulation_live_run_for_time"); // B
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:01 PM TRT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run 10 us 
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, "simulation_live_run_for_time"); // B
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run 10 us 
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, "simulation_live_run_for_time"); // B
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run 10 us 
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, "simulation_live_run_for_time"); // B
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run 10 us 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 122 MB. Current time: 4/27/24, 10:44:03 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:03 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:03 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:03 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 80 MB. Current time: 4/27/24, 10:44:03 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 87 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 87 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 80 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:04 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 82 MB. Current time: 4/27/24, 10:44:05 PM TRT
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 32, 279); // b
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 321, 389); // b
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_SELECTED_WAVE_OBJECT_NAMES
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:11 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,090 MB. GUI used memory: 79 MB. Current time: 4/27/24, 10:44:12 PM TRT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - tb_getir_asama2", "DesignTask.SIMULATION");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: WAVEFORM_CLOSE_WCFG
+dismissDialog("Confirm Close"); // u
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+dismissDialog("Close"); // bq
+// Elapsed time: 94 seconds
+selectCodeEditor("tb_getir_asama2.v", 366, 562); // ac
+// TclEventType: FILE_SET_CHANGE
