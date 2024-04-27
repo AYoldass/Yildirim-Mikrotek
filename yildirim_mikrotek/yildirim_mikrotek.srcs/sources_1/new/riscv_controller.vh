@@ -392,9 +392,6 @@
 `define BIB_YOK       3'h0
 
 
-
-
-
 // Diger SABITLER
 
 // Buyruk tipleri
