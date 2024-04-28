@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module transmitter_tb;
+module tb_transmitter;
 
    // Declare signals
    reg clk_i;

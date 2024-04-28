@@ -1,6 +1,41 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/dallanma_ongorucu.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module dallanma_ongorucu
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/getir_asama2.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module getir_asama2
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_getir_asama2.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_getir_asama2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/dallanma_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dallanma_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/toplayici_birim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module toplayici_birim
+INFO: [VRFC 10-311] analyzing module adder_tree_0
+INFO: [VRFC 10-311] analyzing module adder_tree_1
+INFO: [VRFC 10-311] analyzing module adder_tree_2
+INFO: [VRFC 10-311] analyzing module adder_tree_3
+INFO: [VRFC 10-311] analyzing module adder_tree_4
+INFO: [VRFC 10-311] analyzing module adder_tree_5
+INFO: [VRFC 10-311] analyzing module adder_tree_6
+INFO: [VRFC 10-311] analyzing module adder_tree_7
+INFO: [VRFC 10-311] analyzing module adder_tree_8
+INFO: [VRFC 10-311] analyzing module adder_tree_9
+INFO: [VRFC 10-311] analyzing module adder_tree_10
+INFO: [VRFC 10-311] analyzing module adder_tree_11
+INFO: [VRFC 10-311] analyzing module adder_tree_12
+INFO: [VRFC 10-311] analyzing module adder_tree_13
+INFO: [VRFC 10-311] analyzing module adder_tree_14
+INFO: [VRFC 10-311] analyzing module adder_tree_15
+INFO: [VRFC 10-311] analyzing module adder_tree_16
+INFO: [VRFC 10-311] analyzing module adder_tree_17
+INFO: [VRFC 10-311] analyzing module adder_tree_18
+INFO: [VRFC 10-311] analyzing module adder_tree_19
+INFO: [VRFC 10-311] analyzing module adder_tree_20
+INFO: [VRFC 10-311] analyzing module adder_tree_21
+INFO: [VRFC 10-311] analyzing module adder_tree_22
+INFO: [VRFC 10-311] analyzing module adder_tree_23
+INFO: [VRFC 10-311] analyzing module adder_tree_24
+INFO: [VRFC 10-311] analyzing module adder_tree_25
+INFO: [VRFC 10-311] analyzing module adder_tree_26
+INFO: [VRFC 10-311] analyzing module adder_tree_27
+INFO: [VRFC 10-311] analyzing module adder_tree_28
+INFO: [VRFC 10-311] analyzing module adder_tree_29
+INFO: [VRFC 10-311] analyzing module adder_tree_30
+INFO: [VRFC 10-311] analyzing module adder_tree_31
+INFO: [VRFC 10-311] analyzing module adder_tree_32
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_dallanma_birimi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_dallanma_birimi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

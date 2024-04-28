@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module baud_rate_generator_tb;
+module tb_baud_rate_generator;
 
    // Declare signals
    reg clk_i;

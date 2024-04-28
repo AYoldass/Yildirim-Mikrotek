@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module axi_interface_uart_tb;
+module tb_axi_interface_uart;
     parameter UART_BASE_ADDR = 32'h2000_0000;  // Ensure this matches the module definition
 
     reg s_axi_aclk_i;
