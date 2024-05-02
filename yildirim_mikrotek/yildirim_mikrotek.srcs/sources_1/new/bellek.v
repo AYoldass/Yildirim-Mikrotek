@@ -145,15 +145,15 @@ always @(posedge clk_i) begin
 end
 
 bellek_islem_birimi bib (
-   .clk_i                            ( clk_i               ),
-   .rst_i                            ( rst_i              ),  
-   .buyruk_secim_i                   ( buyruk_secim_w  ),          
-   .rd_i                             ( rd_w            ),  
-   .rs2_i                            ( rs2_w           ),  
-   .veri_o                           ( bib_veri_w          ),
-   .maske_o                          ( maske_w             ),
-   .oku_o                            ( oku_w               ),
-   .yaz_o                            ( yaz_w               )    
+   .clk_i                            ( clk_i                ),
+   .rst_i                            ( rst_i                ),  
+   .buyruk_secim_i                   ( buyruk_secim_w       ),          
+   .rd_i                             ( rd_w                 ),  
+   .rs2_i                            ( rs2_w                ),  
+   .veri_o                           ( bib_veri_w           ),
+   .maske_o                          ( maske_w              ),
+   .oku_o                            ( oku_w                ),
+   .yaz_o                            ( yaz_w                )    
 );
 
 veri_yolu_birimi vyb ( 
