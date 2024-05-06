@@ -57,7 +57,7 @@ always @* begin
    case(buyruk_secim_i)
       // Load Buyruklarý
       `BIB_LW: begin // 32 Bit Okur
-         maske_cmb  = maske_sec(OP_WORD, rd_i); 
+         maske_cmb  = maske_sec(OP_WORD, rd_i); //sirasiyla 1. ve 2. parametreler
          oku_cmb    = 1;
          yaz_cmb    = 0;         
       end
