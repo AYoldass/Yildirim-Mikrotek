@@ -470,3 +470,147 @@
 `define HALF_WORD_MASKE_2   4'b1100
 
 `define WORD_MASKE          4'b1111
+
+`define OPCODE_RTYPE 5'b01100 
+`define OPCODE_ITYPE 5'b00100
+`define OPCODE_LOAD 5'b00000
+`define OPCODE_STORE 5'b01000
+`define OPCODE_BRANCH 5'b11000
+`define OPCODE_JAL 5'b11011
+`define OPCODE_JALR 5'b11001
+`define OPCODE_LUI 5'b01101
+`define OPCODE_AUIPC 5'b00101
+`define OPCODE_SYSTEM 5'b11100
+`define OPCODE_FENCE 5'b00011
+`define OPCODE_ATOMIC 5'b01011
+`define OPCODE_FPU_LW 5'b00001
+`define OPCODE_FPU_SW 5'b01001
+`define OPCODE_FPU_FMADD 5'b10000
+`define OPCODE_FPU_FMSUB 5'b10001
+`define OPCODE_FPU_FNMSUB 5'b10010
+`define OPCODE_FPU_FNMADD 5'b10011
+`define OPCODE_FPU 5'b10100
+
+`define OPCODE_BITMANIP 5'b01000
+
+`define FUNCT3_ADD 3'b000
+`define FUNCT3_SLT 3'b010 
+`define FUNCT3_SLTU 3'b011
+`define FUNCT3_XOR 3'b100
+`define FUNCT3_OR 3'b110
+`define FUNCT3_AND 3'b111
+`define FUNCT3_SLL 3'b001
+`define FUNCT3_SRA 3'b101
+`define FUNCT3_EQ 3'b000
+`define FUNCT3_NEQ 3'b001
+`define FUNCT3_LT 3'b100
+`define FUNCT3_GE 3'b101
+`define FUNCT3_LTU 3'b110
+`define FUNCT3_GEU 3'b111 
+
+`define MUL 3'b000
+`define MULH 3'b001
+`define MULHSU 3'b010
+`define MULHU 3'b011
+`define DIV 3'b100
+`define DIVU 3'b101
+`define REM 3'b110
+`define REMU 3'b111
+
+`define LB 3'b000
+`define LH 3'b001
+`define LW 3'b010
+`define LBU 3'b011
+`define LHU 3'b100
+
+`define SB 3'b000
+`define SH 3'b001
+`define SW 3'b010
+
+`define CSRRW 3'b000
+`define CSRRS 3'b001
+`define CSRRC 3'b010
+`define CSRRWI 3'b011
+`define CSRRSI 3'b100
+`define CSRRCI 3'b101
+
+`define LR_W        5'b00010
+`define SC_W        5'b00011
+`define AMOSWAP_W   5'b00001
+`define AMOADD_W    5'b00000
+`define AMOXOR_W    5'b00100
+`define AMOAND_W    5'b01100
+`define AMOOR_W     5'b01000
+`define AMOMIN_W    5'b10000
+`define AMOMAX_W    5'b10100
+`define AMOMINU_W   5'b11000
+`define AMOMAXU_W   5'b11100
+
+`define FPULW 5'h00
+`define FPUSW 5'h01
+`define FPUFMADD 5'h02
+`define FPUFMSUB 5'h03
+`define FPUFNMADD 5'h04
+`define FPUFNMSUB 5'h19
+`define FPUADD 5'h05
+`define FPUSUB 5'h06
+`define FPUMUL 5'h07
+`define FPUDIV 5'h08
+`define FPUSQRT 5'h09
+`define FPUSGNJ 5'h0A
+`define FPUSGNJN 5'h0B
+`define FPUSGNJX 5'h0C
+`define FPUMIN 5'h0D
+`define FPUMAX 5'h0E
+`define FPUCVTW 5'h0F
+`define FPUCVTWU 5'h10
+`define FPUMVXW 5'h11
+`define FPUEQ 5'h12
+`define FPULT 5'h13
+`define FPULE 5'h14
+`define FPUCLASS 5'h15
+`define FPUCVTSW 5'h16
+`define FPUCVTSWU 5'h17
+`define FPUMVWX 5'h18
+
+`define COZ_FPUADD 7'b0000000
+`define COZ_FPUSUB 7'b0000100
+`define COZ_FPUMUL 7'b0001000
+`define COZ_FPUDIV 7'b0001100
+`define COZ_FPUSQRT 7'b0101100
+`define COZ_FPUSGNJ 7'b0010000
+`define COZ_FPUMIN 7'b0010100
+`define COZ_FPUCVTW 7'b1100000
+`define COZ_FPUMVXW 7'b1110000
+`define COZ_FPUEQ 7'b1010000
+`define COZ_FPUCVTSW 7'b1101000
+`define COZ_FPUMVWX 7'b1111000
+
+
+`define OPCODE_WIDTH 8
+`define MIKROISLEM_WIDTH 15
+`define EXCEPTION_WIDTH 4
+
+`define RTYPE 0
+`define ITYPE 1
+`define LOAD 2
+`define STORE 3
+`define BRANCH 4
+`define JAL 5
+`define JALR 6
+`define LUI 7
+`define AUIPC 8
+`define SYSTEM 9
+`define FENCE 10
+`define MUL 11
+`define ATOMIC 12
+`define FPU 13
+`define FPU_LW 14
+`define FPU_SW 15
+`define FPU_FMADD 16
+`define FPU_FMSUB 17
+`define FPU_FNMADD 18
+`define FPU_FNMSUB 19
+
+`define ILLEGAL 0
+`define ECALL 1

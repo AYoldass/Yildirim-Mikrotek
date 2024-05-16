@@ -273,5 +273,4 @@ module coz_yazmac_oku(
       .yaz_gecerli_i   (rd_yazmac_i)
    );
 
-    );
 endmodule
