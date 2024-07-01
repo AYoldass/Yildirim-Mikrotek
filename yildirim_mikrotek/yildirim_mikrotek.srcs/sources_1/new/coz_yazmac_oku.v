@@ -1,111 +1,168 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 16.05.2024 13:40:35
-// Design Name: 
-// Module Name: coz_yazmac_oku
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 `include "riscv_controller.vh"
 
 module coz_yazmac_oku(
-     input clk_i,
+    input clk_i,
     input rst_i,
     input [31:0] inst_i, //32 bit instruction
+    
     input [31:0] pc_i, //PC value from previous stage
     output reg[31:0] pc_o, //PC value
-    output wire[4:0] rs1_addr_o,//address for register source 1
-    output reg[4:0] rs1_addr_q_o,//registered address for register source 1
-    output wire[4:0] rs2_addr_o, //address for register source 2
-    output reg[4:0] rs2_addr_q_o, //registered address for register source 2
+    output reg [2:0] lt_ltu_eq_o,  
+    
+    output wire[4:0] rs1_addr_o,//registered address for register source 1
+    output wire[4:0] rs2_addr_o, //registered address for register source 2
     output reg[4:0] rd_addr_o, //address for destination address
     
+    output reg [31:0] value1_o,             
+    output reg [31:0] value2_o,
+   
     input wire [31:0] rd_value_i,     // Rd'nin degeri
     input wire        rd_yazmac_i,           // Rd'ye sonuc yazilacak mi
     
+    
     output reg[31:0] imm_o, //extended value for immediate
-    output reg[`MIKROISLEM_WIDTH-1:0] mikro_islem_o, 
+    output wire [`MIKROISLEM_WIDTH-1:0] mikro_islem_o, 
+    output reg [`MIKROISLEM_WIDTH-1:0] mikro_islem_o_q,
+    output wire [7:0] birim_enable_o,
+    output reg [7:0] birim_enable_o_q,
     output reg[`OPCODE_WIDTH-1:0] opcode_o, //opcode type
     output reg[`EXCEPTION_WIDTH-1:0] exception_o, //exceptions: illegal inst, ecall, ebreak, mret
-    
-    input wire clk_en_i, // input clk enable for pipeline stalling of this stage
-    output reg clk_en_o, // output clk enable for pipeline stalling of next stage
-    input wire stall_i, 
-    output reg stall_o, 
-    input wire flush_i, 
-    output reg flush_o 
+    output reg  fpu_rs3_en,
+    output reg [4:0] rs3_adrr_o,
+   
+    output wire regwrite,memtoreg,memwrite,memread,branch,jump,op_imm,op_pcimm,
+    output reg regwrite_q,memtoreg_q,memwrite_q,memread_q,branch_q,jump_q,op_imm_q,op_pcimm_q,
+
+    input  wire  durdur_i,      
+    input  wire  bosalt_i,  
+    input wire yonlendir_kontrol1_i,
+    input wire yonlendir_kontrol2_i,
+    input wire yonlendir_deger_i
     );
     
-    assign rs2_addr_o = inst_i[24:20]; 
-    assign rs1_addr_o = inst_i[19:15];   
-    
+    assign rs2_addr = inst_i[24:20]; 
+    assign rs1_addr = inst_i[19:15];
+        
     wire[2:0] funct3 = inst_i[14:12];
     wire[2:0] funct7=  inst_i[25];
     wire[6:0] opcode = inst_i[6:2];
     
-    reg [14:0] BIRIM_AMB;
-    reg [14:0] BIRIM_BIB;
-    reg [14:0] BIRIM_DALLANMA;
-    reg [14:0] BIRIM_CARPMA;
-    reg [14:0] BIRIM_BOLME;
-    reg [14:0] BIRIM_FPU;
-    reg [14:0] BIRIM_ATOMIC;
-    reg [14:0] BIRIM_SYSTEM;
+    reg [5:0] BIRIM_AMB;
+    reg [5:0] BIRIM_BIB;
+    reg [5:0] BIRIM_DALLANMA;
+    reg [5:0] BIRIM_CARPMA;
+    reg [5:0] BIRIM_BOLME;
+    reg [5:0] BIRIM_FPU;
+    reg [5:0] BIRIM_ATOMIC;
+    reg [5:0] BIRIM_SYSTEM;
     
+    reg [7:0] controls;
+        
     reg amb_en;
     reg carpma_en;
     reg bolme_en;
     reg fpu_en;
     reg atomic_en;
+    reg dallanma_en;
+    reg csr_en;
+    reg bib_en;
     
     reg[31:0] imm;
 
     reg system_noncsr = 0;
     reg valid_opcode = 0;
     reg illegal_shift = 0;
-    wire stall_bit = stall_o || stall_i; 
     
     wire [31:0] rs1_deger; // okunan 1. yazmac
     wire [31:0] rs2_deger; // okunan 2. yazmac
     
-    assign {regwrite,op,regdst, branch, memwrite, memtoreg, jump} = controls;
-  
+    assign {regwrite,memtoreg,memwrite,memread,branch,jump,op_imm,op_pcimm} = controls;
+    
+    wire fpu_rs3 = opcode_o[`FPU_FMADD]||opcode_o[`FPU_FMSUB]||opcode_o[`FPU_FNMADD]||opcode_o[`FPU_FNMSUB];
+    
+    assign mikro_islem_o = amb_en ? BIRIM_AMB :
+                        bib_en ? BIRIM_BIB:
+                        carpma_en ? BIRIM_AMB :
+                        bolme_en ? BIRIM_AMB :
+                        fpu_en ? BIRIM_AMB :
+                        atomic_en ? BIRIM_AMB :
+                        dallanma_en ? BIRIM_DALLANMA:
+                        csr_en ? BIRIM_SYSTEM:
+                        14'hx;
+                        
+    assign birim_enable_o[`BIRIM_ALU]=amb_en;
+    assign birim_enable_o[`BIRIM_CARPMA]=carpma_en;
+    assign birim_enable_o[`BIRIM_BOLME]=bolme_en;
+    assign birim_enable_o[`BIRIM_FPU]=fpu_en;
+    assign birim_enable_o[`BIRIM_ATOMIC]=atomic_en;
+    assign birim_enable_o[`BIRIM_DALLANMA]=dallanma_en;
+    assign birim_enable_o[`BIRIM_CSR]=csr_en;
+    assign birim_enable_o[`BIRIM_BIB]=bib_en;
+    
+                        
+    wire [31:0] deger1_tmp = (yonlendir_kontrol1_i == `YON_GERIYAZ ) ? rd_value_i        :
+                             (yonlendir_kontrol1_i == `YON_YURUT   ) ? yonlendir_deger_i :
+                             (yonlendir_kontrol1_i == `YON_YOK     ) ? rs1_deger           :
+                                                                       rs1_deger;
+
+   wire [31:0] deger2_tmp = (yonlendir_kontrol2_i  == `YON_GERIYAZ ) ? rd_value_i        :
+                            (yonlendir_kontrol2_i  == `YON_YURUT   ) ? yonlendir_deger_i :
+                            (yonlendir_kontrol2_i  == `YON_YOK )     ? rs2_deger           :
+                                                                       rs2_deger;                    
+    wire sec_pc = (branch) || (op_pcimm);
+    wire [31:0] deger1_w = sec_pc ? pc_i : deger1_tmp;
+
+    wire sec_imm = (op_imm) || (op_pcimm);
+    wire [31:0] deger2_w = sec_imm ? imm : deger2_tmp;
+
+    wire lt_w  = ($signed(deger1_tmp) < $signed(deger2_tmp));
+    wire ltu_w = (deger1_tmp  < deger2_tmp);
+    wire eq_w  = (deger1_tmp === deger2_tmp);       
+    
+     always @(posedge clk_i) begin
+      if (rst_i) begin
+         mikro_islem_o_q <=  exception_o[`NOP];
+         lt_ltu_eq_o  <= 0;
+      end
+      else begin
+         if(!durdur_i) begin
+            mikro_islem_o_q <= bosalt_i ?  exception_o[`NOP] : mikro_islem_o;
+            birim_enable_o_q <= birim_enable_o;
+            exception_o <=  exception_o;
+            opcode_o <= opcode_o;
+            value1_o <= deger1_w;
+            value2_o <= deger2_w;
+            rd_addr_o <= inst_i[11:7];
+            fpu_rs3_en <= fpu_rs3;
+            rs3_adrr_o <= inst_i[31:27];
+            lt_ltu_eq_o<= {lt_w,ltu_w,eq_w};
+            pc_o<= pc_i;
+            imm_o <=imm;
+            regwrite_q <= regwrite;
+            memtoreg_q <= memtoreg;
+            memwrite_q <= memwrite;
+            memread_q <= memread;
+            branch_q <= branch;
+            jump_q <= jump;
+            op_imm_q <= op_imm;
+            op_pcimm_q <= op_pcimm;
+         end
+      end
+   end
+
+   yazmac_obegi yo(
+      .clk_i        (clk_i),
+      .rst_i        (rst_i),
+      .oku1_adr_i   (inst_i[19:15]),
+      .oku2_adr_i   (inst_i[24:20]),
+      .oku1_deger_o (rs1_deger),
+      .oku2_deger_o (rs2_deger),
+      .yaz_adr_i    (rd_adrr_i),
+      .yaz_deger_i  (rd_value_i),
+      .yaz_i        (rd_yazmac_i)
+   );         
                            
-    always @(posedge clk_i) begin
-        if(!rst_i) begin
-            clk_en_o <= 0;
-        end
-        else begin
-            if(clk_en_i && !stall_bit) begin 
-                pc_o       <= pc_i;
-                rs1_addr_q_o <= rs1_addr_o;
-                rs2_addr_q_o <= rs2_addr_o;
-                rd_addr_o  <= inst_i[11:7];
-                imm_o      <= imm;
-            end
-            else if(flush_i && !stall_bit) begin 
-                clk_en_o <= 0;
-            end
-            else if(!stall_bit) begin 
-                clk_en_o <= clk_en_i;
-            end
-            else if(stall_bit && !stall_i) clk_en_o <= 0; 
-                                                                    
-        end
-    end
     
     always @* begin
         opcode_o[`RTYPE]  = opcode == `OPCODE_RTYPE && funct7==1'b0;
@@ -138,23 +195,25 @@ module coz_yazmac_oku(
         exception_o[`ECALL] = (system_noncsr && inst_i[21:20]==2'b00)? 1:0;
         exception_o[`EBREAK] = (system_noncsr && inst_i[21:20]==2'b01)? 1:0;              
         exception_o[`MRET] = (system_noncsr && inst_i[21:20]==2'b10)? 1:0;
-        
+        exception_o[`NOP] = inst_i[31:0]==32'h0;
+
          case(opcode)
         `OPCODE_ITYPE , `OPCODE_LOAD , `OPCODE_JALR: imm = {{20{inst_i[31]}},inst_i[31:20]}; 
                                       `OPCODE_STORE: imm = {{20{inst_i[31]}},inst_i[31:25],inst_i[11:7]};
                                      `OPCODE_BRANCH: imm = {{19{inst_i[31]}},inst_i[31],inst_i[7],inst_i[30:25],inst_i[11:8],1'b0};
                                         `OPCODE_JAL: imm = {{11{inst_i[31]}},inst_i[31],inst_i[19:12],inst_i[20],inst_i[30:21],1'b0};
                         `OPCODE_LUI , `OPCODE_AUIPC: imm = {inst_i[31:12],12'h000};
-                     `OPCODE_SYSTEM , `OPCODE_FENCE: imm = {20'b0,inst_i[31:20]};   
+                     `OPCODE_SYSTEM , `OPCODE_FENCE: imm = {20'b0,inst_i[31:20]};
+        `OPCODE_SYSTEM && (funct3== 3'b101||funct3 == 3'b110): imm = {27'b0,inst_i[19:15]};
+                                     `OPCODE_FPU_LW: imm = {20'b0,inst_i[31:20]};
+                                     `OPCODE_FPU_SW: imm = {25'b0,inst_i[31:25]};
                      default: imm = 0;
         endcase
     end
     
      always @* begin
-        stall_o = stall_i; 
-        flush_o = flush_i; 
-      
         if(opcode_o[`RTYPE] || opcode_o[`ITYPE]) begin
+            amb_en = 1;
             if(opcode_o[`RTYPE]) begin
                 BIRIM_AMB[`ALU_TOPLAMA] = (funct3 == `FUNCT3_ADD) ? !inst_i[30] : 0; //add and sub has same o_funct3 code
                 BIRIM_AMB[`ALU_CIKARMA] = funct3 == `FUNCT3_ADD ? inst_i[30] : 0;      //differs on i_inst[30]
@@ -170,6 +229,7 @@ module coz_yazmac_oku(
             BIRIM_AMB[`ALU_SRA] = funct3 == `FUNCT3_SRA ? inst_i[30]:0 ;      //differs on i_inst[30]
         end
         else if(opcode_o[`LOAD] || opcode_o[`STORE]) begin
+            bib_en=1;
             if(opcode_o[`LOAD]) begin
                 BIRIM_BIB[`LB] = funct3 == `LB;
                 BIRIM_BIB[`LH] = funct3 == `LH;
@@ -182,8 +242,8 @@ module coz_yazmac_oku(
                BIRIM_BIB[`SH] = funct3 == `SH;
                BIRIM_BIB[`SW] = funct3 == `SW;
         end
-
         else if(opcode_o[`BRANCH] || opcode_o[`JAL]||opcode_o[`JALR]) begin
+           dallanma_en=1;
            if(opcode_o[`JAL]) begin
                 BIRIM_DALLANMA[`JAL] = 1;
             end
@@ -207,8 +267,14 @@ module coz_yazmac_oku(
             BIRIM_BOLME[`DIVU] = funct3 == `DIVU;
             BIRIM_BOLME[`REM] = funct3 == `REM;
             BIRIM_BOLME[`REMU] = funct3 == `REMU; 
+            if( BIRIM_CARPMA[`MUL]||BIRIM_CARPMA[`MULH]||BIRIM_CARPMA[`MULHSU]||BIRIM_CARPMA[`MULHU]) begin
+                carpma_en=1;
+            end
+            else
+                bolme_en=1;    
         end
         else if(opcode_o[`ATOMIC]) begin
+            atomic_en=1;
             BIRIM_ATOMIC[`LR_W] = inst_i[31:27] == `LR_W;
             BIRIM_ATOMIC[`SC_W] = inst_i[31:27] == `SC_W;
             BIRIM_ATOMIC[`AMOSWAP_W] = inst_i[31:27] == `AMOSWAP_W;
@@ -223,6 +289,7 @@ module coz_yazmac_oku(
         end
 
         else if(opcode_o[`FPU]||opcode_o[`FPU_LW]|| opcode_o[`FPU_SW]|| opcode_o[`FPU_FMADD]|| opcode_o[`FPU_FMSUB] || opcode_o[`FPU_FNMADD]|| opcode_o[`FPU_FNMSUB]) begin
+           fpu_en=1;
            BIRIM_FPU[`FPULW] = opcode_o[`FPU_LW]? 1 : 0 ;
            BIRIM_FPU[`FPUSW] = opcode_o[`FPU_SW]? 1 : 0 ;
            BIRIM_FPU[`FPUFMADD] = opcode_o[`FPU_FMADD]? 1 : 0 ;
@@ -251,6 +318,7 @@ module coz_yazmac_oku(
            BIRIM_FPU[`FPUMVWX] = inst_i[31:25]== `COZ_FPUMVWX;
         end
         else if(opcode_o[`SYSTEM] ) begin
+            csr_en=1;
             BIRIM_SYSTEM[`CSRRW] = funct3 == 3'b001;
             BIRIM_SYSTEM[`CSRRS] = funct3 == 3'b010;
             BIRIM_SYSTEM[`CSRRC] = funct3 == 3'b011;
@@ -260,17 +328,30 @@ module coz_yazmac_oku(
         end
         else BIRIM_AMB[`ALU_TOPLAMA] = 1'b1; //add operation for all remaining instructions
     end
+    always @* begin
+        case(opcode)
+            opcode_o[`RTYPE] : controls = 8'b10000000; 
+            opcode_o[`LOAD]: controls = 8'b11010010; 
+            opcode_o[`STORE]: controls = 8'b0x100010; 
+            opcode_o[`BRANCH]: controls = 8'b0x001001; 
+            opcode_o[`ITYPE]: controls = 8'b10000010; 
+            opcode_o[`JAL]: controls = 8'b10000100; 
+            opcode_o[`JALR]: controls = 8'b10000101;
+            opcode_o[`MUL]: controls = 8'b10000000;
+            opcode_o[`LUI]: controls = 8'b10000000;    
+            opcode_o[`AUIPC]: controls = 8'b10000000; 
+            opcode_o[`SYSTEM]: controls = 8'b10000010; 
+            opcode_o[`ATOMIC]: controls = 8'b10000000;
+            opcode_o[`FPU]   : controls = 8'b10000000;  
+            opcode_o[`FPU_LW]: controls = 8'b11010010;
+            opcode_o[`FPU_SW]: controls = 8'b10000010;
+            opcode_o[`FPU_FMADD]: controls = 8'b10000000;
+            opcode_o[`FPU_FMSUB]: controls = 8'b10000000;
+            opcode_o[`FPU_FNMADD]:controls = 8'b10000000;
+            opcode_o[`FPU_FNMSUB]:controls = 8'b10000000;
+            default: controls = 8'bxxxxxxxx; 
+        endcase
+    end
     
-    yazmac_obegi yo(
-      .clk_i        (clk_i),
-      .rst_i        (rst_i),
-      .oku_adres1_i   (inst_i[19:15]),
-      .oku_adres2_i   (inst_i[24:20]),
-      .oku_veri1_o (rs1_deger),
-      .oku_veri2_o (rs2_deger),
-      .yaz_adres_i    (rd_address_o),
-      .yaz_veri_i  (rd_value_i),
-      .yaz_gecerli_i   (rd_yazmac_i)
-   );
-
+   
 endmodule

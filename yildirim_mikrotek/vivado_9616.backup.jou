@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+<<<<<<< HEAD
+<<<<<<< HEAD
+# Start of session at: Sun Jun  2 00:24:28 2024
+# Process ID: 9616
+# Current directory: C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15976 C:\Users\ahmet\Desktop\Graduation-Project\yildirim_mikrotek\yildirim_mikrotek.xpr
+# Log file: C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek/vivado.log
+# Journal file: C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek\vivado.jou
+# Running On: DESKTOP-VTDBCS3, OS: Windows, CPU Frequency: 1190 MHz, CPU Physical cores: 4, Host memory: 8345 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.xpr
+=======
+# Start of session at: Sun May 26 23:00:21 2024
+# Process ID: 17356
+=======
+# Start of session at: Sun Jun  2 15:24:53 2024
+# Process ID: 19052
+>>>>>>> cae3b9247f478614f2aa9aa50faa94884816887d
+# Current directory: C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25448 C:\Users\senan\Desktop\Graduation-Project\yildirim_mikrotek\yildirim_mikrotek.xpr
+# Log file: C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/vivado.log
+# Journal file: C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek\vivado.jou
+# Running On: sena, OS: Windows, CPU Frequency: 2189 MHz, CPU Physical cores: 12, Host memory: 16780 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.xpr
+update_compile_order -fileset sources_1
+<<<<<<< HEAD
+close [ open C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/csr.v w ]
+add_files C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/csr.v
+>>>>>>> 22efff4eb91f765a5f6e82de1f08704460545a0d
+=======
+launch_simulation
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top exception_detection [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+>>>>>>> cae3b9247f478614f2aa9aa50faa94884816887d
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+source tb_exception_detection.tcl
+close_sim
+launch_simulation
+source tb_exception_detection.tcl
+close_sim
+launch_simulation
+source tb_exception_detection.tcl
+close_sim

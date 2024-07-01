@@ -1,41 +1,83 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/dallanma_birimi.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module dallanma_birimi
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/toplayici_birim.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module toplayici_birim
-INFO: [VRFC 10-311] analyzing module adder_tree_0
-INFO: [VRFC 10-311] analyzing module adder_tree_1
-INFO: [VRFC 10-311] analyzing module adder_tree_2
-INFO: [VRFC 10-311] analyzing module adder_tree_3
-INFO: [VRFC 10-311] analyzing module adder_tree_4
-INFO: [VRFC 10-311] analyzing module adder_tree_5
-INFO: [VRFC 10-311] analyzing module adder_tree_6
-INFO: [VRFC 10-311] analyzing module adder_tree_7
-INFO: [VRFC 10-311] analyzing module adder_tree_8
-INFO: [VRFC 10-311] analyzing module adder_tree_9
-INFO: [VRFC 10-311] analyzing module adder_tree_10
-INFO: [VRFC 10-311] analyzing module adder_tree_11
-INFO: [VRFC 10-311] analyzing module adder_tree_12
-INFO: [VRFC 10-311] analyzing module adder_tree_13
-INFO: [VRFC 10-311] analyzing module adder_tree_14
-INFO: [VRFC 10-311] analyzing module adder_tree_15
-INFO: [VRFC 10-311] analyzing module adder_tree_16
-INFO: [VRFC 10-311] analyzing module adder_tree_17
-INFO: [VRFC 10-311] analyzing module adder_tree_18
-INFO: [VRFC 10-311] analyzing module adder_tree_19
-INFO: [VRFC 10-311] analyzing module adder_tree_20
-INFO: [VRFC 10-311] analyzing module adder_tree_21
-INFO: [VRFC 10-311] analyzing module adder_tree_22
-INFO: [VRFC 10-311] analyzing module adder_tree_23
-INFO: [VRFC 10-311] analyzing module adder_tree_24
-INFO: [VRFC 10-311] analyzing module adder_tree_25
-INFO: [VRFC 10-311] analyzing module adder_tree_26
-INFO: [VRFC 10-311] analyzing module adder_tree_27
-INFO: [VRFC 10-311] analyzing module adder_tree_28
-INFO: [VRFC 10-311] analyzing module adder_tree_29
-INFO: [VRFC 10-311] analyzing module adder_tree_30
-INFO: [VRFC 10-311] analyzing module adder_tree_31
-INFO: [VRFC 10-311] analyzing module adder_tree_32
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_dallanma_birimi.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_dallanma_birimi
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ahmet/Desktop/Yildirim_Mikrotek_Teknofest/Yildirim_Mikrotek/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:518]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:519]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:520]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:521]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:522]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:523]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:524]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:525]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:527]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:528]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:529]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:530]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:531]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:533]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:534]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:535]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:544]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:545]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:546]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:547]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:548]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:549]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:550]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:551]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:552]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:553]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:554]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:606]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:607]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:608]
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:609]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:611]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:612]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:617]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:618]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:619]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:620]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:623]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:624]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:649]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:653]
+INFO: [VRFC 10-311] analyzing module exception_detection
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_exception_detection.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:34]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:41]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:42]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:43]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:44]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:45]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:47]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:48]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:49]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:50]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:51]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:52]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:53]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:54]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:55]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:56]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:57]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:58]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:61]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:62]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:63]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:64]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:76]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:84]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:85]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:86]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:87]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:88]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:89]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:90]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:91]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:92]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:93]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:94]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:378]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:379]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:380]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:381]
+INFO: [VRFC 10-311] analyzing module tb_exception_detection

@@ -22,6 +22,8 @@
 
 `define MEM_TRANSFER_WIDTH 4  // Mask to store word, halfword or byte
 
+`define VALID_MEM_START 32'h80000000
+`define VALID_MEM_END   32'h80000FFF 
 
 // RV32IM Buyruklari
 
@@ -302,7 +304,12 @@
 `define BIRIM_CARPMA     3'h1
 `define BIRIM_BOLME      3'h2
 `define BIRIM_BIB        3'h3
-`define BIRIM_SISTEM     3'h4
+`define BIRIM_CSR        3'h4
+`define BIRIM_FPU        3'h5
+`define BIRIM_ATOMIC     3'h6
+`define BIRIM_DALLANMA   3'h7
+
+
 
 `define DAL_EQ     3'b000
 `define DAL_NE     3'b001
@@ -587,9 +594,9 @@
 `define COZ_FPUMVWX 7'b1111000
 
 
-`define OPCODE_WIDTH 8
-`define MIKROISLEM_WIDTH 15
-`define EXCEPTION_WIDTH 4
+`define OPCODE_WIDTH 6
+`define MIKROISLEM_WIDTH 5
+`define EXCEPTION_WIDTH 3
 
 `define RTYPE 0
 `define ITYPE 1
@@ -614,3 +621,34 @@
 
 `define ILLEGAL 0
 `define ECALL 1
+`define EBREAK 2
+`define MRET 3
+`define NOP 4
+
+`define MSTATUS 12'h300
+`define MISA    12'h301
+`define MIE     12'h304
+`define MTVEC   12'h305
+`define MSCRATCH 12'h340
+`define MEPC    12'h341
+`define MCAUSE  12'h342
+`define MTVAL   12'h343
+`define MIP     12'h344
+`define MCYCLE  12'hB00
+`define MCYCLEH 12'hB80
+`define MINSTRET 12'hB02
+`define MINSTRETH 12'hBB
+`define MCOUNTINHIBIT 12'h320
+
+`define MACHINE_SOFTWARE_INTERRUPT 3
+`define MACHINE_TIMER_INTERRUPT 7
+`define MACHINE_EXTERNAL_INTERRUPT 11
+`define INSTRUCTION_ADDRESS_MISALIGNED 0
+`define INSTRUCTION_ACCESS_FAULT 1
+`define ILLEGAL_INSTRUCTION 2
+`define EBREAK 3
+`define LOAD_ADDRESS_MISALIGNED 4
+`define LOAD_ACCESS_FAULT 5
+`define STORE_ADDRESS_MISALIGNED 6
+`define ECALL 11
+

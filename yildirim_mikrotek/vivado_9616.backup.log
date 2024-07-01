@@ -1,0 +1,752 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+<<<<<<< HEAD
+<<<<<<< HEAD
+# Start of session at: Sun Jun  2 00:24:28 2024
+# Process ID: 9616
+# Current directory: C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15976 C:\Users\ahmet\Desktop\Graduation-Project\yildirim_mikrotek\yildirim_mikrotek.xpr
+# Log file: C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek/vivado.log
+# Journal file: C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek\vivado.jou
+# Running On: DESKTOP-VTDBCS3, OS: Windows, CPU Frequency: 1190 MHz, CPU Physical cores: 4, Host memory: 8345 MB
+=======
+# Start of session at: Sun May 26 23:00:21 2024
+# Process ID: 17356
+=======
+# Start of session at: Sun Jun  2 15:24:53 2024
+# Process ID: 19052
+>>>>>>> cae3b9247f478614f2aa9aa50faa94884816887d
+# Current directory: C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25448 C:\Users\senan\Desktop\Graduation-Project\yildirim_mikrotek\yildirim_mikrotek.xpr
+# Log file: C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/vivado.log
+# Journal file: C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek\vivado.jou
+# Running On: sena, OS: Windows, CPU Frequency: 2189 MHz, CPU Physical cores: 12, Host memory: 16780 MB
+>>>>>>> 22efff4eb91f765a5f6e82de1f08704460545a0d
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+<<<<<<< HEAD
+INFO: [Project 1-313] Project file moved from 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek' since last save.
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/ahmet/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.gen/sources_1'.
+=======
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.gen/sources_1'.
+>>>>>>> 22efff4eb91f765a5f6e82de1f08704460545a0d
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
+<<<<<<< HEAD
+<<<<<<< HEAD
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1151.211 ; gain = 348.297
+=======
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1825.699 ; gain = 224.059
+update_compile_order -fileset sources_1
+close [ open C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/csr.v w ]
+add_files C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/csr.v
+>>>>>>> 22efff4eb91f765a5f6e82de1f08704460545a0d
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  2 00:26:13 2024...
+=======
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1811.301 ; gain = 371.660
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_exception_detection'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_exception_detection' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_exception_detection_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v" into library xil_defaultlib
+ERROR: [VRFC 10-1020] missing compiler directive [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:311]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:518]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:519]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:520]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:521]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:522]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:523]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:524]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:525]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:527]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:528]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:529]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:530]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:531]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:533]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:534]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:535]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:544]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:545]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:546]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:547]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:548]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:549]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:550]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:551]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:552]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:553]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:554]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:606]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:607]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:608]
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:609]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:611]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:612]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:617]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:618]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:619]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:620]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:623]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:624]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:649]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:653]
+INFO: [VRFC 10-311] analyzing module exception_detection
+ERROR: [VRFC 10-8530] module 'exception_detection' is ignored due to previous errors [C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v:4]
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_exception_detection'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_exception_detection' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_exception_detection_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v" into library xil_defaultlib
+ERROR: [VRFC 10-1020] missing compiler directive [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:311]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:518]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:519]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:520]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:521]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:522]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:523]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:524]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:525]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:527]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:528]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:529]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:530]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:531]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:533]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:534]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:535]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:544]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:545]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:546]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:547]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:548]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:549]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:550]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:551]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:552]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:553]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:554]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:606]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:607]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:608]
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:609]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:611]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:612]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:617]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:618]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:619]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:620]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:623]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:624]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:649]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:653]
+INFO: [VRFC 10-311] analyzing module exception_detection
+ERROR: [VRFC 10-8530] module 'exception_detection' is ignored due to previous errors [C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v:4]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top exception_detection [current_fileset]
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_exception_detection'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_exception_detection' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_exception_detection_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v" into library xil_defaultlib
+ERROR: [VRFC 10-1020] missing compiler directive [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:311]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:518]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:519]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:520]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:521]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:522]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:523]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:524]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:525]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:527]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:528]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:529]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:530]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:531]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:533]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:534]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:535]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:544]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:545]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:546]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:547]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:548]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:549]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:550]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:551]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:552]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:553]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:554]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:606]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:607]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:608]
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:609]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:611]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:612]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:617]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:618]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:619]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:620]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:623]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:624]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:649]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:653]
+INFO: [VRFC 10-311] analyzing module exception_detection
+ERROR: [VRFC 10-8530] module 'exception_detection' is ignored due to previous errors [C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v:4]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_exception_detection'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_exception_detection' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_exception_detection_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v" into library xil_defaultlib
+ERROR: [VRFC 10-1020] missing compiler directive [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:311]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:518]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:519]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:520]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:521]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:522]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:523]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:524]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:525]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:527]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:528]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:529]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:530]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:531]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:533]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:534]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:535]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:544]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:545]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:546]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:547]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:548]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:549]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:550]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:551]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:552]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:553]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:554]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:606]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:607]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:608]
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:609]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:611]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:612]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:617]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:618]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:619]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:620]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:623]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:624]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:649]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:653]
+INFO: [VRFC 10-311] analyzing module exception_detection
+ERROR: [VRFC 10-8530] module 'exception_detection' is ignored due to previous errors [C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v:4]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_exception_detection'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_exception_detection' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_exception_detection_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:518]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:519]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:520]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:521]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:522]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:523]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:524]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:525]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:527]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:528]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:529]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:530]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:531]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:533]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:534]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:535]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:544]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:545]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:546]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:547]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:548]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:549]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:550]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:551]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:552]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:553]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:554]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:606]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:607]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:608]
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:609]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:611]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:612]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:617]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:618]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:619]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:620]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:623]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:624]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:649]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:653]
+INFO: [VRFC 10-311] analyzing module exception_detection
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_exception_detection.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:34]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:41]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:42]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:43]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:44]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:45]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:47]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:48]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:49]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:50]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:51]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:52]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:53]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:54]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:55]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:56]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:57]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:58]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:61]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:62]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:63]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:64]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:76]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:84]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:85]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:86]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:87]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:88]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:89]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:90]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:91]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:92]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:93]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:94]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:378]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:379]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:380]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:381]
+INFO: [VRFC 10-311] analyzing module tb_exception_detection
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1865.082 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_exception_detection_behav xil_defaultlib.tb_exception_detection xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_exception_detection_behav xil_defaultlib.tb_exception_detection xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 6 into 'opcode_i' is out of bounds [C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v:65]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.exception_detection
+Compiling module xil_defaultlib.tb_exception_detection
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_exception_detection_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_exception_detection_behav -key {Behavioral:sim_1:Functional:tb_exception_detection} -tclbatch {tb_exception_detection.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_exception_detection.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_exception_detection_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1900.180 ; gain = 35.098
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_exception_detection'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_exception_detection' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_exception_detection_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:518]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:519]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:520]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:521]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:522]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:523]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:524]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:525]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:527]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:528]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:529]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:530]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:531]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:533]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:534]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:535]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:544]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:545]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:546]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:547]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:548]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:549]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:550]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:551]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:552]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:553]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:554]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:606]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:607]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:608]
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:609]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:611]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:612]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:617]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:618]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:619]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:620]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:623]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:624]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:649]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:653]
+INFO: [VRFC 10-311] analyzing module exception_detection
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_exception_detection.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:34]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:41]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:42]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:43]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:44]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:45]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:47]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:48]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:49]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:50]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:51]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:52]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:53]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:54]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:55]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:56]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:57]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:58]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:61]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:62]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:63]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:64]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:76]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:84]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:85]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:86]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:87]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:88]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:89]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:90]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:91]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:92]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:93]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:94]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:378]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:379]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:380]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:381]
+INFO: [VRFC 10-311] analyzing module tb_exception_detection
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1906.441 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_exception_detection_behav xil_defaultlib.tb_exception_detection xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_exception_detection_behav xil_defaultlib.tb_exception_detection xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 6 into 'opcode_i' is out of bounds [C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v:65]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.exception_detection
+Compiling module xil_defaultlib.tb_exception_detection
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_exception_detection_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_exception_detection_behav -key {Behavioral:sim_1:Functional:tb_exception_detection} -tclbatch {tb_exception_detection.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_exception_detection.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_exception_detection_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1912.133 ; gain = 5.691
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_exception_detection'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_exception_detection' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_exception_detection_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:518]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:519]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:520]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:521]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:522]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:523]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:524]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:525]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:527]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:528]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:529]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:530]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:531]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:533]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:534]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:535]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:544]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:545]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:546]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:547]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:548]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:549]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:550]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:551]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:552]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:553]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:554]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:606]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:607]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:608]
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:609]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:611]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:612]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:617]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:618]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:619]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:620]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:623]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:624]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:649]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:653]
+INFO: [VRFC 10-311] analyzing module exception_detection
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sim_1/new/tb_exception_detection.v" into library xil_defaultlib
+WARNING: [VRFC 10-9157] macro 'AUIPC' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:34]
+WARNING: [VRFC 10-9157] macro 'DIV' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:41]
+WARNING: [VRFC 10-9157] macro 'DIVU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:42]
+WARNING: [VRFC 10-9157] macro 'EBREAK' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:43]
+WARNING: [VRFC 10-9157] macro 'ECALL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:44]
+WARNING: [VRFC 10-9157] macro 'FENCE' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:45]
+WARNING: [VRFC 10-9157] macro 'JAL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:47]
+WARNING: [VRFC 10-9157] macro 'JALR' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:48]
+WARNING: [VRFC 10-9157] macro 'LB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:49]
+WARNING: [VRFC 10-9157] macro 'LBU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:50]
+WARNING: [VRFC 10-9157] macro 'LH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:51]
+WARNING: [VRFC 10-9157] macro 'LHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:52]
+WARNING: [VRFC 10-9157] macro 'LUI' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:53]
+WARNING: [VRFC 10-9157] macro 'LW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:54]
+WARNING: [VRFC 10-9157] macro 'MUL' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:55]
+WARNING: [VRFC 10-9157] macro 'MULH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:56]
+WARNING: [VRFC 10-9157] macro 'MULHSU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:57]
+WARNING: [VRFC 10-9157] macro 'MULHU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:58]
+WARNING: [VRFC 10-9157] macro 'REM' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:61]
+WARNING: [VRFC 10-9157] macro 'REMU' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:62]
+WARNING: [VRFC 10-9157] macro 'SB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:63]
+WARNING: [VRFC 10-9157] macro 'SH' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:64]
+WARNING: [VRFC 10-9157] macro 'SW' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:76]
+WARNING: [VRFC 10-9157] macro 'LR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:84]
+WARNING: [VRFC 10-9157] macro 'SC_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:85]
+WARNING: [VRFC 10-9157] macro 'AMOSWAP_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:86]
+WARNING: [VRFC 10-9157] macro 'AMOADD_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:87]
+WARNING: [VRFC 10-9157] macro 'AMOXOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:88]
+WARNING: [VRFC 10-9157] macro 'AMOAND_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:89]
+WARNING: [VRFC 10-9157] macro 'AMOOR_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:90]
+WARNING: [VRFC 10-9157] macro 'AMOMIN_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:91]
+WARNING: [VRFC 10-9157] macro 'AMOMAX_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:92]
+WARNING: [VRFC 10-9157] macro 'AMOMINU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:93]
+WARNING: [VRFC 10-9157] macro 'AMOMAXU_W' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:94]
+WARNING: [VRFC 10-9157] macro 'FPU_FMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:378]
+WARNING: [VRFC 10-9157] macro 'FPU_FMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:379]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMSUB' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:380]
+WARNING: [VRFC 10-9157] macro 'FPU_FNMADD' is redefined [../../../../yildirim_mikrotek.srcs/sources_1/new/riscv_controller.vh:381]
+INFO: [VRFC 10-311] analyzing module tb_exception_detection
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1912.133 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_exception_detection_behav xil_defaultlib.tb_exception_detection xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_exception_detection_behav xil_defaultlib.tb_exception_detection xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 6 into 'opcode_i' is out of bounds [C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.srcs/sources_1/new/exception_detection.v:65]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.exception_detection
+Compiling module xil_defaultlib.tb_exception_detection
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_exception_detection_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/senan/Desktop/Graduation-Project/yildirim_mikrotek/yildirim_mikrotek.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_exception_detection_behav -key {Behavioral:sim_1:Functional:tb_exception_detection} -tclbatch {tb_exception_detection.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_exception_detection.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_exception_detection_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1915.043 ; gain = 2.910
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+>>>>>>> cae3b9247f478614f2aa9aa50faa94884816887d
