@@ -1,0 +1,47 @@
+# ============================================================
+#  Yıldırım Mikrotek - .gitignore
+#  Xilinx Vivado tarafından üretilen / yeniden üretilebilen
+#  dosyalar depoya dahil edilmez.
+# ============================================================
+
+# --- Vivado çalışma / önbellek dizinleri ---
+**/*.cache/
+**/*.hw/
+**/*.sim/
+**/*.runs/
+**/*.ip_user_files/
+**/*.gen/
+**/.Xil/
+**/.jobs/
+
+# --- Vivado günlük / journal dosyaları ---
+*.jou
+*.log
+*.str
+vivado*.backup.jou
+vivado*.backup.log
+*.backup.jou
+*.backup.log
+
+# --- Vivado üretilen ara dosyalar ---
+*.wpc
+*.wdf
+*.pb
+*.rst
+*.dcp
+*.bit
+*.ltx
+*.rpt
+*.dmp
+*.zip
+ssm.db
+
+# --- Sentez / implementasyon koşum dosyaları ---
+**/synth_1/
+**/impl_1/
+
+# --- Genel ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
