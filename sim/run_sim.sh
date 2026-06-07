@@ -49,6 +49,7 @@ TESTLER=(
   "cekirdek_a      | $TB/tb_cekirdek_a.v      | $CEKIRDEK"
   "cekirdek_b      | $TB/tb_cekirdek_b.v      | $CEKIRDEK"
   "cekirdek_f      | $TB/tb_cekirdek_f.v      | $CEKIRDEK"
+  "cekirdek_fdiv   | $TB/tb_cekirdek_fdiv.v   | $CEKIRDEK"
   "cekirdek_karma  | $TB/tb_cekirdek_karma.v  | $CEKIRDEK"
   "cekirdek_ust    | $TB/tb_cekirdek_ust.v    | $SOC"
   "soc_veriyolu    | $TB/tb_soc_veriyolu.v    | $SOCVY"

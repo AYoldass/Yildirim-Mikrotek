@@ -322,7 +322,13 @@ Bu modül bir **pipeline veri yolu kontrolcüsü değil**; bellek ile L1B/L1V
       bildirim+çoklu sürücü; çarpma var-olmayan `enyuksek_sol_bit48`'e bağlı) → sadık entegre
       edilemez. Önceki örüntüye uygun temiz **`fpu_temiz.v`** yazıldı (kombinasyonel, RNE):
       FADD/FSUB/FMUL, FSGNJ[N/X], FMIN/FMAX, FEQ/FLT/FLE, FCVT.W.S/WU + S.W/S.WU, FMV.X.W/W.X,
-      FCLASS. (FDIV/FSQRT/FMADD ve altnormaller kapsam dışı.)
+      FCLASS. (FMADD/altnormaller kapsam dışı.)
+- [x] **FDIV.S + FSQRT.S eklendi** (2026-06-07): `fpu_temiz`'e tam-hassas **kombinasyonel**
+      bölme (24-bit mantis, ma/mb·2²⁷ tamsayı bölme → normalize + RNE; kalan→sticky) ve karekök
+      (tek/çift üs ayrımı + bit-bit digit-recurrence isqrt, 26-bit → RNE) işlevleri. FPU zaten
+      kombinasyonel olduğundan **çok-çevrim handshake gerekmedi**; coz'da FDIV `fpu_fsrc2`'ye
+      eklendi (f[rs2] okur). Birim test 12/12 (1/3, √2, √0.5 RNE doğru). `tb_cekirdek_fdiv`
+      7/7: çekirdek üzerinden decode yönlendirme + F scoreboard RAW (√8 ← fdiv sonucu) doğrulandı.
 - [x] **F altyapısı:** `fp_yazmac_obegi.v` (f0-f31, f0 sıfır-sabit DEĞİL, scoreboard);
       FLW/FSW (bellek↔f-reg, LSU yeniden kullanılır); F kaynak/hedef sınıflandırması coz'da
       (tamsayı↔float karışık operandlar); F hazard scoreboard'a eklendi; float geri-yazma yolu.

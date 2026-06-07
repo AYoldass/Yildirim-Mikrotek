@@ -126,8 +126,9 @@ module coz_asamasi (
    wire fpu_int_src = is_fpu && (funct7==7'b1101000 || funct7==7'b1111000); // FCVT.S.W/FMV.W.X
    wire fpu_fsrc1   = is_fpu && !fpu_int_src;                       // f[rs1] okur
    wire fpu_fsrc2   = is_fpu && (funct7==7'b0000000 || funct7==7'b0000100 ||
-                                 funct7==7'b0001000 || funct7==7'b0010000 ||
-                                 funct7==7'b0010100 || funct7==7'b1010000); // ikili: f[rs2]
+                                 funct7==7'b0001000 || funct7==7'b0001100 ||
+                                 funct7==7'b0010000 || funct7==7'b0010100 ||
+                                 funct7==7'b1010000); // ikili: f[rs2] (FADD/SUB/MUL/DIV/SGNJ/MIN-MAX/CMP)
    // f[rd] yazan buyruk (FLW dahil), int[rd] yazan FPU buyrugu
    wire f_yaz   = is_flw || fpu_f_res;
    wire int_fpu_yaz = fpu_int_res;

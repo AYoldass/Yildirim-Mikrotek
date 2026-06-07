@@ -17,7 +17,8 @@
 //    FCVT.W.S/FCVT.WU.S 1100000 (rs2 0/1) -> tamsayi,
 //    FMV.X.W 1110000 rm000, FCLASS 1110000 rm001 -> tamsayi,
 //    FCVT.S.W/FCVT.S.WU 1101000 (rs2 0/1) <- tamsayi,  FMV.W.X 1111000 <- tamsayi.
-//  (FDIV/FSQRT/FMADD desteklenmez.)  Altnormaller sifira yuvarlanir (basit).
+//    FDIV.S 0001100, FSQRT.S 0101100 (rs2 0) -> tam-hassas kombinasyonel + RNE.
+//  (FMADD/FMSUB/FNMADD/FNMSUB desteklenmez.)  Altnormaller sifira yuvarlanir (basit).
 //
 //  tamsayi_sonuc_o: sonuc tamsayi yazmac obegine mi (FEQ/FLT/FLE/FCVT.W/FMV.X/FCLASS).
 // ===========================================================================
@@ -146,6 +147,78 @@ module fpu_temiz (
       end
    endfunction
 
+   // ======================= FDIV =======================
+   //  Tam-hassas bolme: mantisalar 24-bit; ma/mb*2^27 tamsayi bolme ile bulunur,
+   //  normalize edilip yuvarlanir (RNE). Kalan -> sticky.
+   function [31:0] fdiv;
+      input        as_, bs_;
+      input [7:0]  ae_, be_;
+      input [22:0] am_, bm_;
+      reg sr; reg signed [11:0] er; reg [23:0] ma, mb;
+      reg [50:0] dividend; reg [27:0] q; reg [50:0] rem;
+      reg st0, g, rb, st, lsb; reg [24:0] mr; reg [23:0] frac24;
+      begin
+         sr = as_ ^ bs_;
+         ma = {(ae_!=0), am_};
+         mb = {(be_!=0), bm_};
+         dividend = {ma, 27'b0};                 // ma << 27  (ma/mb * 2^27)
+         q   = dividend / mb;                     // [2^26, 2^28)
+         rem = dividend - q*mb; st0 = |rem;
+         if (q[27]) begin                         // oran >= 1 (lider 1 -> bit27)
+            er = $signed({4'b0,ae_}) - $signed({4'b0,be_}) + 127;
+            frac24 = q[27:4]; g = q[3]; rb = q[2]; st = q[1]|q[0]|st0;
+         end else begin                           // oran [0.5,1) (lider 1 -> bit26)
+            er = $signed({4'b0,ae_}) - $signed({4'b0,be_}) + 126;
+            frac24 = q[26:3]; g = q[2]; rb = q[1]; st = q[0]|st0;
+         end
+         lsb = frac24[0];
+         mr  = {1'b0, frac24};
+         if (g && (rb||st||lsb)) begin
+            mr = mr + 1;
+            if (mr[24]) begin mr = mr>>1; er = er + 1; end
+         end
+         if (er <= 0)         fdiv = {sr, 31'b0};            // altakma -> +/-0
+         else if (er >= 255)  fdiv = {sr, 8'hFF, 23'b0};     // tasma -> +/-inf
+         else                 fdiv = {sr, er[7:0], mr[22:0]};
+      end
+   endfunction
+
+   // ======================= FSQRT =======================
+   //  Karekok (yalnizca s=0): tek/cift ussu ayir, mantisi olcekle, tamsayi
+   //  karekok (bit-bit digit-recurrence) ile 26-bit sonuc; RNE yuvarla. Kalan -> sticky.
+   function [31:0] fsqrt;
+      input [31:0] f;
+      reg [7:0] e_; reg [23:0] sig; reg signed [11:0] E, resE;
+      reg [55:0] rad, a, tsq; reg [27:0] q4, t; integer i;
+      reg [24:0] mr; reg [23:0] m24; reg g, rb, st, lsb;
+      begin
+         e_  = f[30:23]; sig = {(e_!=0), f[22:0]};
+         E   = $signed({4'b0,e_}) - 127;
+         if (E[0] == 1'b0) begin                  // cift us
+            rad  = {32'b0, sig} << 23;
+            resE = 127 + (E >>> 1);
+         end else begin                           // tek us (mantise 1 bit ekle)
+            rad  = {32'b0, sig} << 24;
+            resE = 127 + ((E - 1) >>> 1);
+         end
+         a  = rad << 4;                            // 2 ekstra bit (sonuc = gercek*4)
+         q4 = 0;
+         for (i = 26; i >= 0; i = i - 1) begin
+            t   = q4 | (28'b1 << i);
+            tsq = t * t;
+            if (tsq <= a) q4 = t;
+         end
+         st  = ((q4*q4) != a);                     // kalan -> sticky
+         m24 = q4[25:2]; g = q4[1]; rb = q4[0]; lsb = m24[0];
+         mr  = {1'b0, m24};
+         if (g && (rb||st||lsb)) begin
+            mr = mr + 1;
+            if (mr[24]) begin mr = mr>>1; resE = resE + 1; end
+         end
+         fsqrt = {1'b0, resE[7:0], mr[22:0]};
+      end
+   endfunction
+
    // ======================= FCVT (float<->int) =======================
    // float -> signed int (FCVT.W.S), basit kesme (round-toward-zero)
    function [31:0] f2i;
@@ -234,6 +307,18 @@ module fpu_temiz (
             if (a_nan||b_nan||(a_inf&&b_zero)||(b_inf&&a_zero)) r = QNAN;
             else if (a_inf||b_inf) r = {s1^s2, 8'hFF, 23'b0};
             else r = fmul(s1, s2, e1, e2, m1, m2);
+         end
+         7'b0001100: begin               // FDIV
+            if (a_nan||b_nan||(a_zero&&b_zero)||(a_inf&&b_inf)) r = QNAN;
+            else if (a_inf || b_zero) r = {s1^s2, 8'hFF, 23'b0};   // inf/x , x/0 -> inf
+            else if (b_inf || a_zero) r = {s1^s2, 31'b0};          // x/inf , 0/x -> 0
+            else r = fdiv(s1, s2, e1, e2, m1, m2);
+         end
+         7'b0101100: begin               // FSQRT (rs2=00000)
+            if (a_nan)               r = QNAN;
+            else if (s1 && !a_zero)  r = QNAN;     // sqrt(negatif) -> NaN
+            else if (a_inf||a_zero)  r = f1_i;     // sqrt(+inf)=+inf, sqrt(+/-0)=+/-0
+            else r = fsqrt(f1_i);
          end
          7'b0010000: case (rm_i)          // FSGNJ / N / X
             3'b000: r = {s2,        f1_i[30:0]};
