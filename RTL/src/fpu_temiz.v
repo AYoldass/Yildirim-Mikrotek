@@ -8,7 +8,9 @@
 //  Depodaki kayan_nokta_birimi.v ve alt modulleri BOZUK (hizalama modulu cift
 //  bildirim/coklu surucu icerir; carpma var olmayan enyuksek_sol_bit48'e bagli).
 //  Bu yuzden onceki ornege uygun olarak (coz_asamasi/carpma/csr gibi) temiz bir
-//  birim yazildi. Kombinasyonel (tek cevrim), yuvarlama = en yakina (ties-to-even).
+//  birim yazildi. Kombinasyonel (tek cevrim). Yuvarlama: rm alanindan (funct3)
+//  RNE/RTZ/RDN/RUP/RMM statik modlar (round_up fonksiyonu); DYN(111) -> frm CSR
+//  henuz baglanmadigindan RNE varsayilir.
 //
 //  Desteklenen islemler (funct7 / rm ile secilir, instr[31:25],[14:12],[24:20]):
 //    FADD.S 0000000, FSUB.S 0000100, FMUL.S 0001000,
@@ -64,6 +66,27 @@ module fpu_temiz (
       else                  flt = !mag_lt && !mag_eq;   // ikisi negatif: buyuk buyukluk = kucuk
    end
 
+   // ======================= Yuvarlama karari (RNE/RTZ/RDN/RUP/RMM) =======================
+   //  g  = guard (LSB'nin hemen altindaki bit), rb = round, st = sticky (g'nin altinda kalan
+   //  bitlerin OR'u), lsb = sonucun en dusuk biti, sgn = sonuc isareti.
+   //  rm: 000 RNE, 001 RTZ, 010 RDN, 011 RUP, 100 RMM, 111 DYN(->frm yok, RNE varsayilir).
+   function round_up;
+      input g, rb, st, lsb, sgn;
+      input [2:0] rm;
+      reg any_below;
+      begin
+         any_below = g || rb || st;                       // atilan bitlerden biri 1 mi
+         case (rm)
+            3'b000:  round_up = g && (rb || st || lsb);    // RNE: en yakina, beraberlik->cift
+            3'b001:  round_up = 1'b0;                       // RTZ: sifira dogru (kesme)
+            3'b010:  round_up = sgn && any_below;           // RDN: -sonsuza
+            3'b011:  round_up = !sgn && any_below;          // RUP: +sonsuza
+            3'b100:  round_up = g;                          // RMM: en yakina, beraberlik->buyuk buyukluk
+            default: round_up = g && (rb || st || lsb);     // DYN ve digerleri -> RNE
+         endcase
+      end
+   endfunction
+
    // ======================= FADD / FSUB =======================
    wire sub = funct7_i[2];                 // FSUB ise f2 isaretini ters cevir
    wire        bs = s2 ^ sub;
@@ -76,6 +99,7 @@ module fpu_temiz (
       input        as_, bs_;
       input [7:0]  ae_, be_;
       input [22:0] am_, bm_;
+      input [2:0]  rm_;
       reg sa, sb; reg [7:0] ea, eb; reg [26:0] ma27, mb27; reg [27:0] sum;
       integer sh, i; reg [8:0] er; reg sbig; reg [22:0] frac; reg lsb,g,rb,st; reg [24:0] mr;
       reg [26:0] lost;
@@ -104,7 +128,7 @@ module fpu_temiz (
          end
          lsb=sum[3]; g=sum[2]; rb=sum[1]; st=sum[0];
          mr = {1'b0, sum[26:3]};                // 1 + 24-bit
-         if (g && (rb||st||lsb)) begin
+         if (round_up(g, rb, st, lsb, sbig, rm_)) begin
             mr = mr + 1;
             if (mr[24]) begin mr = mr>>1; er=er+1; end
          end
@@ -119,6 +143,7 @@ module fpu_temiz (
       input        as_, bs_;
       input [7:0]  ae_, be_;
       input [22:0] am_, bm_;
+      input [2:0]  rm_;
       reg sr; reg [9:0] er; reg [23:0] ma, mb; reg [47:0] p;
       reg [22:0] frac; reg guard, round, sticky, lsb; reg [24:0] mr;
       begin
@@ -137,7 +162,7 @@ module fpu_temiz (
             guard= p[22]; round=p[21]; sticky=|p[20:0]; lsb=p[23];
             mr = {1'b0, p[46:23]};
          end
-         if (guard && (round||sticky||lsb)) begin
+         if (round_up(guard, round, sticky, lsb, sr, rm_)) begin
             mr = mr + 1;
             if (mr[24]) begin mr = mr>>1; er=er+1; end
          end
@@ -154,6 +179,7 @@ module fpu_temiz (
       input        as_, bs_;
       input [7:0]  ae_, be_;
       input [22:0] am_, bm_;
+      input [2:0]  rm_;
       reg sr; reg signed [11:0] er; reg [23:0] ma, mb;
       reg [50:0] dividend; reg [27:0] q; reg [50:0] rem;
       reg st0, g, rb, st, lsb; reg [24:0] mr; reg [23:0] frac24;
@@ -173,7 +199,7 @@ module fpu_temiz (
          end
          lsb = frac24[0];
          mr  = {1'b0, frac24};
-         if (g && (rb||st||lsb)) begin
+         if (round_up(g, rb, st, lsb, sr, rm_)) begin
             mr = mr + 1;
             if (mr[24]) begin mr = mr>>1; er = er + 1; end
          end
@@ -188,6 +214,7 @@ module fpu_temiz (
    //  karekok (bit-bit digit-recurrence) ile 26-bit sonuc; RNE yuvarla. Kalan -> sticky.
    function [31:0] fsqrt;
       input [31:0] f;
+      input [2:0]  rm_;
       reg [7:0] e_; reg [23:0] sig; reg signed [11:0] E, resE;
       reg [55:0] rad, a, tsq; reg [27:0] q4, t; integer i;
       reg [24:0] mr; reg [23:0] m24; reg g, rb, st, lsb;
@@ -211,7 +238,7 @@ module fpu_temiz (
          st  = ((q4*q4) != a);                     // kalan -> sticky
          m24 = q4[25:2]; g = q4[1]; rb = q4[0]; lsb = m24[0];
          mr  = {1'b0, m24};
-         if (g && (rb||st||lsb)) begin
+         if (round_up(g, rb, st, lsb, 1'b0, rm_)) begin   // sonuc daima pozitif
             mr = mr + 1;
             if (mr[24]) begin mr = mr>>1; resE = resE + 1; end
          end
@@ -240,7 +267,7 @@ module fpu_temiz (
 
    // signed int -> float (FCVT.S.W), round-to-nearest-even
    function [31:0] i2f;
-      input [31:0] x; input isaretli;
+      input [31:0] x; input isaretli; input [2:0] rm_;
       reg s_; reg [31:0] mag; integer msb; integer i; reg [7:0] e_; reg [22:0] frac;
       reg [31:0] norm; reg g,r,st; reg [24:0] mr; integer sh;
       begin
@@ -261,7 +288,7 @@ module fpu_temiz (
                r = (sh>=2) ? mag[sh-2] : 1'b0;
                st = (sh>=3) ? (|(mag & ((32'b1<<(sh-2))-1))) : 1'b0;
                mr = {1'b0, 1'b1, frac};               // 1.frac (25-bit)
-               if (g && (r||st||frac[0])) begin
+               if (round_up(g, r, st, frac[0], s_, rm_)) begin
                   mr = mr + 1;
                   if (mr[24]) begin mr = mr>>1; e_=e_+1; end
                end
@@ -301,24 +328,24 @@ module fpu_temiz (
             if (a_nan||b_nan|| (a_inf&&b_inf&&(s1!=bs))) r = QNAN;
             else if (a_inf) r = f1_i;
             else if (b_inf) r = {bs, 8'hFF, 23'b0};
-            else r = fadd(s1, bs, e1, be, m1, bm);
+            else r = fadd(s1, bs, e1, be, m1, bm, rm_i);
          end
          7'b0001000: begin               // FMUL
             if (a_nan||b_nan||(a_inf&&b_zero)||(b_inf&&a_zero)) r = QNAN;
             else if (a_inf||b_inf) r = {s1^s2, 8'hFF, 23'b0};
-            else r = fmul(s1, s2, e1, e2, m1, m2);
+            else r = fmul(s1, s2, e1, e2, m1, m2, rm_i);
          end
          7'b0001100: begin               // FDIV
             if (a_nan||b_nan||(a_zero&&b_zero)||(a_inf&&b_inf)) r = QNAN;
             else if (a_inf || b_zero) r = {s1^s2, 8'hFF, 23'b0};   // inf/x , x/0 -> inf
             else if (b_inf || a_zero) r = {s1^s2, 31'b0};          // x/inf , 0/x -> 0
-            else r = fdiv(s1, s2, e1, e2, m1, m2);
+            else r = fdiv(s1, s2, e1, e2, m1, m2, rm_i);
          end
          7'b0101100: begin               // FSQRT (rs2=00000)
             if (a_nan)               r = QNAN;
             else if (s1 && !a_zero)  r = QNAN;     // sqrt(negatif) -> NaN
             else if (a_inf||a_zero)  r = f1_i;     // sqrt(+inf)=+inf, sqrt(+/-0)=+/-0
-            else r = fsqrt(f1_i);
+            else r = fsqrt(f1_i, rm_i);
          end
          7'b0010000: case (rm_i)          // FSGNJ / N / X
             3'b000: r = {s2,        f1_i[30:0]};
@@ -338,7 +365,7 @@ module fpu_temiz (
             default:r = 32'b0;
          endcase
          7'b1100000: r = f2i(f1_i, (rs2f_i==5'b00000));                   // FCVT.W.S / FCVT.WU.S
-         7'b1101000: r = i2f(x1_i, (rs2f_i==5'b00000));                   // FCVT.S.W / FCVT.S.WU
+         7'b1101000: r = i2f(x1_i, (rs2f_i==5'b00000), rm_i);                   // FCVT.S.W / FCVT.S.WU
          7'b1110000: r = (rm_i==3'b000) ? f1_i : fclass(f1_i);            // FMV.X.W / FCLASS
          7'b1111000: r = x1_i;                                            // FMV.W.X
          default:    r = QNAN;
