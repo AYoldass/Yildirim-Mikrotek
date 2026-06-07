@@ -47,6 +47,11 @@ module csr_birimi #(
    input              zaman_kesme_i,
    input              yazilim_kesme_i,
 
+   // --- FCSR (kayan nokta) ---
+   input   [4:0]      fp_bayrak_i,       // FPU istisna bayraklari {NV,DZ,OF,UF,NX}
+   input              fp_bayrak_yaz_i,   // bu cevrim FP islemi emekli oldu -> bayrak biriktir
+   output  [2:0]      frm_o,             // FCSR.frm -> FPU (DYN yuvarlama)
+
    // --- Cikislar ---
    output  [31:0]     csr_oku_o,         // CSR eski degeri -> rd
    output             trap_o,            // yonlendir + bosalt
@@ -74,6 +79,9 @@ module csr_birimi #(
    reg [3:0]  mcause_code;
    reg [63:0] mcycle, minstret;
    reg        mcountinhibit_cy, mcountinhibit_ir;
+   reg [4:0]  fflags;          // {NV,DZ,OF,UF,NX}
+   reg [2:0]  frm;             // yuvarlama modu
+   assign     frm_o = frm;
 
    // ---------------- Okuma (eski deger) ----------------
    reg [31:0] csr_data;
@@ -95,6 +103,9 @@ module csr_birimi #(
          `MINSTRET:csr_data = minstret[31:0];
          `MINSTRETH:csr_data= minstret[63:32];
          `MCOUNTINHIBIT: begin csr_data[0]=mcountinhibit_cy; csr_data[2]=mcountinhibit_ir; end
+         `FFLAGS:  csr_data[4:0] = fflags;
+         `FRM:     csr_data[2:0] = frm;
+         `FCSR:    begin csr_data[4:0] = fflags; csr_data[7:5] = frm; end
          default:  csr_data = 32'b0;
       endcase
    end
@@ -163,6 +174,7 @@ module csr_birimi #(
          mcause_intbit<=0; mcause_code<=0;
          mcycle<=0; minstret<=0;
          mcountinhibit_cy<=0; mcountinhibit_ir<=0;
+         fflags<=5'b0; frm<=3'b0;
       end
       else begin
          // Sayaclar
@@ -190,9 +202,15 @@ module csr_birimi #(
                `MINSTRET:minstret[31:0]<=csr_in;
                `MINSTRETH:minstret[63:32]<=csr_in;
                `MCOUNTINHIBIT: begin mcountinhibit_cy<=csr_in[0]; mcountinhibit_ir<=csr_in[2]; end
+               `FFLAGS:  fflags <= csr_in[4:0];
+               `FRM:     frm    <= csr_in[2:0];
+               `FCSR:    begin fflags <= csr_in[4:0]; frm <= csr_in[7:5]; end
                default: ;
             endcase
          end
+
+         // FP istisna bayrak biriktirme (CSR yazma ile ayni cevrimde olamaz: farkli buyruklar)
+         if (fp_bayrak_yaz_i) fflags <= fflags | fp_bayrak_i;
 
          // Tuzak girisi (acik yazmadan sonra; tuzak onceliklidir)
          if (tuzaga_git) begin

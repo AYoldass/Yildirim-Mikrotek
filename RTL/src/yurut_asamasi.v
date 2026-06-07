@@ -281,6 +281,12 @@ module yurut_asamasi (
    wire        csr_tuzak;       // tuzak girisi -> mevcut buyrugu squash (commit/mem yok)
    wire [31:0] csr_trap_hedef;
 
+   // FCSR: csr_birimi <-> fpu_temiz baglantilari
+   wire [2:0] csr_frm;        // FCSR.frm -> FPU (DYN yuvarlama)
+   wire [4:0] fpu_bayrak;     // FPU istisna bayraklari -> CSR biriktirme
+   // FP islemi bu cevrim emekli oldu mu (tuzak/bekleme yokken) -> bayrak biriktir
+   wire fp_bayrak_yaz = fpu_mi && !csr_tuzak && !mem_bekle_o;
+
    csr_birimi #(.RESET_MTVEC(32'h8000_0000)) csr (
       .clk_i        ( clk_i ),
       .rst_i        ( rst_i ),
@@ -295,6 +301,9 @@ module yurut_asamasi (
       .dis_kesme_i  ( dis_kesme_i ),
       .zaman_kesme_i( zaman_kesme_i ),
       .yazilim_kesme_i( yazilim_kesme_i ),
+      .fp_bayrak_i  ( fpu_bayrak ),
+      .fp_bayrak_yaz_i( fp_bayrak_yaz ),
+      .frm_o        ( csr_frm ),
       .csr_oku_o    ( csr_oku ),
       .trap_o       ( csr_trap ),
       .tuzak_o      ( csr_tuzak ),
@@ -330,12 +339,14 @@ module yurut_asamasi (
    fpu_temiz fpu (
       .funct7_i(yurut_buyruk_i[31:25]),
       .rm_i(yurut_buyruk_i[14:12]),
+      .frm_i(csr_frm),              // DYN(111) yuvarlama icin FCSR.frm
       .rs2f_i(yurut_buyruk_i[24:20]),
       .f1_i(yurut_fdeger1_i),
       .f2_i(yurut_fdeger2_i),
       .x1_i(yurut_deger1_i),        // FCVT.S.W / FMV.W.X icin int rs1
       .sonuc_o(fpu_sonuc),
-      .tamsayi_sonuc_o(fpu_int)
+      .tamsayi_sonuc_o(fpu_int),
+      .bayrak_o(fpu_bayrak)
    );
 
    // ---------------- Atomik birim (RV32A) ----------------

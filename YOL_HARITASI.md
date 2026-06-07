@@ -333,11 +333,15 @@ Bu modül bir **pipeline veri yolu kontrolcüsü değil**; bellek ile L1B/L1V
       FLW/FSW (bellek↔f-reg, LSU yeniden kullanılır); F kaynak/hedef sınıflandırması coz'da
       (tamsayı↔float karışık operandlar); F hazard scoreboard'a eklendi; float geri-yazma yolu.
       FPU tek-çevrim (kombinasyonel) → çok-çevrim gerekmez; F-reg RAW scoreboard ile doğru.
-- [x] **FCSR (yuvarlama modları):** rm alanından (funct3) **statik yuvarlama modları**
-      RNE/RTZ/RDN/RUP/RMM eklendi (ortak `round_up` fonksiyonu: guard/round/sticky/lsb/işaret).
-      FADD/FSUB/FMUL/FDIV/FSQRT/FCVT.S.W bu modu uygular. `tb_fpu_yuvarlama` 15/15 (1/3 tüm
-      modlar, -1/3 işaret duyarlı RDN/RUP, √2 RUP farkı). **DYN(111)→RNE** (frm CSR henüz bağlı
-      değil — ileri iş); FCVT.W.S hâlâ RTZ kesme; istisna bayrağı (fflags) biriktirme yok.
+- [x] **FCSR tam (yuvarlama modları + dinamik + istisna bayrakları):**
+      - **Yuvarlama:** rm alanından (funct3) RNE/RTZ/RDN/RUP/RMM (ortak `round_up`); FADD/FSUB/
+        FMUL/FDIV/FSQRT/FCVT.S.W uygular. **DYN(111)→FCSR.frm** (`frm_i` ile bağlandı).
+      - **İstisna bayrakları:** FPU `bayrak_o {NV,DZ,OF,UF,NX}` üretir (aritmetik işlevler
+        `{OF,UF,NX,sonuç}` döndürür; NV/DZ özel-durum mantığıyla). `csr_birimi`'ne **fflags(0x001)/
+        frm(0x002)/fcsr(0x003)** CSR'leri eklendi (aliaslı); FP op emekli olunca fflags OR-biriktirir.
+      - **Doğrulama:** `tb_fpu_yuvarlama` (modlar + DYN + NX/DZ/NV bayrakları) + `tb_cekirdek_fcsr`
+        (çekirdek üzerinden: frm yaz→DYN op kullanır, inexact→NX, 1/0→DZ, fcsr birleşik okuma).
+        Regresyon **17/17**. (Basitleştirme: FCVT.W.S aralık-dışı NV; FCVT.W.S NX bayrağı yok.)
 - [x] **`tb_cekirdek_f`** 14/14: FLW/FSW, FADD/FSUB/FMUL (FLW sonucuna RAW), FEQ/FLT, FCVT
       (çift yön), FMV.X.W, FSGNJN, FMIN + bellek geri-yazma. Regresyon `./sim/run_sim.sh` → 10/10.
 

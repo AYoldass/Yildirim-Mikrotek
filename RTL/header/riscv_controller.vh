@@ -675,6 +675,11 @@
 `define MINSTRETH 12'hBB
 `define MCOUNTINHIBIT 12'h320
 
+// FCSR (kayan nokta durum/kontrol) - kullanici CSR'leri
+`define FFLAGS 12'h001   // istisna bayraklari {NV,DZ,OF,UF,NX} = fcsr[4:0]
+`define FRM    12'h002   // yuvarlama modu                       = fcsr[7:5]
+`define FCSR   12'h003   // {frm[2:0], fflags[4:0]}
+
 `define MACHINE_SOFTWARE_INTERRUPT 3
 `define MACHINE_TIMER_INTERRUPT 7
 `define MACHINE_EXTERNAL_INTERRUPT 11

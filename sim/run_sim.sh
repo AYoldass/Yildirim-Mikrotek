@@ -51,6 +51,7 @@ TESTLER=(
   "cekirdek_f      | $TB/tb_cekirdek_f.v      | $CEKIRDEK"
   "cekirdek_fdiv   | $TB/tb_cekirdek_fdiv.v   | $CEKIRDEK"
   "fpu_yuvarlama   | $TB/tb_fpu_yuvarlama.v   | $SRC/fpu_temiz.v"
+  "cekirdek_fcsr   | $TB/tb_cekirdek_fcsr.v   | $CEKIRDEK"
   "cekirdek_karma  | $TB/tb_cekirdek_karma.v  | $CEKIRDEK"
   "cekirdek_ust    | $TB/tb_cekirdek_ust.v    | $SOC"
   "soc_veriyolu    | $TB/tb_soc_veriyolu.v    | $SOCVY"
