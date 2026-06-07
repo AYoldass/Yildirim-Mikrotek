@@ -341,7 +341,14 @@ Bu modül bir **pipeline veri yolu kontrolcüsü değil**; bellek ile L1B/L1V
         frm(0x002)/fcsr(0x003)** CSR'leri eklendi (aliaslı); FP op emekli olunca fflags OR-biriktirir.
       - **Doğrulama:** `tb_fpu_yuvarlama` (modlar + DYN + NX/DZ/NV bayrakları) + `tb_cekirdek_fcsr`
         (çekirdek üzerinden: frm yaz→DYN op kullanır, inexact→NX, 1/0→DZ, fcsr birleşik okuma).
-        Regresyon **17/17**. (Basitleştirme: FCVT.W.S aralık-dışı NV; FCVT.W.S NX bayrağı yok.)
+        (Basitleştirme: FCVT.W.S aralık-dışı NV; FCVT.W.S NX bayrağı yok.)
+- [x] **FMADD ailesi (fused multiply-add):** FMADD/FMSUB/FNMSUB/FNMADD eklendi — tam-hassas
+      ürün + **TEK yuvarlama** (fpu_temiz'de geniş sabit-nokta akümülatör; `fma_gecerli_i`/
+      `fma_op_i`={neg_prod,sub_c}/`f3_i`). 3. f-operand (rs3) plumbing'i: `fp_yazmac_obegi` 3.
+      okuma portu, coz FMA decode + `f_oku3`/`yurut_fdeger3` + rs3 hazard, cekirdek+yurut bağlama.
+      `tb_fpu_fma` 192/192 (Python Fraction referansı) + `tb_cekirdek_fma` 5/5: 4 varyant + RAW
+      scoreboard + **tek-yuvarlama kanıtı** (a·a−1 = 0x3A000400, çift-yuvarlama 0x3D000000 verirdi).
+      Regresyon **19/19**.
 - [x] **`tb_cekirdek_f`** 14/14: FLW/FSW, FADD/FSUB/FMUL (FLW sonucuna RAW), FEQ/FLT, FCVT
       (çift yön), FMV.X.W, FSGNJN, FMIN + bellek geri-yazma. Regresyon `./sim/run_sim.sh` → 10/10.
 

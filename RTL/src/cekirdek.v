@@ -60,10 +60,10 @@ module cekirdek (
    wire        rezerve_gecerli;
 
    // ---------------- Coz <-> F RF (kayan nokta) ----------------
-   wire [4:0]  f_oku1, f_oku2;
-   wire [31:0] frs1_deger, frs2_deger;
-   wire        frs1_gecerli, frs2_gecerli;
-   wire        f_rs1_kullanilir, f_rs2_kullanilir;
+   wire [4:0]  f_oku1, f_oku2, f_oku3;
+   wire [31:0] frs1_deger, frs2_deger, frs3_deger;
+   wire        frs1_gecerli, frs2_gecerli, frs3_gecerli;
+   wire        f_rs1_kullanilir, f_rs2_kullanilir, f_rs3_kullanilir;
    wire [4:0]  f_rezerve_adres;
    wire [3:0]  f_rezerve_etiket;
    wire        f_rezerve_gecerli;
@@ -74,7 +74,7 @@ module cekirdek (
    wire        fwb_gecerli;
 
    // ---------------- Coz -> Yurut ----------------
-   wire [31:0] y_ps, y_d1, y_d2, y_rs2, y_imm, y_buyruk, y_fd1, y_fd2;
+   wire [31:0] y_ps, y_d1, y_d2, y_rs2, y_imm, y_buyruk, y_fd1, y_fd2, y_fd3;
    wire [`MI_BIT-1:0] y_mi;
    wire [4:0]  y_rd, y_rs1a, y_rs2a;
    wire [3:0]  y_etiket;
@@ -101,7 +101,8 @@ module cekirdek (
                  ( (rs1_kullanilir   && !rs1_gecerli)  ||
                    (rs2_kullanilir   && !rs2_gecerli)  ||
                    (f_rs1_kullanilir && !frs1_gecerli) ||
-                   (f_rs2_kullanilir && !frs2_gecerli) );
+                   (f_rs2_kullanilir && !frs2_gecerli) ||
+                   (f_rs3_kullanilir && !frs3_gecerli) );
    wire durdur = hazard || mesgul;
 
    // =========================================================== //
@@ -144,9 +145,10 @@ module cekirdek (
    // =========================================================== //
    fp_yazmac_obegi u_frf (
       .clk_i(clk_i), .rst_i(rst_i),
-      .oku_adres1_i(f_oku1), .oku_adres2_i(f_oku2),
+      .oku_adres1_i(f_oku1), .oku_adres2_i(f_oku2), .oku_adres3_i(f_oku3),
       .oku_veri1_o(frs1_deger), .oku_veri1_gecerli_o(frs1_gecerli),
       .oku_veri2_o(frs2_deger), .oku_veri2_gecerli_o(frs2_gecerli),
+      .oku_veri3_o(frs3_deger), .oku_veri3_gecerli_o(frs3_gecerli),
       .yaz_veri_i(fwb_veri), .yaz_adres_i(fwb_adres),
       .yaz_etiket_i(fwb_etiket), .yaz_gecerli_i(fwb_gecerli),
       .etiket_i(f_rezerve_etiket), .etiket_adres_i(f_rezerve_adres),
@@ -163,10 +165,11 @@ module cekirdek (
       .coz_buyruk_rvc_i(g_rvc),
       .oku_adres1_o(oku_adres1), .oku_adres2_o(oku_adres2),
       .rs1_deger_i(rs1_deger), .rs2_deger_i(rs2_deger),
-      .f_oku1_o(f_oku1), .f_oku2_o(f_oku2),
-      .frs1_deger_i(frs1_deger), .frs2_deger_i(frs2_deger),
+      .f_oku1_o(f_oku1), .f_oku2_o(f_oku2), .f_oku3_o(f_oku3),
+      .frs1_deger_i(frs1_deger), .frs2_deger_i(frs2_deger), .frs3_deger_i(frs3_deger),
       .rs1_kullanilir_o(rs1_kullanilir), .rs2_kullanilir_o(rs2_kullanilir),
       .f_rs1_kullanilir_o(f_rs1_kullanilir), .f_rs2_kullanilir_o(f_rs2_kullanilir),
+      .f_rs3_kullanilir_o(f_rs3_kullanilir),
       .rezerve_adres_o(rezerve_adres), .rezerve_etiket_o(rezerve_etiket),
       .rezerve_gecerli_o(rezerve_gecerli),
       .f_rezerve_adres_o(f_rezerve_adres), .f_rezerve_etiket_o(f_rezerve_etiket),
@@ -176,7 +179,7 @@ module cekirdek (
       .yurut_rs2_deger_o(y_rs2), .yurut_imm_o(y_imm), .yurut_mikroislem_o(y_mi),
       .yurut_rd_adres_o(y_rd), .yurut_rs1_adres_o(y_rs1a), .yurut_rs2_adres_o(y_rs2a),
       .yurut_etiket_o(y_etiket), .yurut_buyruk_o(y_buyruk),
-      .yurut_fdeger1_o(y_fd1), .yurut_fdeger2_o(y_fd2),
+      .yurut_fdeger1_o(y_fd1), .yurut_fdeger2_o(y_fd2), .yurut_fdeger3_o(y_fd3),
       .yurut_gecerli_o(y_gecerli), .yurut_atladi_o(y_atladi),
       .yurut_rvc_o(y_rvc)
    );
@@ -189,7 +192,7 @@ module cekirdek (
       .yurut_ps_i(y_ps), .yurut_deger1_i(y_d1), .yurut_deger2_i(y_d2),
       .yurut_rs2_deger_i(y_rs2), .yurut_imm_i(y_imm), .yurut_mikroislem_i(y_mi),
       .yurut_buyruk_i(y_buyruk),
-      .yurut_fdeger1_i(y_fd1), .yurut_fdeger2_i(y_fd2),
+      .yurut_fdeger1_i(y_fd1), .yurut_fdeger2_i(y_fd2), .yurut_fdeger3_i(y_fd3),
       .yurut_rd_adres_i(y_rd), .yurut_etiket_i(y_etiket),
       .yurut_gecerli_i(y_gecerli), .yurut_atladi_i(y_atladi),
       .yurut_rvc_i(y_rvc),

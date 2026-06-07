@@ -45,6 +45,7 @@ module yurut_asamasi (
    input   [31:0]                 yurut_buyruk_i,
    input   [31:0]                 yurut_fdeger1_i,
    input   [31:0]                 yurut_fdeger2_i,
+   input   [31:0]                 yurut_fdeger3_i,
    input   [4:0]                  yurut_rd_adres_i,
    input   [3:0]                  yurut_etiket_i,
    input                          yurut_gecerli_i,
@@ -336,6 +337,8 @@ module yurut_asamasi (
    wire        fpu_mi = yurut_gecerli_i && (birim == `BIRIM_FPU);
    wire [31:0] fpu_sonuc;
    wire        fpu_int;     // sonuc tamsayi RF'ye mi
+   // FMADD ailesi: opcode[6:2]=100xx (yurut_buyruk_i[6:2]); op = opcode[3:2]={neg_prod,sub_c}
+   wire        fma_mi = (yurut_buyruk_i[6:4] == 3'b100) && (yurut_buyruk_i[1:0] == 2'b11);
    fpu_temiz fpu (
       .funct7_i(yurut_buyruk_i[31:25]),
       .rm_i(yurut_buyruk_i[14:12]),
@@ -343,7 +346,10 @@ module yurut_asamasi (
       .rs2f_i(yurut_buyruk_i[24:20]),
       .f1_i(yurut_fdeger1_i),
       .f2_i(yurut_fdeger2_i),
+      .f3_i(yurut_fdeger3_i),
       .x1_i(yurut_deger1_i),        // FCVT.S.W / FMV.W.X icin int rs1
+      .fma_gecerli_i(fma_mi),
+      .fma_op_i(yurut_buyruk_i[3:2]),  // {neg_prod, sub_c}
       .sonuc_o(fpu_sonuc),
       .tamsayi_sonuc_o(fpu_int),
       .bayrak_o(fpu_bayrak)

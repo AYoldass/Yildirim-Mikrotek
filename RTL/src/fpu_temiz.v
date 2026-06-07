@@ -20,8 +20,10 @@
 //    FCVT.W.S/FCVT.WU.S 1100000 (rs2 0/1) -> tamsayi,
 //    FMV.X.W 1110000 rm000, FCLASS 1110000 rm001 -> tamsayi,
 //    FCVT.S.W/FCVT.S.WU 1101000 (rs2 0/1) <- tamsayi,  FMV.W.X 1111000 <- tamsayi.
-//    FDIV.S 0001100, FSQRT.S 0101100 (rs2 0) -> tam-hassas kombinasyonel + RNE.
-//  (FMADD/FMSUB/FNMADD/FNMSUB desteklenmez.)  Altnormaller sifira yuvarlanir (basit).
+//    FDIV.S 0001100, FSQRT.S 0101100 (rs2 0) -> tam-hassas kombinasyonel.
+//    FMADD/FMSUB/FNMSUB/FNMADD (ayri opcode + f[rs3]) -> fma_gecerli_i/fma_op_i/f3_i ile;
+//      tam-hassas urun, TEK yuvarlama (genis sabit-nokta akumulator).
+//  Altnormaller sifira yuvarlanir (basit).
 //
 //  tamsayi_sonuc_o: sonuc tamsayi yazmac obegine mi (FEQ/FLT/FLE/FCVT.W/FMV.X/FCLASS).
 // ===========================================================================
@@ -33,7 +35,10 @@ module fpu_temiz (
    input  [4:0]  rs2f_i,      // rs2 alani (FCVT/FMV ayrimi)
    input  [31:0] f1_i,        // f[rs1]
    input  [31:0] f2_i,        // f[rs2]
+   input  [31:0] f3_i,        // f[rs3] (fused multiply-add ucuncu operand)
    input  [31:0] x1_i,        // tamsayi rs1 (FCVT.S.W / FMV.W.X)
+   input         fma_gecerli_i,   // bu buyruk FMADD ailesinden mi
+   input  [1:0]  fma_op_i,        // {neg_prod, sub_c} (opcode[3:2])
    output reg [31:0] sonuc_o,
    output            tamsayi_sonuc_o,  // sonuc tamsayi RF'ye mi
    output reg [4:0]  bayrak_o          // fflags {NV,DZ,OF,UF,NX}
@@ -44,6 +49,12 @@ module fpu_temiz (
    // Sinyalleyen NaN tespiti (mantis MSB=0 -> sNaN -> NV)
    wire a_snan = (f1_i[30:23]==8'hFF) && (f1_i[22:0]!=0) && !f1_i[22];
    wire b_snan = (f2_i[30:23]==8'hFF) && (f2_i[22:0]!=0) && !f2_i[22];
+   // f3 (FMA ucuncu operand) ayristirma
+   wire s3     = f3_i[31];
+   wire c_nan  = (f3_i[30:23]==8'hFF) && (f3_i[22:0]!=0);
+   wire c_inf  = (f3_i[30:23]==8'hFF) && (f3_i[22:0]==0);
+   wire c_zero = (f3_i[30:23]==0)     && (f3_i[22:0]==0);
+   wire c_snan = c_nan && !f3_i[22];
 
    // --- ayristirma ---
    wire        s1 = f1_i[31],         s2 = f2_i[31];
@@ -329,13 +340,78 @@ module fpu_temiz (
       end
    endfunction
 
+   // ======================= FMADD ailesi (fused multiply-add) =======================
+   //  result = (-1)^np * (a*b) + (-1)^sc * c, TEK yuvarlama (tam-hassas urun).
+   //  Genis sabit-nokta akumulator (FW bit) ile a*b (48-bit) ve c (24-bit) ortak
+   //  olcekte TAM toplanir; sonra normalize + RNE/rm yuvarlama. (Donanim icin genis
+   //  ama dogru; bu kod tabani simulasyon-odakli.)  Donus {OF,UF,NX,sonuc}.
+   localparam integer FW = 600;
+   function [34:0] fmadd;
+      input [31:0] fa, fb, fc;
+      input        np, sc_;             // neg_prod, sub_c
+      input [2:0]  rm_;
+      reg sa,sb,scn; reg [7:0] ea,eb,ec; reg [23:0] ma,mb,mc; reg [47:0] pm;
+      reg psign, csign, rsign; integer pe, ce, refe, i, msb, shamt;
+      reg [FW-1:0] pterm, cterm, mag, one, mask; reg [24:0] mr; reg [23:0] frac24;
+      reg g, rb, st; integer Er, bias;
+      begin
+         one = 1;
+         sa=fa[31]; ea=fa[30:23]; ma={(ea!=0),fa[22:0]};
+         sb=fb[31]; eb=fb[30:23]; mb={(eb!=0),fb[22:0]};
+         scn=fc[31];ec=fc[30:23]; mc={(ec!=0),fc[22:0]};
+         pm    = ma*mb;
+         psign = sa ^ sb ^ np;
+         csign = scn ^ sc_;
+         pe    = ea + eb - 300;            // urun LSB ussu (pm bit0 = 2^pe)
+         ce    = ec - 150;                 // c LSB ussu (mc bit0 = 2^ce)
+         refe  = (pe < ce) ? pe : ce;      // ortak LSB
+         pterm = {{(FW-48){1'b0}}, pm} << (pe - refe);
+         cterm = {{(FW-24){1'b0}}, mc} << (ce - refe);
+         if (psign == csign)        begin mag = pterm + cterm; rsign = psign; end
+         else if (pterm >= cterm)   begin mag = pterm - cterm; rsign = psign; end
+         else                       begin mag = cterm - pterm; rsign = csign; end
+         if (mag == 0) begin
+            fmadd = {3'b000, (rm_==3'b010)?32'h80000000:32'h00000000};  // tam iptal -> +0 (RDN -> -0)
+         end else begin
+            msb = FW-1; while (!mag[msb]) msb = msb - 1;
+            Er  = refe + msb;             // sonuc ussu (yansiz): deger = 1.f * 2^Er
+            if (msb >= 23) begin
+               shamt  = msb - 23;
+               frac24 = mag >> shamt;                       // 24-bit (lider 1 = bit23)
+               g  = mag[shamt-1];
+               rb = (shamt >= 2) ? mag[shamt-2] : 1'b0;
+               mask = (one << (shamt-2)) - 1;
+               st = (shamt >= 3) ? |(mag & mask) : 1'b0;
+            end else begin
+               frac24 = mag << (23 - msb);                  // tam (yuvarlama yok)
+               g = 1'b0; rb = 1'b0; st = 1'b0;
+            end
+            mr = {1'b0, frac24};
+            if (round_up(g, rb, st, frac24[0], rsign, rm_)) begin
+               mr = mr + 1;
+               if (mr[24]) begin mr = mr>>1; Er = Er + 1; end
+            end
+            bias = Er + 127;
+            if (bias >= 255)      fmadd = {3'b101, rsign, 8'hFF, 23'b0};            // OF -> inf
+            else if (bias <= 0)   fmadd = {3'b011, rsign, 31'b0};                   // UF -> +/-0
+            else                  fmadd = {2'b00, (g|rb|st), rsign, bias[7:0], mr[22:0]};
+         end
+      end
+   endfunction
+
    // ======================= islem secimi =======================
    wire is_cmp    = (funct7_i == 7'b1010000);
    wire is_f2i    = (funct7_i == 7'b1100000);
    wire is_fmvx   = (funct7_i == 7'b1110000);   // FMV.X.W (rm0) / FCLASS (rm1)
-   assign tamsayi_sonuc_o = is_cmp || is_f2i || is_fmvx;
+   assign tamsayi_sonuc_o = !fma_gecerli_i && (is_cmp || is_f2i || is_fmvx);
 
    //  Yuvarlama islemleri {OF,UF,NX,sonuc} 35-bit doner; bayrak alanlari [34:32].
+   // FMA etkin isaretler (opcode[3]=neg_prod, opcode[2]=sub_c)
+   wire        fma_psign = s1 ^ s2 ^ fma_op_i[1];
+   wire        fma_csign = s3 ^ fma_op_i[0];
+   wire        fma_pinf  = (a_inf && !b_zero) || (b_inf && !a_zero);
+   wire        fma_pnan  = (a_inf && b_zero) || (b_inf && a_zero);   // 0*inf -> gecersiz
+
    reg [31:0] r;
    reg [34:0] w;            // genis (flag'li) sonuc
    reg [4:0]  bayrak;       // {NV, DZ, OF, UF, NX}
@@ -343,6 +419,25 @@ module fpu_temiz (
       r = 32'b0;
       w = 35'b0;
       bayrak = 5'b0;
+      if (fma_gecerli_i) begin
+         // ---- FMADD ailesi ----
+         if (a_nan||b_nan||c_nan||fma_pnan) begin
+            r = QNAN;
+            bayrak[4] = a_snan||b_snan||c_snan||fma_pnan;          // NV
+         end
+         else if (fma_pinf || c_inf) begin
+            if (fma_pinf && c_inf && (fma_psign != fma_csign)) begin
+               r = QNAN; bayrak[4] = 1'b1;                         // inf - inf -> NV
+            end
+            else if (fma_pinf) r = {fma_psign, 8'hFF, 23'b0};
+            else               r = {fma_csign, 8'hFF, 23'b0};
+         end
+         else begin
+            w = fmadd(f1_i, f2_i, f3_i, fma_op_i[1], fma_op_i[0], erm);
+            r = w[31:0]; bayrak[2:0] = w[34:32];
+         end
+      end
+      else
       case (funct7_i)
          7'b0000000, 7'b0000100: begin   // FADD / FSUB
             if (a_nan||b_nan|| (a_inf&&b_inf&&(s1!=bs))) begin

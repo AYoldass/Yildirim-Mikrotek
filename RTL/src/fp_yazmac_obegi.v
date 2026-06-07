@@ -15,10 +15,13 @@ module fp_yazmac_obegi (
 
    input   [4:0]        oku_adres1_i,
    input   [4:0]        oku_adres2_i,
+   input   [4:0]        oku_adres3_i,        // FMA ucuncu operand (f[rs3])
    output  [31:0]       oku_veri1_o,
    output               oku_veri1_gecerli_o,
    output  [31:0]       oku_veri2_o,
    output               oku_veri2_gecerli_o,
+   output  [31:0]       oku_veri3_o,
+   output               oku_veri3_gecerli_o,
 
    input   [31:0]       yaz_veri_i,
    input   [4:0]        yaz_adres_i,
@@ -74,5 +77,7 @@ module fp_yazmac_obegi (
    assign oku_veri1_gecerli_o = gecerli_r[oku_adres1_i];
    assign oku_veri2_o         = yazmac_r[oku_adres2_i];
    assign oku_veri2_gecerli_o = gecerli_r[oku_adres2_i];
+   assign oku_veri3_o         = yazmac_r[oku_adres3_i];
+   assign oku_veri3_gecerli_o = gecerli_r[oku_adres3_i];
 
 endmodule

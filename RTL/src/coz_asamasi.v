@@ -50,14 +50,17 @@ module coz_asamasi (
    // --- Kayan nokta (F) yazmac obegi okuma ---
    output  [4:0]                  f_oku1_o,
    output  [4:0]                  f_oku2_o,
+   output  [4:0]                  f_oku3_o,        // FMA ucuncu operand (f[rs3])
    input   [31:0]                 frs1_deger_i,
    input   [31:0]                 frs2_deger_i,
+   input   [31:0]                 frs3_deger_i,
 
    // --- Tehlike (hazard) bilgisi ---
    output                         rs1_kullanilir_o,
    output                         rs2_kullanilir_o,
    output                         f_rs1_kullanilir_o,
    output                         f_rs2_kullanilir_o,
+   output                         f_rs3_kullanilir_o,
 
    // --- rd rezervasyonu (tamsayi RF etiket portuna) ---
    output  [4:0]                  rezerve_adres_o,
@@ -88,6 +91,7 @@ module coz_asamasi (
    output reg [31:0]              yurut_buyruk_o,
    output reg [31:0]              yurut_fdeger1_o,
    output reg [31:0]              yurut_fdeger2_o,
+   output reg [31:0]              yurut_fdeger3_o,
    output reg                     yurut_gecerli_o,
    output reg                     yurut_atladi_o,
    output reg                     yurut_rvc_o
@@ -120,6 +124,7 @@ module coz_asamasi (
    wire is_flw = (opcode == `OPCODE_FPU_LW);
    wire is_fsw = (opcode == `OPCODE_FPU_SW);
    wire is_fpu = (opcode == `OPCODE_FPU);
+   wire is_fma = (opcode[4:2] == 3'b100);   // FMADD/FMSUB/FNMSUB/FNMADD ([6:2]=100xx)
    // FPU sonucu tamsayi RF'ye mi? (FEQ/FLT/FLE, FCVT.W.S, FMV.X.W/FCLASS)
    wire fpu_int_res = is_fpu && (funct7==7'b1010000 || funct7==7'b1100000 || funct7==7'b1110000);
    wire fpu_f_res   = is_fpu && !fpu_int_res;                       // f[rd] yazan FPU op
@@ -129,14 +134,16 @@ module coz_asamasi (
                                  funct7==7'b0001000 || funct7==7'b0001100 ||
                                  funct7==7'b0010000 || funct7==7'b0010100 ||
                                  funct7==7'b1010000); // ikili: f[rs2] (FADD/SUB/MUL/DIV/SGNJ/MIN-MAX/CMP)
-   // f[rd] yazan buyruk (FLW dahil), int[rd] yazan FPU buyrugu
-   wire f_yaz   = is_flw || fpu_f_res;
+   // f[rd] yazan buyruk (FLW + FPU f-sonuclari + FMA), int[rd] yazan FPU buyrugu
+   wire f_yaz   = is_flw || fpu_f_res || is_fma;
    wire int_fpu_yaz = fpu_int_res;
 
    assign f_oku1_o = rs1_adres;
    assign f_oku2_o = rs2_adres;
-   assign f_rs1_kullanilir_o = fpu_fsrc1;
-   assign f_rs2_kullanilir_o = fpu_fsrc2 || is_fsw;
+   assign f_oku3_o = coz_buyruk_i[31:27];            // FMA: f[rs3]
+   assign f_rs1_kullanilir_o = fpu_fsrc1 || is_fma;  // FMA f[rs1] okur
+   assign f_rs2_kullanilir_o = fpu_fsrc2 || is_fsw || is_fma;
+   assign f_rs3_kullanilir_o = is_fma;
    wire [4:0] rs1_adres = coz_buyruk_i[19:15];
    wire [4:0] rs2_adres = coz_buyruk_i[24:20];
    wire [4:0] rd_adres  = coz_buyruk_i[11:7];
@@ -364,6 +371,12 @@ module coz_asamasi (
             // int sonuc (FEQ/FLT/FLE/FCVT.W.S/FMV.X.W/FCLASS) -> tamsayi RF yaz
             mikroislem[`YAZMAC]  = fpu_int_res ? `YAZMAC_YAZ : `YAZMAC_YAZMA;
          end
+         5'b10000, 5'b10001, 5'b10010, 5'b10011: begin   // FMADD/FMSUB/FNMSUB/FNMADD
+            mikroislem[`BIRIM]   = `BIRIM_FPU;
+            mikroislem[`OPERAND] = `OPERAND_REG;
+            mikroislem[`GERIYAZ] = `GERIYAZ_KAYNAK_YOK;
+            mikroislem[`YAZMAC]  = `YAZMAC_YAZMA;   // sonuc f[rd]'ye (fwb yolu)
+         end
          default: begin
             mikroislem[`YAZMAC] = `YAZMAC_YAZMA;
          end
@@ -430,6 +443,7 @@ module coz_asamasi (
          yurut_buyruk_o     <= 32'b0;
          yurut_fdeger1_o    <= 32'b0;
          yurut_fdeger2_o    <= 32'b0;
+         yurut_fdeger3_o    <= 32'b0;
          yurut_rvc_o        <= 1'b0;
          etiket_sayac_r     <= 4'b0;
       end
@@ -462,6 +476,7 @@ module coz_asamasi (
             yurut_buyruk_o     <= coz_buyruk_i;
             yurut_fdeger1_o    <= frs1_deger_i;
             yurut_fdeger2_o    <= frs2_deger_i;
+            yurut_fdeger3_o    <= frs3_deger_i;
             yurut_rvc_o        <= coz_buyruk_rvc_i;
             if (yaziyor || f_yaz) etiket_sayac_r <= etiket_sayac_r + 4'd1;
          end
