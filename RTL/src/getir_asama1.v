@@ -72,7 +72,7 @@ always @* begin
       // end
    end
 
-   if (l1b_istek_hazir_i && l1b_istek_gecerli_o) begin // L1B istegi kabul ediyor
+   if (l1b_istek_hazir_i && ps_gecerli_cmb) begin // L1B istegi kabul ediyor (ps_gecerli_cmb == l1b_istek_gecerli_o; kendi cikisini okuyarak olusan kombinasyonel donme onlendi)
       g2_istek_yapildi_cmb = 1'b1;
       if (!cek_ps_gecerli_i && !cek_bosalt_i && g2_ps_gecerli_r && !g2_ps_hazir_i) begin // Getir2'yi bekleyen buyruk var ve kabul edilmiyor, Getir1'i duraklat
          ps_gecerli_ns = 1'b0;

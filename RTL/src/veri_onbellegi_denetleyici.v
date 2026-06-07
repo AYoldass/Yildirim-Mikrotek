@@ -322,7 +322,8 @@ always @* begin
    son_adres_maske_ns           = son_adres_maske_r;
    son_adres_onbellekleme_ns    = son_adres_onbellekleme_r;
 
-   if (port_veri_hazir_i && port_veri_gecerli_o) begin
+   // NOT: port_veri_gecerli_o (=cmb) yerine _r okunur -> delta-dongusu onlenir.
+   if (port_veri_hazir_i && port_veri_gecerli_r) begin
       port_veri_gecerli_ns = 1'b0;
    end
 
@@ -373,10 +374,15 @@ always @* begin
                l1_durum_ns          = port_istek_gecerli_i ? L1_OKU : L1_BOSTA;
             end
             else begin
-               port_veri_cmb            = get_veri(l1_okunan_bloklar_w[fn_l1_ara_sonuc_cmb[`FN_L1V_SORGU_YOL]], son_adres_r);
-               port_veri_gecerli_cmb    = 1'b1;
+               // Onbellek HIT (okuma): veriyi yakala ve KAYITLI yanit durumuna gec.
+               // Eskiden port_veri_gecerli_o KOMBINASYONEL surulurdu (port_veri_gecerli_cmb=1);
+               // vyb (veri_yolu_birimi) ile bu blok arasinda yakinsamayan bir kombinasyonel
+               // cevrim (iverilog event-pingpongu) olusuyordu. L1_YANIT zaten uncached yol icin
+               // kayitli el-sikismasi (gecerli/hazir + tuketimde temizleme) sagliyor; cached
+               // hit'i de oraya yonlendiriyoruz.
                port_veri_ns             = get_veri(l1_okunan_bloklar_w[fn_l1_ara_sonuc_cmb[`FN_L1V_SORGU_YOL]], son_adres_r);
-               port_veri_gecerli_ns     = !port_veri_hazir_i;
+               son_adres_gecerli_ns     = 1'b0;   // teslim L1_YANIT'te; ayni satiri tekrar hit etme
+               l1_durum_ns              = L1_YANIT;
             end
          end
          else begin
@@ -414,7 +420,7 @@ always @* begin
    end
    L1_YANIT: begin
       port_veri_gecerli_ns = 1'b1;
-      if (port_veri_hazir_i && port_veri_gecerli_o) begin
+      if (port_veri_hazir_i && port_veri_gecerli_r) begin
          port_veri_gecerli_ns   = 1'b0;
          l1_durum_ns            = L1_BOSTA;
       end
@@ -499,6 +505,8 @@ always @* begin
       end
    end
    endcase
+
+   port_istek_hazir_ns = port_istek_hazir_cmb;   // kaydedilen hazir (delta-dongu kirma)
 end
 
 always @(posedge clk_i) begin
@@ -578,9 +586,17 @@ end
 
 assign vy_istek_adres_o = vy_istek_onbellekleme_r ? vy_istek_adres_r
                      : vy_istek_adres_r & ((~{`ADRES_BIT{1'b0}}) << `ADRES_BYTE_BIT);
-assign port_istek_hazir_o       = port_istek_hazir_cmb;
-assign port_veri_o              = port_veri_cmb;
-assign port_veri_gecerli_o      = port_veri_gecerli_cmb;
+// port_istek_hazir KAYITLI verilir: vyb (veri_yolu_birimi) always@* blogu ile
+// bu blok arasinda, hazir KOMBINASYONEL surulurse iverilog'da yakinsamayan bir
+// olay-pingpongu (delta-dongu) olusuyordu (degerler sabit kalsa da iki always@*
+// birbirini sonsuz tetikliyordu). Kaydetmek dongu yolunu kirar; islevsel olarak
+// L1 BOSTA'da hazir=1 sabit oldugundan istek kabulu yine ayni cevrimde olur.
+assign port_istek_hazir_o       = port_istek_hazir_r;
+// Okuma-veri yaniti KAYITLI verilir (port_veri_o/port_veri_gecerli_o = *_r). Eskiden
+// kombinasyonel (port_veri_*_cmb) idi ve vyb ile yakinsamayan kombinasyonel cevrim
+// olusturuyordu. Cached HIT artik L1_YANIT uzerinden kayitli el-sikismasi ile teslim eder.
+assign port_veri_o              = port_veri_r;
+assign port_veri_gecerli_o      = port_veri_gecerli_r;
 assign vy_istek_gecerli_o       = vy_istek_gecerli_r;
 assign vy_istek_onbellekleme_o  = vy_istek_onbellekleme_r;
 assign vy_istek_yaz_o           = vy_istek_yaz_r;

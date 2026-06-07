@@ -23,7 +23,33 @@
 `define MEM_TRANSFER_WIDTH 4  // Mask to store word, halfword or byte
 
 `define VALID_MEM_START 32'h80000000
-`define VALID_MEM_END   32'h80000FFF 
+`define VALID_MEM_END   32'h80000FFF
+
+// ---------------------------------------------------------------------------
+// Dallanma Ongorucu (Branch Predictor) Yapilandirma Parametreleri
+// ---------------------------------------------------------------------------
+// Bu parametreler dallanma_ongorucu.v icindeki bit-genisligi aritmetigi ve
+// kod yorumlarindan ("BTB 32x60", "BHT 32x29", "GGY 5 bit") yeniden tureti-
+// lmistir. Eksik olmalari halinde dallanma_ongorucu.v derlenmez.
+//
+//  BTB satiri:  | Valid(1) | Etiket(27) | Hedef/Target(32) |  -> 60 bit
+//  BHT satiri:  |        Etiket(27)      |   Tahmin(2)      |  -> 29 bit
+// ---------------------------------------------------------------------------
+
+// --- BTB (Branch Target Buffer) ---
+`define BTB_SATIR_SAYISI    32            // Satir (giris) sayisi -> 2^BTB_PS_BIT
+`define BTB_PS_BIT          5             // Indeks icin kullanilan PS bit sayisi
+`define BTB_SATIR_BOYUT     60            // 1 (valid) + 27 (etiket) + 32 (hedef)
+`define BTB_VALID_BITI      59            // En ust bit: gecerlilik biti
+
+// --- BHT (Branch History Table) ---
+`define BHT_SATIR_SAYISI    32            // Satir sayisi -> 2^BHT_PS_BIT
+`define BHT_PS_BIT          5             // Indeks icin kullanilan PS bit sayisi
+`define BHT_SATIR_BOYUT     29            // 27 (etiket) + 2 (tahmin sayaci)
+`define DALLANMA_TAHMIN_BIT 2             // 2-bit doygunluk sayaci
+
+// --- Genel Gecmis Yazmaci (Global History Register, gshare) ---
+`define GENEL_GECMIS_YAZMACI_BIT 5        // BHT indeksi ile XOR'lanan gecmis bit sayisi
 
 // RV32IM Buyruklari
 
@@ -321,16 +347,16 @@
 `define DAL_JALR   3'b110
 `define DAL_YOK    3'b111
 
-//----Dallanma Öngörücü Tanimlamalar----
+//----Dallanma ï¿½ngï¿½rï¿½cï¿½ Tanimlamalar----
 `define BTB_SATIR_SAYISI         32
 `define BTB_PS_BIT               5
 `define BTB_SATIR_BOYUT          (32 - `BTB_PS_BIT) + 1 + 32
 `define BHT_SATIR_SAYISI         32
 `define BHT_PS_BIT               5
-`define DALLANMA_TAHMIN_BIT      2 // ilerde çift kutuplu yapýlabilir
+`define DALLANMA_TAHMIN_BIT      2 // ilerde ï¿½ift kutuplu yapï¿½labilir
 `define BHT_SATIR_BOYUT          (32 - `BHT_PS_BIT) + `DALLANMA_TAHMIN_BIT
 `define GENEL_GECMIS_YAZMACI_BIT 5
-`define BTB_VALID_BITI           `BTB_SATIR_BOYUT-1 // en anlamlý biti
+`define BTB_VALID_BITI           `BTB_SATIR_BOYUT-1 // en anlamlï¿½ biti
 `define GGY_SAYAC_BIT            3
 
 
@@ -427,7 +453,7 @@
 `define BELLEK_BASLANGIC    32'h4000_0000
 `define BELLEK_BOYUT        32'h0004_0000
 
-//-----------Adres Aralýklarý-----------
+//-----------Adres Aralï¿½klarï¿½-----------
 `define UART_BASE_ADDR      32'h2000_0000
 `define UART_MASK_ADDR      32'h0000_000f
 `define RAM_BASE_ADDR       32'h4000_0000
@@ -437,7 +463,7 @@
 `define TIMER_MASK_ADDR     32'h0000_000f
 
 
-//-------Önbellek Denetleyiciler----------
+//-------ï¿½nbellek Denetleyiciler----------
 `define L1_BLOK_BIT 32    
 `define L1B_SATIR   256
 `define L1B_YOL     2  
@@ -458,14 +484,14 @@
 
 `define L1_BLOK_BYTE (`L1_BLOK_BIT / 8)
 
-// ----Yardýmcý Tanýmlamalar----
+// ----Yardï¿½mcï¿½ Tanï¿½mlamalar----
 `define ALL_ONES_256        256'hFFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF
 `define ALL_ONES_128        128'hFFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF
 `define ALL_ONES_64          64'hFFFF_FFFF_FFFF_FFFF
 `define ALL_ONES_32          32'hFFFF_FFFF
 
-// ----Maskeleme Ýçin Yardýmcý Tanýmlar----
-`define NOP_MASKE           4'b0000  // Böyle mi olmalý ?
+// ----Maskeleme ï¿½ï¿½in Yardï¿½mcï¿½ Tanï¿½mlar----
+`define NOP_MASKE           4'b0000  // Bï¿½yle mi olmalï¿½ ?
 
 `define BYTE_MAKSE_0        4'b0001
 `define BYTE_MAKSE_1        4'b0010
@@ -473,7 +499,7 @@
 `define BYTE_MAKSE_3        4'b1000
 
 `define HALF_WORD_MASKE_0   4'b0011
-`define HALF_WORD_MASKE_1   4'b0110  // Bu eriþimi yapabildiðiniz varsaydýk
+`define HALF_WORD_MASKE_1   4'b0110  // Bu eriï¿½imi yapabildiï¿½iniz varsaydï¿½k
 `define HALF_WORD_MASKE_2   4'b1100
 
 `define WORD_MASKE          4'b1111
