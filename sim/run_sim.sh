@@ -53,6 +53,7 @@ TESTLER=(
   "fpu_yuvarlama   | $TB/tb_fpu_yuvarlama.v   | $SRC/fpu_temiz.v"
   "cekirdek_fcsr   | $TB/tb_cekirdek_fcsr.v   | $CEKIRDEK"
   "fpu_fma         | $TB/tb_fpu_fma.v         | $SRC/fpu_temiz.v"
+  "fpu_altnormal   | $TB/tb_fpu_altnormal.v   | $SRC/fpu_temiz.v"
   "cekirdek_fma    | $TB/tb_cekirdek_fma.v    | $CEKIRDEK"
   "cekirdek_karma  | $TB/tb_cekirdek_karma.v  | $CEKIRDEK"
   "cekirdek_ust    | $TB/tb_cekirdek_ust.v    | $SOC"

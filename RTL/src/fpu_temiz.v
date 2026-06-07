@@ -23,7 +23,8 @@
 //    FDIV.S 0001100, FSQRT.S 0101100 (rs2 0) -> tam-hassas kombinasyonel.
 //    FMADD/FMSUB/FNMSUB/FNMADD (ayri opcode + f[rs3]) -> fma_gecerli_i/fma_op_i/f3_i ile;
 //      tam-hassas urun, TEK yuvarlama (genis sabit-nokta akumulator).
-//  Altnormaller sifira yuvarlanir (basit).
+//  ALTNORMAL (subnormal) destegi: norm_in (giris normalize, isaretli us) + pack (cikis
+//  normal/subnormal gradual-underflow/overflow + yuvarlama) ile FADD/FMUL/FDIV/FSQRT/FMADD.
 //
 //  tamsayi_sonuc_o: sonuc tamsayi yazmac obegine mi (FEQ/FLT/FLE/FCVT.W/FMV.X/FCLASS).
 // ===========================================================================
@@ -107,91 +108,148 @@ module fpu_temiz (
       end
    endfunction
 
+   // ======================= Altnormal yardimcilari =======================
+   //  norm_in: bir operandi (24-bit normalize mantis M, isaretli gercek us E) olarak
+   //  ayristirir; deger = M * 2^(E-23). normal: M={1,m},E=e-127. subnormal: m normalize
+   //  edilir (E < -126). sifir: M=0,E=0.  Donus: {E[9:0] signed, M[23:0]} (34-bit).
+   function [33:0] norm_in;
+      input [31:0] f;
+      reg [7:0] e_; reg [22:0] m_; reg [23:0] M; reg signed [9:0] E;
+      begin
+         e_ = f[30:23]; m_ = f[22:0];
+         if (e_ == 0) begin
+            if (m_ == 0) begin M = 0; E = 0; end           // sifir
+            else begin                                      // subnormal
+               M = {1'b0, m_};  E = -10'sd126;
+               while (!M[23]) begin M = M << 1; E = E - 1; end
+            end
+         end else begin
+            M = {1'b1, m_};  E = $signed({2'b0, e_}) - 10'sd127;  // normal
+         end
+         norm_in = {E, M};
+      end
+   endfunction
+
+   //  pack: normalize sonucu (1.f * 2^Eres) f32'ye paketler: normal / subnormal (gradual
+   //  underflow) / overflow; rm ile yuvarlar. inx0 = yuvarlama oncesi atilan bit var mi.
+   //  Donus {OF,UF,NX,sonuc[31:0]}.
+   function [34:0] pack;
+      input        sgn;
+      input [23:0] M24;          // normalize mantis (bit23=1), 1.f
+      input        g0, r0, s0;   // urun/bolme'den gelen guard/round/sticky
+      input signed [11:0] Eres;  // yansiz us (deger = M24 * 2^(Eres-23) = 1.f * 2^Eres)
+      input [2:0]  rm_;
+      reg signed [11:0] E; reg [24:0] mr; reg [23:0] fr; integer rsh, i;
+      reg g, rb, st, inx; reg [7:0] bx; reg [23:0] mask;
+      begin
+         E = Eres;
+         if (E + 127 >= 255) begin
+            pack = {3'b101, sgn, 8'hFF, 23'b0};                 // overflow -> inf (OF+NX)
+         end
+         else if (E + 127 >= 1) begin                            // ----- normal -----
+            g = g0; rb = r0; st = s0; inx = g|rb|st;
+            mr = {1'b0, M24};
+            if (round_up(g, rb, st, M24[0], sgn, rm_)) begin
+               mr = mr + 1;
+               if (mr[24]) begin mr = mr >> 1; E = E + 1; end
+            end
+            if (E + 127 >= 255) pack = {3'b101, sgn, 8'hFF, 23'b0};
+            else begin bx = E + 12'sd127; pack = {2'b00, inx, sgn, bx, mr[22:0]}; end
+         end
+         else begin                                             // ----- subnormal / underflow -----
+            rsh = -(E + 126);                                    // >=1 sag kaydirma
+            if (rsh > 24) begin
+               // tum mantis LSB altinda: g=0, sticky=tum M24
+               g = 1'b0; rb = 1'b0; st = (|M24) | g0 | r0 | s0; fr = 24'b0;
+            end else begin
+               fr = M24 >> rsh;
+               g  = (rsh >= 1) ? M24[rsh-1] : 1'b0;
+               rb = (rsh >= 2) ? M24[rsh-2] : 1'b0;
+               mask = (rsh >= 3) ? ((24'd1 << (rsh-2)) - 24'd1) : 24'd0;
+               st = ((rsh >= 3) ? |(M24 & mask) : 1'b0) | g0 | r0 | s0;
+            end
+            inx = g | rb | st;
+            mr = {1'b0, fr};
+            if (round_up(g, rb, st, fr[0], sgn, rm_)) mr = mr + 1;
+            // mr[23]=1 ise en kucuk normale yuvarlandi (exp=1); aksi halde subnormal (exp=0)
+            pack = {2'b0, (inx ? 1'b1 : 1'b0), sgn, (mr[23] ? 8'd1 : 8'd0), mr[22:0]};
+            if (inx) pack[33] = 1'b1;                            // UF (tiny + inexact)
+         end
+      end
+   endfunction
+
    // ======================= FADD / FSUB =======================
    wire sub = funct7_i[2];                 // FSUB ise f2 isaretini ters cevir
    wire        bs = s2 ^ sub;
    wire [7:0]  be = e2;
    wire [22:0] bm = m2;
 
-   //  Hizali mantis semasi (27-bit): {1.23 mantis, guard, round, sticky}.
-   //  Lider 1 bit26'da; bit[2:0] = G,R,S. Toplama icin bit27 elde-basligi.
-   //  Donus: {OF, UF, NX, sonuc[31:0]}  (35-bit)
+   //  Altnormal destekli (norm_in + pack). Hizali mantis 27-bit: {1.23, G,R,S},
+   //  lider 1 bit26'da; bit27 elde-basligi.  Donus {OF,UF,NX,sonuc[31:0]}.
    function [34:0] fadd;
       input        as_, bs_;
       input [7:0]  ae_, be_;
       input [22:0] am_, bm_;
       input [2:0]  rm_;
-      reg sa, sb; reg [7:0] ea, eb; reg [26:0] ma27, mb27; reg [27:0] sum;
-      integer sh, i; reg [8:0] er; reg sbig; reg [22:0] frac; reg lsb,g,rb,st; reg [24:0] mr;
-      reg [26:0] lost; reg inx;
+      reg [33:0] na, nb; reg [23:0] Ma, Mb; reg signed [9:0] Ea, Eb;
+      reg sb, sbig; reg signed [11:0] Er; reg [26:0] mhi, mlo, lost; reg [27:0] sum;
+      integer sh, i; reg g, r0, s0;
       begin
-         if ({ae_,am_} >= {be_,bm_}) begin
-            sa=as_; ea=ae_; ma27={(ae_!=0),am_,3'b0}; sb=bs_; eb=be_; mb27={(be_!=0),bm_,3'b0};
-         end else begin
-            sa=bs_; ea=be_; ma27={(be_!=0),bm_,3'b0}; sb=as_; eb=ae_; mb27={(ae_!=0),am_,3'b0};
-         end
-         sh = ea - eb;
-         if (sh > 27) sh = 27;
-         lost  = (sh>=27) ? mb27 : (mb27 & ((27'b1<<sh)-1));
-         mb27  = mb27 >> sh;
-         if (|lost) mb27[0] = 1'b1;             // sticky
-         er = {1'b0, ea};
-         sbig = sa;
-         if (sa == sb) begin
-            sum = {1'b0, ma27} + {1'b0, mb27};
-            if (sum[27]) begin                  // elde -> sag kaydir
-               st = sum[0]; sum = sum >> 1; sum[0] = sum[0] | st; er = er + 1;
+         na = norm_in({as_,ae_,am_}); Ea = $signed(na[33:24]); Ma = na[23:0];
+         nb = norm_in({bs_,be_,bm_}); Eb = $signed(nb[33:24]); Mb = nb[23:0];
+         if (Ma==0 && Mb==0)
+            fadd = {3'b000, ((as_&&bs_) || (rm_==3'b010 && (as_||bs_))), 31'b0}; // 0+0 isaret
+         else if (Ma==0) fadd = {3'b000, bs_, be_, bm_};       // 0 + b = b
+         else if (Mb==0) fadd = {3'b000, as_, ae_, am_};       // a + 0 = a
+         else begin
+            if ((Ea > Eb) || (Ea==Eb && Ma>=Mb)) begin
+               sbig=as_; Er=Ea; mhi={Ma,3'b0}; sb=bs_; mlo={Mb,3'b0}; sh=Ea-Eb;
+            end else begin
+               sbig=bs_; Er=Eb; mhi={Mb,3'b0}; sb=as_; mlo={Ma,3'b0}; sh=Eb-Ea;
             end
-         end else begin
-            sum = {1'b0, ma27} - {1'b0, mb27};  // ma>=mb
-            i = 0;
-            while (sum[26]==1'b0 && (|sum) && i<27) begin sum = sum<<1; er=er-1; i=i+1; end
+            if (sh > 27) sh = 27;
+            lost = (sh>=27) ? mlo : (mlo & ((27'b1<<sh)-1));
+            mlo  = mlo >> sh;
+            if (|lost) mlo[0] = 1'b1;                          // sticky
+            if (as_ == bs_) begin                              // ayni isaret -> topla
+               sum = {1'b0, mhi} + {1'b0, mlo};
+               if (sum[27]) begin s0=sum[0]; sum=sum>>1; sum[0]=sum[0]|s0; Er=Er+1; end
+            end else begin                                     // farkli isaret -> cikar (mhi>=mlo)
+               sum = {1'b0, mhi} - {1'b0, mlo};
+               i = 0;
+               while (sum[26]==1'b0 && (|sum) && i<27) begin sum=sum<<1; Er=Er-1; i=i+1; end
+            end
+            if (sum == 0) fadd = {3'b000, (rm_==3'b010), 31'b0};   // tam iptal -> +0 (RDN -0)
+            else begin
+               g = sum[2]; r0 = sum[1]; s0 = sum[0];
+               fadd = pack(sbig, sum[26:3], g, r0, s0, Er, rm_);
+            end
          end
-         lsb=sum[3]; g=sum[2]; rb=sum[1]; st=sum[0];
-         inx = g | rb | st;                     // atilan bitler -> inexact
-         mr = {1'b0, sum[26:3]};                // 1 + 24-bit
-         if (round_up(g, rb, st, lsb, sbig, rm_)) begin
-            mr = mr + 1;
-            if (mr[24]) begin mr = mr>>1; er=er+1; end
-         end
-         if (sum == 0)         fadd = {3'b000, 32'b0};                       // tam iptal -> +0
-         else if (er >= 9'hFF) fadd = {3'b101, sbig, 8'hFF, 23'b0};          // OF+NX -> inf
-         else                  fadd = {2'b00, inx, sbig, er[7:0], mr[22:0]}; // NX=inx
       end
    endfunction
 
    // ======================= FMUL =======================
+   //  Altnormal destekli: girisler norm_in ile (subnormal dahil), sonuc pack ile
+   //  (normal/subnormal gradual underflow/overflow + yuvarlama).
    function [34:0] fmul;
       input        as_, bs_;
       input [7:0]  ae_, be_;
       input [22:0] am_, bm_;
       input [2:0]  rm_;
-      reg sr; reg [9:0] er; reg [23:0] ma, mb; reg [47:0] p;
-      reg [22:0] frac; reg guard, round, sticky, lsb; reg [24:0] mr; reg inx;
+      reg sr; reg [33:0] na, nb; reg [23:0] Ma, Mb, M24; reg signed [9:0] Ea, Eb;
+      reg [47:0] p; reg signed [11:0] Eres; reg g, r0, s0;
       begin
          sr = as_ ^ bs_;
-         ma = {(ae_!=0), am_};
-         mb = {(be_!=0), bm_};
-         p  = ma * mb;                          // 48-bit (1.xx * 1.xx -> 2.46 veya 1.46)
-         er = {2'b0, ae_} + {2'b0, be_} - 10'd127;
-         if (p[47]) begin                       // 1x.xxx -> normalize sag 1
-            er = er + 1;
-            frac = p[46:24];
-            guard= p[23]; round=p[22]; sticky=|p[21:0]; lsb=p[24];
-            mr = {1'b0, p[47:24]};
-         end else begin                         // 1.xxx
-            frac = p[45:23];
-            guard= p[22]; round=p[21]; sticky=|p[20:0]; lsb=p[23];
-            mr = {1'b0, p[46:23]};
+         na = norm_in({as_, ae_, am_});  Ea = na[33:24]; Ma = na[23:0];
+         nb = norm_in({bs_, be_, bm_});  Eb = nb[33:24]; Mb = nb[23:0];
+         if (Ma == 0 || Mb == 0) fmul = {3'b000, sr, 31'b0};   // sifir carpani -> +/-0
+         else begin
+            p = Ma * Mb;                          // [2^46, 2^48)
+            if (p[47]) Eres = $signed(Ea) + $signed(Eb) + 12'sd1;
+            else begin p = p << 1; Eres = $signed(Ea) + $signed(Eb); end
+            M24 = p[47:24]; g = p[23]; r0 = p[22]; s0 = |p[21:0];
+            fmul = pack(sr, M24, g, r0, s0, Eres, rm_);
          end
-         inx = guard | round | sticky;
-         if (round_up(guard, round, sticky, lsb, sr, rm_)) begin
-            mr = mr + 1;
-            if (mr[24]) begin mr = mr>>1; er=er+1; end
-         end
-         if (er[9] || er==0)     fmul = {3'b011, sr, 31'b0};            // UF+NX (altakma -> +/-0)
-         else if (er >= 10'd255) fmul = {3'b101, sr, 8'hFF, 23'b0};     // OF+NX (tasma -> inf)
-         else                    fmul = {2'b00, inx, sr, er[7:0], mr[22:0]};
       end
    endfunction
 
@@ -203,33 +261,23 @@ module fpu_temiz (
       input [7:0]  ae_, be_;
       input [22:0] am_, bm_;
       input [2:0]  rm_;
-      reg sr; reg signed [11:0] er; reg [23:0] ma, mb;
-      reg [50:0] dividend; reg [27:0] q; reg [50:0] rem;
-      reg st0, g, rb, st, lsb; reg [24:0] mr; reg [23:0] frac24; reg inx;
+      reg sr; reg [33:0] na, nb; reg [23:0] Ma, Mb, M24; reg signed [9:0] Ea, Eb;
+      reg signed [11:0] Eres; reg [50:0] dividend, rem; reg [27:0] q; reg g, r0, s0, st0;
       begin
          sr = as_ ^ bs_;
-         ma = {(ae_!=0), am_};
-         mb = {(be_!=0), bm_};
-         dividend = {ma, 27'b0};                 // ma << 27  (ma/mb * 2^27)
-         q   = dividend / mb;                     // [2^26, 2^28)
-         rem = dividend - q*mb; st0 = |rem;
+         na = norm_in({as_,ae_,am_}); Ea = $signed(na[33:24]); Ma = na[23:0];
+         nb = norm_in({bs_,be_,bm_}); Eb = $signed(nb[33:24]); Mb = nb[23:0];
+         dividend = {Ma, 27'b0};                 // Ma << 27  (Ma/Mb * 2^27)
+         q   = dividend / Mb;                     // [2^26, 2^28)
+         rem = dividend - q*Mb; st0 = |rem;
          if (q[27]) begin                         // oran >= 1 (lider 1 -> bit27)
-            er = $signed({4'b0,ae_}) - $signed({4'b0,be_}) + 127;
-            frac24 = q[27:4]; g = q[3]; rb = q[2]; st = q[1]|q[0]|st0;
+            Eres = $signed(Ea) - $signed(Eb);
+            M24 = q[27:4]; g = q[3]; r0 = q[2]; s0 = q[1]|q[0]|st0;
          end else begin                           // oran [0.5,1) (lider 1 -> bit26)
-            er = $signed({4'b0,ae_}) - $signed({4'b0,be_}) + 126;
-            frac24 = q[26:3]; g = q[2]; rb = q[1]; st = q[0]|st0;
+            Eres = $signed(Ea) - $signed(Eb) - 12'sd1;
+            M24 = q[26:3]; g = q[2]; r0 = q[1]; s0 = q[0]|st0;
          end
-         lsb = frac24[0];
-         inx = g | rb | st;
-         mr  = {1'b0, frac24};
-         if (round_up(g, rb, st, lsb, sr, rm_)) begin
-            mr = mr + 1;
-            if (mr[24]) begin mr = mr>>1; er = er + 1; end
-         end
-         if (er <= 0)         fdiv = {3'b011, sr, 31'b0};            // UF+NX (altakma -> +/-0)
-         else if (er >= 255)  fdiv = {3'b101, sr, 8'hFF, 23'b0};     // OF+NX (tasma -> +/-inf)
-         else                 fdiv = {2'b00, inx, sr, er[7:0], mr[22:0]};
+         fdiv = pack(sr, M24, g, r0, s0, Eres, rm_);
       end
    endfunction
 
@@ -239,18 +287,18 @@ module fpu_temiz (
    function [34:0] fsqrt;
       input [31:0] f;
       input [2:0]  rm_;
-      reg [7:0] e_; reg [23:0] sig; reg signed [11:0] E, resE;
+      reg [33:0] na; reg [23:0] M, m24; reg signed [11:0] E, resE;
       reg [55:0] rad, a, tsq; reg [27:0] q4, t; integer i;
-      reg [24:0] mr; reg [23:0] m24; reg g, rb, st, lsb, inx;
+      reg g, rb, st;
       begin
-         e_  = f[30:23]; sig = {(e_!=0), f[22:0]};
-         E   = $signed({4'b0,e_}) - 127;
+         na = norm_in(f); E = $signed(na[33:24]); M = na[23:0];  // altnormal -> normalize
+         // deger = (M/2^23) * 2^E,  mant in [1,2), us E (isaretli)
          if (E[0] == 1'b0) begin                  // cift us
-            rad  = {32'b0, sig} << 23;
-            resE = 127 + (E >>> 1);
+            rad  = {32'b0, M} << 23;
+            resE = E >>> 1;
          end else begin                           // tek us (mantise 1 bit ekle)
-            rad  = {32'b0, sig} << 24;
-            resE = 127 + ((E - 1) >>> 1);
+            rad  = {32'b0, M} << 24;
+            resE = (E - 1) >>> 1;
          end
          a  = rad << 4;                            // 2 ekstra bit (sonuc = gercek*4)
          q4 = 0;
@@ -260,14 +308,9 @@ module fpu_temiz (
             if (tsq <= a) q4 = t;
          end
          st  = ((q4*q4) != a);                     // kalan -> sticky
-         m24 = q4[25:2]; g = q4[1]; rb = q4[0]; lsb = m24[0];
-         inx = g | rb | st;
-         mr  = {1'b0, m24};
-         if (round_up(g, rb, st, lsb, 1'b0, rm_)) begin   // sonuc daima pozitif
-            mr = mr + 1;
-            if (mr[24]) begin mr = mr>>1; resE = resE + 1; end
-         end
-         fsqrt = {2'b00, inx, 1'b0, resE[7:0], mr[22:0]};   // sqrt: OF/UF yok, NX=inx
+         m24 = q4[25:2]; g = q4[1]; rb = q4[0];
+         // sqrt sonucu daima normal araliktadir -> pack normal yolu (isaret 0)
+         fsqrt = pack(1'b0, m24, g, rb, st, resE, rm_);
       end
    endfunction
 
@@ -350,20 +393,22 @@ module fpu_temiz (
       input [31:0] fa, fb, fc;
       input        np, sc_;             // neg_prod, sub_c
       input [2:0]  rm_;
-      reg sa,sb,scn; reg [7:0] ea,eb,ec; reg [23:0] ma,mb,mc; reg [47:0] pm;
+      reg sa,sb,scn; reg [33:0] na,nb,nc; reg signed [9:0] Ea,Eb,Ec;
+      reg [23:0] ma,mb,mc; reg [47:0] pm;
       reg psign, csign, rsign; integer pe, ce, refe, i, msb, shamt;
       reg [FW-1:0] pterm, cterm, mag, one, mask; reg [24:0] mr; reg [23:0] frac24;
       reg g, rb, st; integer Er, bias;
       begin
          one = 1;
-         sa=fa[31]; ea=fa[30:23]; ma={(ea!=0),fa[22:0]};
-         sb=fb[31]; eb=fb[30:23]; mb={(eb!=0),fb[22:0]};
-         scn=fc[31];ec=fc[30:23]; mc={(ec!=0),fc[22:0]};
+         sa=fa[31]; sb=fb[31]; scn=fc[31];
+         na=norm_in(fa); Ea=$signed(na[33:24]); ma=na[23:0];   // altnormal -> normalize
+         nb=norm_in(fb); Eb=$signed(nb[33:24]); mb=nb[23:0];
+         nc=norm_in(fc); Ec=$signed(nc[33:24]); mc=nc[23:0];
          pm    = ma*mb;
          psign = sa ^ sb ^ np;
          csign = scn ^ sc_;
-         pe    = ea + eb - 300;            // urun LSB ussu (pm bit0 = 2^pe)
-         ce    = ec - 150;                 // c LSB ussu (mc bit0 = 2^ce)
+         pe    = Ea + Eb - 46;             // urun LSB ussu (pm bit0 = 2^pe)
+         ce    = Ec - 23;                  // c LSB ussu (mc bit0 = 2^ce)
          refe  = (pe < ce) ? pe : ce;      // ortak LSB
          pterm = {{(FW-48){1'b0}}, pm} << (pe - refe);
          cterm = {{(FW-24){1'b0}}, mc} << (ce - refe);
@@ -386,15 +431,8 @@ module fpu_temiz (
                frac24 = mag << (23 - msb);                  // tam (yuvarlama yok)
                g = 1'b0; rb = 1'b0; st = 1'b0;
             end
-            mr = {1'b0, frac24};
-            if (round_up(g, rb, st, frac24[0], rsign, rm_)) begin
-               mr = mr + 1;
-               if (mr[24]) begin mr = mr>>1; Er = Er + 1; end
-            end
-            bias = Er + 127;
-            if (bias >= 255)      fmadd = {3'b101, rsign, 8'hFF, 23'b0};            // OF -> inf
-            else if (bias <= 0)   fmadd = {3'b011, rsign, 31'b0};                   // UF -> +/-0
-            else                  fmadd = {2'b00, (g|rb|st), rsign, bias[7:0], mr[22:0]};
+            // Normal/subnormal/overflow paketleme + yuvarlama (altnormal cikis destekli)
+            fmadd = pack(rsign, frac24, g, rb, st, Er[11:0], rm_);
          end
       end
    endfunction

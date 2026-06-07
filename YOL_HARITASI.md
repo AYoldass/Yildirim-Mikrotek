@@ -349,6 +349,14 @@ Bu modül bir **pipeline veri yolu kontrolcüsü değil**; bellek ile L1B/L1V
       `tb_fpu_fma` 192/192 (Python Fraction referansı) + `tb_cekirdek_fma` 5/5: 4 varyant + RAW
       scoreboard + **tek-yuvarlama kanıtı** (a·a−1 = 0x3A000400, çift-yuvarlama 0x3D000000 verirdi).
       Regresyon **19/19**.
+- [x] **FP altnormal (subnormal) desteği:** İki yeniden kullanılabilir yardımcı — `norm_in`
+      (girişi normalize eder: subnormal→işaretli düşük üs; değer = M·2^(E−23)) ve `pack` (sonucu
+      normal / **subnormal gradual-underflow** / overflow olarak paketler + rm yuvarlama + OF/UF/NX).
+      **FADD/FMUL/FDIV/FSQRT/FMADD** işaretli-üs aritmetiğine geçirilip bu yardımcıları kullanır
+      (önceden altnormaller sıfıra temizleniyordu). Doğrulama: `tb_fpu_altnormal` (248 vektör,
+      5 işlem, kritik altnormal+gradual-underflow durumları) + geliştirme sırasında ~1000 rastgele
+      vektör Python (struct/Fraction doğru-yuvarlama) referansına karşı. Regresyon **20/20**.
+      (Geriye yalnızca FCVT.W.S aralık-dışı doygunluk ayrıntısı kaldı; F uzantısı spec-tam.)
 - [x] **`tb_cekirdek_f`** 14/14: FLW/FSW, FADD/FSUB/FMUL (FLW sonucuna RAW), FEQ/FLT, FCVT
       (çift yön), FMV.X.W, FSGNJN, FMIN + bellek geri-yazma. Regresyon `./sim/run_sim.sh` → 10/10.
 
